@@ -1,1 +1,387 @@
+.account-page {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
 
+.account-header {
+    margin-bottom: 32px;
+}
+
+.account-header h1 {
+    margin: 8px 0 8px;
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+}
+
+.account-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    max-width: 650px;
+}
+
+
+/* Grid */
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* Cards */
+
+.account-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px;
+}
+
+.account-card:hover {
+    border-color: var(--border-light);
+}
+
+
+/* Header */
+
+.account-card .card-header {
+    margin-bottom: 24px;
+}
+
+.account-card .card-header h2 {
+    margin: 6px 0 0;
+    font-size: 20px;
+    color: var(--text);
+}
+
+
+/* Form */
+
+.account-card .form-group {
+    margin-bottom: 20px;
+}
+
+.account-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.account-card input {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--bg-soft);
+    color: var(--text);
+
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.account-card input:focus {
+    border-color: var(--border-light);
+    background: #101010;
+}
+
+.account-card input:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.account-card .form-help {
+    display: block;
+    margin-top: 7px;
+
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* Mensagem */
+
+.account-card .auth-message {
+    margin-bottom: 18px;
+}
+
+
+/* Plano */
+
+.account-plan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px;
+
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.account-plan-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.account-plan strong {
+    display: block;
+
+    color: var(--text);
+    font-size: 20px;
+}
+
+
+/* Detalhes do plano */
+
+.account-plan-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    margin-top: 14px;
+}
+
+.account-detail {
+    padding: 14px;
+
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.account-detail span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.account-detail strong {
+    color: var(--text);
+    font-size: 14px;
+}
+
+
+/* Segurança */
+
+.account-security-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.security-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.security-item:first-child {
+    padding-top: 0;
+}
+
+.security-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.security-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text);
+    font-size: 14px;
+}
+
+.security-item span {
+    display: block;
+
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* Zona de perigo */
+
+.account-danger {
+    grid-column: 1 / -1;
+
+    border-color: rgba(255, 95, 95, 0.3);
+}
+
+.account-danger .card-header {
+    margin-bottom: 18px;
+}
+
+.account-danger .card-label {
+    color: #ff5f5f;
+}
+
+.danger-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding: 18px;
+
+    background: rgba(255, 95, 95, 0.04);
+    border: 1px solid rgba(255, 95, 95, 0.15);
+    border-radius: 12px;
+}
+
+.danger-content strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text);
+    font-size: 15px;
+}
+
+.danger-content p {
+    margin: 0;
+
+    max-width: 700px;
+
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* Botão perigoso */
+
+.btn-danger {
+    flex-shrink: 0;
+
+    background: #ff5f5f;
+    color: #ffffff;
+
+    border: 1px solid #ff5f5f;
+}
+
+.btn-danger:hover {
+    background: #e94d4d;
+    border-color: #e94d4d;
+}
+
+
+/* Footer */
+
+.dashboard-footer {
+    margin-top: 0;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-danger {
+        grid-column: auto;
+    }
+
+}
+
+
+/* Celular */
+
+@media (max-width: 700px) {
+
+    .account-page {
+        padding-top: 35px;
+        padding-bottom: 50px;
+    }
+
+    .account-header h1 {
+        font-size: 28px;
+    }
+
+    .account-card {
+        padding: 20px;
+    }
+
+    .account-plan {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .account-plan .btn {
+        width: 100%;
+    }
+
+    .security-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .security-item .btn {
+        width: 100%;
+    }
+
+    .danger-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .danger-content .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* Celular pequeno */
+
+@media (max-width: 480px) {
+
+    .account-header h1 {
+        font-size: 25px;
+    }
+
+    .account-card {
+        padding: 17px;
+        border-radius: 13px;
+    }
+
+    .account-plan-details {
+        grid-template-columns: 1fr;
+    }
+
+    .account-plan strong {
+        font-size: 18px;
+    }
+
+    .danger-content {
+        padding: 15px;
+    }
+
+}
