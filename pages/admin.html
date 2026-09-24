@@ -1,1 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Administração — Zyphor Cloud</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="dashboard-logo"
+            >
+                ZYPHOR CLOUD
+            </a>
+
+            <nav class="dashboard-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="bots.html">
+                    Bots
+                </a>
+
+                <a href="planos.html">
+                    Planos
+                </a>
+
+                <a href="pagamentos.html">
+                    Pagamentos
+                </a>
+
+                <a href="suporte.html">
+                    Suporte
+                </a>
+
+                <a
+                    href="admin.html"
+                    class="active"
+                >
+                    Admin
+                </a>
+
+            </nav>
+
+            <div class="dashboard-user">
+
+                <span id="userName">
+                    Administrador
+                </span>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-secondary"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="container admin-page">
+
+        <section class="admin-header">
+
+            <div>
+
+                <span class="card-label">
+                    ADMINISTRAÇÃO
+                </span>
+
+                <h1>
+                    Painel administrativo
+                </h1>
+
+                <p>
+                    Gerencie usuários, pagamentos, bots e configurações da plataforma.
+                </p>
+
+            </div>
+
+            <span
+                id="adminRole"
+                class="admin-role"
+            >
+                Admin
+            </span>
+
+        </section>
+
+
+        <!-- Estatísticas -->
+
+        <section class="admin-stats">
+
+            <div class="admin-stat">
+
+                <span>
+                    Usuários
+                </span>
+
+                <strong id="totalUsers">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <span>
+                    Bots
+                </span>
+
+                <strong id="totalBots">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <span>
+                    Bots online
+                </span>
+
+                <strong id="onlineBots">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <span>
+                    Pagamentos pendentes
+                </span>
+
+                <strong id="pendingPayments">
+                    —
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- Navegação administrativa -->
+
+        <section class="admin-menu">
+
+            <button
+                type="button"
+                class="admin-menu-button active"
+                data-section="overview"
+            >
+                Visão geral
+            </button>
+
+            <button
+                type="button"
+                class="admin-menu-button"
+                data-section="payments"
+            >
+                Pagamentos
+            </button>
+
+            <button
+                type="button"
+                class="admin-menu-button"
+                data-section="users"
+            >
+                Usuários
+            </button>
+
+            <button
+                type="button"
+                class="admin-menu-button"
+                data-section="announcements"
+            >
+                Anúncios
+            </button>
+
+            <button
+                type="button"
+                class="admin-menu-button"
+                data-section="settings"
+            >
+                Configurações
+            </button>
+
+        </section>
+
+
+        <!-- Visão geral -->
+
+        <section
+            id="adminOverview"
+            class="admin-section"
+        >
+
+            <div class="admin-grid">
+
+
+                <div class="admin-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                SISTEMA
+                            </span>
+
+                            <h2>
+                                Status da plataforma
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="system-status">
+
+                        <div class="system-status-item">
+
+                            <span class="status-dot online"></span>
+
+                            <div>
+
+                                <strong>
+                                    API
+                                </strong>
+
+                                <span>
+                                    Operacional
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="system-status-item">
+
+                            <span class="status-dot online"></span>
+
+                            <div>
+
+                                <strong>
+                                    Banco de dados
+                                </strong>
+
+                                <span>
+                                    Operacional
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="system-status-item">
+
+                            <span class="status-dot online"></span>
+
+                            <div>
+
+                                <strong>
+                                    Runner
+                                </strong>
+
+                                <span>
+                                    Operacional
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                ATIVIDADE
+                            </span>
+
+                            <h2>
+                                Atividade recente
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="recentActivity">
+
+                        <div class="admin-empty">
+                            Nenhuma atividade recente.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Pagamentos -->
+
+        <section
+            id="adminPayments"
+            class="admin-section hidden"
+        >
+
+            <div class="admin-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            FINANCEIRO
+                        </span>
+
+                        <h2>
+                            Pagamentos pendentes
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="refreshPayments"
+                        class="btn btn-secondary"
+                    >
+                        Atualizar
+                    </button>
+
+                </div>
+
+
+                <div id="adminPaymentsList">
+
+                    <div class="admin-empty">
+                        Carregando pagamentos...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Usuários -->
+
+        <section
+            id="adminUsers"
+            class="admin-section hidden"
+        >
+
+            <div class="admin-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            CONTAS
+                        </span>
+
+                        <h2>
+                            Usuários
+                        </h2>
+
+                    </div>
+
+                    <input
+                        type="search"
+                        id="userSearch"
+                        class="admin-search"
+                        placeholder="Pesquisar usuário..."
+                    >
+
+                </div>
+
+
+                <div id="adminUsersList">
+
+                    <div class="admin-empty">
+                        Carregando usuários...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Anúncios -->
+
+        <section
+            id="adminAnnouncements"
+            class="admin-section hidden"
+        >
+
+            <div class="admin-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            COMUNICAÇÃO
+                        </span>
+
+                        <h2>
+                            Criar anúncio
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="announcementForm">
+
+                    <div class="form-group">
+
+                        <label for="announcementTitle">
+                            Título
+                        </label>
+
+                        <input
+                            type="text"
+                            id="announcementTitle"
+                            maxlength="120"
+                            placeholder="Título do anúncio"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="announcementMessage">
+                            Mensagem
+                        </label>
+
+                        <textarea
+                            id="announcementMessage"
+                            rows="7"
+                            maxlength="4000"
+                            placeholder="Mensagem do anúncio..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="announcementType">
+                            Tipo
+                        </label>
+
+                        <select id="announcementType">
+
+                            <option value="info">
+                                Informação
+                            </option>
+
+                            <option value="maintenance">
+                                Manutenção
+                            </option>
+
+                            <option value="warning">
+                                Aviso
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div
+                        id="announcementMessageStatus"
+                        class="auth-message"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        id="announcementButton"
+                        class="btn btn-primary"
+                    >
+                        Publicar anúncio
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- Configurações -->
+
+        <section
+            id="adminSettings"
+            class="admin-section hidden"
+        >
+
+            <div class="admin-grid">
+
+
+                <div class="admin-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                PIX
+                            </span>
+
+                            <h2>
+                                Configuração de pagamento
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="pixSettingsForm">
+
+                        <div class="form-group">
+
+                            <label for="pixKeyInput">
+                                Chave PIX
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pixKeyInput"
+                                placeholder="Chave PIX"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="pixReceiverInput">
+                                Recebedor
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pixReceiverInput"
+                                placeholder="Nome do recebedor"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="pixBankInput">
+                                Banco
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pixBankInput"
+                                placeholder="Nome do banco"
+                            >
+
+                        </div>
+
+
+                        <div
+                            id="pixSettingsMessage"
+                            class="auth-message"
+                        ></div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Salvar PIX
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="admin-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                SISTEMA
+                            </span>
+
+                            <h2>
+                                Configurações gerais
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-setting-list">
+
+                        <div class="admin-setting">
+
+                            <div>
+
+                                <strong>
+                                    Modo de manutenção
+                                </strong>
+
+                                <span>
+                                    Impede novos deploys durante manutenção.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="maintenanceMode"
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="admin-setting">
+
+                            <div>
+
+                                <strong>
+                                    Novos cadastros
+                                </strong>
+
+                                <span>
+                                    Permitir novas contas na plataforma.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="registrationEnabled"
+                                    checked
+                                >
+
+                                <span class="switch-slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <span>
+                © 2026 Zyphor Cloud
+            </span>
+
+            <span>
+                Painel administrativo
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/api.js"></script>
+
+    <script src="../js/admin.js"></script>
+
+</body>
+
+</html>
