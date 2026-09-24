@@ -1,1 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Dashboard — Zyphor Cloud</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container dashboard-nav">
+
+            <a href="dashboard.html" class="dashboard-logo">
+                ZYPHOR <span>CLOUD</span>
+            </a>
+
+            <nav class="dashboard-links">
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="bots.html">Meus bots</a>
+                <a href="planos.html">Planos</a>
+                <a href="pagamentos.html">Pagamentos</a>
+                <a href="suporte.html">Suporte</a>
+            </nav>
+
+            <div class="dashboard-user">
+
+                <span id="userName">
+                    Carregando...
+                </span>
+
+                <button id="logoutButton" class="btn btn-secondary">
+                    Sair
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard-page">
+
+        <div class="container">
+
+
+            <!-- CABEÇALHO -->
+
+            <section class="dashboard-welcome">
+
+                <div>
+                    <span class="hero-label">
+                        PAINEL
+                    </span>
+
+                    <h1>
+                        Olá, <span id="welcomeName">...</span>.
+                    </h1>
+
+                    <p>
+                        Gerencie seus bots e acompanhe sua hospedagem.
+                    </p>
+                </div>
+
+                <a href="criar-bot.html" class="btn btn-primary">
+                    + Criar bot
+                </a>
+
+            </section>
+
+
+            <!-- ESTATÍSTICAS -->
+
+            <section class="dashboard-stats">
+
+                <div class="dashboard-stat card">
+
+                    <span class="stat-label">
+                        BOTS
+                    </span>
+
+                    <strong id="botsCount">
+                        0
+                    </strong>
+
+                    <span class="stat-description">
+                        Bots cadastrados
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-stat card">
+
+                    <span class="stat-label">
+                        ONLINE
+                    </span>
+
+                    <strong id="onlineCount">
+                        0
+                    </strong>
+
+                    <span class="stat-description">
+                        Bots em execução
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-stat card">
+
+                    <span class="stat-label">
+                        PLANO
+                    </span>
+
+                    <strong id="planName">
+                        Free
+                    </strong>
+
+                    <span class="stat-description">
+                        Plano atual
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-stat card">
+
+                    <span class="stat-label">
+                        STATUS
+                    </span>
+
+                    <strong class="status-online">
+                        Ativo
+                    </strong>
+
+                    <span class="stat-description">
+                        Conta
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- BOTS -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">
+                            SEUS PROJETOS
+                        </span>
+
+                        <h2>Meus bots</h2>
+                    </div>
+
+                    <a href="bots.html" class="btn btn-secondary">
+                        Ver todos
+                    </a>
+
+                </div>
+
+
+                <div id="dashboardBots" class="dashboard-bots">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            +
+                        </div>
+
+                        <h3>
+                            Nenhum bot ainda
+                        </h3>
+
+                        <p>
+                            Crie seu primeiro bot para começar.
+                        </p>
+
+                        <a
+                            href="criar-bot.html"
+                            class="btn btn-primary"
+                        >
+                            Criar primeiro bot
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECURSOS -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">
+                            RECURSOS
+                        </span>
+
+                        <h2>Seu plano</h2>
+                    </div>
+
+                    <a href="planos.html" class="btn btn-secondary">
+                        Ver planos
+                    </a>
+
+                </div>
+
+
+                <div class="resource-card card">
+
+                    <div class="resource-header">
+
+                        <div>
+                            <span class="resource-plan-label">
+                                PLANO ATUAL
+                            </span>
+
+                            <h3 id="resourcePlanName">
+                                Free
+                            </h3>
+                        </div>
+
+                        <span class="badge badge-online">
+                            Ativo
+                        </span>
+
+                    </div>
+
+
+                    <div class="resource-list">
+
+                        <div class="resource-item">
+
+                            <div>
+                                <span>RAM</span>
+                                <strong id="ramUsage">
+                                    0 MB / 512 MB
+                                </strong>
+                            </div>
+
+                            <div class="resource-bar">
+                                <span
+                                    id="ramBar"
+                                    style="width: 0%"
+                                ></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="resource-item">
+
+                            <div>
+                                <span>CPU</span>
+                                <strong id="cpuUsage">
+                                    0% / 25%
+                                </strong>
+                            </div>
+
+                            <div class="resource-bar">
+                                <span
+                                    id="cpuBar"
+                                    style="width: 0%"
+                                ></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="resource-item">
+
+                            <div>
+                                <span>Armazenamento</span>
+                                <strong id="storageUsage">
+                                    0 MB / 1 GB
+                                </strong>
+                            </div>
+
+                            <div class="resource-bar">
+                                <span
+                                    id="storageBar"
+                                    style="width: 0%"
+                                ></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ATALHOS -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">
+                            ACESSO RÁPIDO
+                        </span>
+
+                        <h2>Atalhos</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-shortcuts">
+
+                    <a href="criar-bot.html" class="shortcut-card card">
+                        <strong>+</strong>
+                        <div>
+                            <h3>Criar bot</h3>
+                            <p>Adicione um novo projeto.</p>
+                        </div>
+                    </a>
+
+
+                    <a href="planos.html" class="shortcut-card card">
+                        <strong>↗</strong>
+                        <div>
+                            <h3>Planos</h3>
+                            <p>Veja os recursos disponíveis.</p>
+                        </div>
+                    </a>
+
+
+                    <a href="pagamentos.html" class="shortcut-card card">
+                        <strong>R$</strong>
+                        <div>
+                            <h3>Pagamentos</h3>
+                            <p>Consulte seus pagamentos.</p>
+                        </div>
+                    </a>
+
+
+                    <a href="suporte.html" class="shortcut-card card">
+                        <strong>?</strong>
+                        <div>
+                            <h3>Suporte</h3>
+                            <p>Precisa de ajuda?</p>
+                        </div>
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <span>
+                    © 2026 Zyphor Cloud
+                </span>
+
+                <span>
+                    Hospedagem de bots
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>
