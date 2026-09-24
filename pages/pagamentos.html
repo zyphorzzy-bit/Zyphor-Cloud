@@ -1,1 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pagamentos — Zyphor Cloud</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/pagamentos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-nav">
+
+            <a href="dashboard.html" class="dashboard-logo">
+                ZYPHOR <span>CLOUD</span>
+            </a>
+
+            <nav class="dashboard-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="bots.html">Meus bots</a>
+                <a href="planos.html">Planos</a>
+                <a href="pagamentos.html" class="active">Pagamentos</a>
+                <a href="suporte.html">Suporte</a>
+            </nav>
+
+            <div class="dashboard-user">
+
+                <span id="userName">
+                    Usuário
+                </span>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-secondary btn-small"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="payments-page">
+
+        <div class="container">
+
+            <section class="payments-header">
+
+                <div>
+
+                    <span class="hero-label">
+                        ZYPHOR CLOUD
+                    </span>
+
+                    <h1>
+                        Pagamentos
+                    </h1>
+
+                    <p>
+                        Gerencie suas compras, planos e comprovantes.
+                    </p>
+
+                </div>
+
+                <a
+                    href="planos.html"
+                    class="btn btn-primary"
+                >
+                    Ver planos
+                </a>
+
+            </section>
+
+
+            <section class="payment-grid">
+
+                <div class="payment-card">
+
+                    <div class="card-header">
+
+                        <span class="card-label">
+                            NOVO PAGAMENTO
+                        </span>
+
+                        <h2>
+                            Escolher plano
+                        </h2>
+
+                        <p>
+                            Selecione o plano que deseja contratar.
+                        </p>
+
+                    </div>
+
+
+                    <form id="paymentForm">
+
+                        <div class="form-group">
+
+                            <label for="paymentPlan">
+                                Plano
+                            </label>
+
+                            <select
+                                id="paymentPlan"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione um plano
+                                </option>
+
+                                <option value="free">
+                                    Free — R$ 0,00/mês
+                                </option>
+
+                                <option value="bronze">
+                                    Bronze — R$ 4,90/mês
+                                </option>
+
+                                <option value="prata">
+                                    Prata — R$ 9,90/mês
+                                </option>
+
+                                <option value="ouro">
+                                    Ouro — R$ 17,90/mês
+                                </option>
+
+                                <option value="diamante">
+                                    Diamante — R$ 29,90/mês
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div
+                            id="selectedPlan"
+                            class="selected-plan"
+                            hidden
+                        >
+
+                            <div>
+
+                                <span>
+                                    Plano selecionado
+                                </span>
+
+                                <strong id="selectedPlanName">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <strong id="selectedPlanPrice">
+                                R$ 0,00
+                            </strong>
+
+                        </div>
+
+
+                        <div
+                            id="paymentMessage"
+                            class="auth-message"
+                        ></div>
+
+
+                        <button
+                            type="submit"
+                            id="paymentButton"
+                            class="btn btn-primary btn-large"
+                        >
+                            Continuar
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="payment-card pix-card">
+
+                    <div class="card-header">
+
+                        <span class="card-label">
+                            PIX
+                        </span>
+
+                        <h2>
+                            Pagamento manual
+                        </h2>
+
+                        <p>
+                            Após pagar, envie o comprovante para análise.
+                        </p>
+
+                    </div>
+
+
+                    <div class="pix-box">
+
+                        <span class="pix-label">
+                            CHAVE PIX
+                        </span>
+
+                        <strong id="pixKey">
+                            Aguardando configuração
+                        </strong>
+
+                        <button
+                            type="button"
+                            id="copyPix"
+                            class="btn btn-secondary btn-small"
+                        >
+                            Copiar chave
+                        </button>
+
+                    </div>
+
+
+                    <div class="pix-info">
+
+                        <div>
+                            <span>
+                                Recebedor
+                            </span>
+
+                            <strong id="pixReceiverName">
+                                —
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>
+                                Banco
+                            </span>
+
+                            <strong id="pixBank">
+                                —
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-instructions">
+
+                        <strong>
+                            Como funciona
+                        </strong>
+
+                        <ol>
+
+                            <li>
+                                Escolha seu plano.
+                            </li>
+
+                            <li>
+                                Faça o pagamento via PIX.
+                            </li>
+
+                            <li>
+                                Envie o comprovante.
+                            </li>
+
+                            <li>
+                                Aguarde a aprovação.
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section
+                id="proofSection"
+                class="payment-card proof-card"
+                hidden
+            >
+
+                <div class="card-header">
+
+                    <span class="card-label">
+                        COMPROVANTE
+                    </span>
+
+                    <h2>
+                        Enviar comprovante
+                    </h2>
+
+                    <p>
+                        Envie o comprovante do pagamento para análise.
+                    </p>
+
+                </div>
+
+
+                <form id="proofForm">
+
+                    <div class="form-group">
+
+                        <label for="proofFile">
+                            Arquivo do comprovante
+                        </label>
+
+                        <input
+                            type="file"
+                            id="proofFile"
+                            accept="image/*,.pdf"
+                            required
+                        >
+
+                        <span class="form-help">
+                            Formatos aceitos: JPG, PNG e PDF.
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="proofNote">
+                            Observação
+                        </label>
+
+                        <textarea
+                            id="proofNote"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Observação opcional..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div
+                        id="proofMessage"
+                        class="auth-message"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        id="proofButton"
+                        class="btn btn-primary"
+                    >
+                        Enviar comprovante
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <section class="payment-history">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            HISTÓRICO
+                        </span>
+
+                        <h2>
+                            Meus pagamentos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="paymentsList"
+                    class="payments-list"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            $
+                        </div>
+
+                        <h3>
+                            Carregando pagamentos...
+                        </h3>
+
+                        <p>
+                            Aguarde enquanto buscamos seu histórico.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <span>
+                © 2026 Zyphor Cloud
+            </span>
+
+            <span>
+                Pagamentos seguros e analisados manualmente
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/pagamentos.js"></script>
+
+</body>
+
+</html>
