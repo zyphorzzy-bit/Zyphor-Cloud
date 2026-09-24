@@ -1,1 +1,371 @@
+.create-bot-page {
+    min-height: calc(100vh - 80px);
+    padding: 50px 0 80px;
+}
 
+.create-bot-header {
+    margin-bottom: 35px;
+}
+
+.create-bot-header h1 {
+    margin: 10px 0 10px;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.create-bot-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.create-bot-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.create-bot-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.card-header {
+    margin-bottom: 28px;
+}
+
+.card-label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.card-header h2 {
+    margin: 0 0 7px;
+    font-size: 21px;
+}
+
+.card-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-help {
+    display: block;
+    margin-top: 7px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 110px;
+    font-family: inherit;
+}
+
+.source-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.source-option {
+    display: block;
+    cursor: pointer;
+}
+
+.source-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.source-option-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #0c0c0c;
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+.source-option:hover .source-option-content {
+    border-color: #3a3a3a;
+    transform: translateY(-1px);
+}
+
+.source-option input:checked + .source-option-content {
+    border-color: #686868;
+    background: #141414;
+}
+
+.source-option-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    border: 1px solid #303030;
+    border-radius: 10px;
+
+    color: #fff;
+    background: #181818;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.source-option-content strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.source-option-content span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.source-panel {
+    padding-top: 2px;
+}
+
+.upload-area {
+    border: 1px dashed #3a3a3a;
+    border-radius: 14px;
+    background: #0b0b0b;
+    transition:
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.upload-area:hover {
+    border-color: #666;
+    background: #101010;
+}
+
+.upload-label {
+    min-height: 190px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.upload-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #333;
+    border-radius: 50%;
+
+    color: #fff;
+    background: #151515;
+
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.upload-label strong {
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.upload-label span:not(.upload-icon) {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.upload-file-name {
+    display: none;
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    color: #fff;
+    font-size: 12px;
+    word-break: break-word;
+}
+
+.upload-file-name.visible {
+    display: block;
+}
+
+.create-bot-info {
+    margin-top: 22px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--border);
+}
+
+.info-item {
+    display: flex;
+    gap: 14px;
+    padding: 22px;
+    background: #0d0d0d;
+}
+
+.info-item > strong {
+    color: #777;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.info-item b {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.info-item span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+#createBotMessage {
+    min-height: 0;
+    margin-bottom: 14px;
+}
+
+#createBotMessage:empty {
+    display: none;
+}
+
+.dashboard-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.dashboard-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* =========================
+   RESPONSIVO
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .create-bot-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .create-bot-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .create-bot-page {
+        padding: 35px 0 60px;
+    }
+
+    .create-bot-header h1 {
+        font-size: 30px;
+    }
+
+    .create-bot-card {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .create-bot-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .create-bot-header h1 {
+        font-size: 27px;
+    }
+
+    .create-bot-card {
+        padding: 18px;
+        border-radius: 13px;
+    }
+
+    .source-option-content {
+        padding: 13px;
+    }
+
+    .source-option-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .upload-label {
+        min-height: 165px;
+    }
+
+    .info-item {
+        padding: 18px;
+    }
+
+    .dashboard-footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
