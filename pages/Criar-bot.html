@@ -1,1 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar bot — Zyphor Cloud</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/criar-bot.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-nav">
+
+            <a href="dashboard.html" class="dashboard-logo">
+                ZYPHOR <span>CLOUD</span>
+            </a>
+
+            <nav class="dashboard-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="bots.html" class="active">Meus bots</a>
+                <a href="planos.html">Planos</a>
+                <a href="pagamentos.html">Pagamentos</a>
+                <a href="suporte.html">Suporte</a>
+            </nav>
+
+            <div class="dashboard-user">
+                <span id="userName">Usuário</span>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-secondary btn-small"
+                >
+                    Sair
+                </button>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="create-bot-page">
+
+        <div class="container">
+
+            <a href="bots.html" class="back-link">
+                ← Voltar para meus bots
+            </a>
+
+
+            <section class="create-bot-header">
+
+                <span class="hero-label">
+                    ZYPHOR CLOUD
+                </span>
+
+                <h1>
+                    Criar novo bot
+                </h1>
+
+                <p>
+                    Configure seu projeto e escolha como deseja importar
+                    os arquivos do bot.
+                </p>
+
+            </section>
+
+
+            <section class="create-bot-layout">
+
+                <div class="create-bot-card">
+
+                    <div class="card-header">
+
+                        <span class="card-label">
+                            CONFIGURAÇÃO
+                        </span>
+
+                        <h2>
+                            Informações do bot
+                        </h2>
+
+                        <p>
+                            Defina as informações básicas do seu projeto.
+                        </p>
+
+                    </div>
+
+
+                    <form id="createBotForm">
+
+                        <div class="form-group">
+
+                            <label for="botName">
+                                Nome do bot
+                            </label>
+
+                            <input
+                                type="text"
+                                id="botName"
+                                name="botName"
+                                placeholder="Ex: Meu Bot"
+                                maxlength="50"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="botDescription">
+                                Descrição
+                            </label>
+
+                            <textarea
+                                id="botDescription"
+                                name="botDescription"
+                                placeholder="Descreva seu projeto..."
+                                maxlength="250"
+                                rows="4"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="botLanguage">
+                                    Linguagem
+                                </label>
+
+                                <select
+                                    id="botLanguage"
+                                    name="language"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Selecione
+                                    </option>
+
+                                    <option value="javascript">
+                                        JavaScript
+                                    </option>
+
+                                    <option value="typescript">
+                                        TypeScript
+                                    </option>
+
+                                    <option value="python">
+                                        Python
+                                    </option>
+
+                                    <option value="java">
+                                        Java
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="botRuntime">
+                                    Runtime
+                                </label>
+
+                                <select
+                                    id="botRuntime"
+                                    name="runtime"
+                                >
+
+                                    <option value="">
+                                        Automático
+                                    </option>
+
+                                    <option value="nodejs">
+                                        Node.js
+                                    </option>
+
+                                    <option value="python">
+                                        Python
+                                    </option>
+
+                                    <option value="java">
+                                        Java
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="startCommand">
+                                Comando de inicialização
+                            </label>
+
+                            <input
+                                type="text"
+                                id="startCommand"
+                                name="startCommand"
+                                placeholder="Ex: node index.js"
+                            >
+
+                            <span class="form-help">
+                                Será usado para iniciar seu bot.
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            id="createBotMessage"
+                            class="auth-message"
+                        ></div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-large"
+                            id="createBotButton"
+                        >
+                            Continuar
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="create-bot-card">
+
+                    <div class="card-header">
+
+                        <span class="card-label">
+                            ORIGEM DO PROJETO
+                        </span>
+
+                        <h2>
+                            Como deseja adicionar os arquivos?
+                        </h2>
+
+                        <p>
+                            Escolha uma das opções para importar seu projeto.
+                        </p>
+
+                    </div>
+
+
+                    <div class="source-options">
+
+                        <label class="source-option">
+
+                            <input
+                                type="radio"
+                                name="sourceType"
+                                value="github"
+                                checked
+                            >
+
+                            <div class="source-option-content">
+
+                                <div class="source-option-icon">
+                                    GH
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        GitHub
+                                    </strong>
+
+                                    <span>
+                                        Importar um repositório do GitHub.
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="source-option">
+
+                            <input
+                                type="radio"
+                                name="sourceType"
+                                value="zip"
+                            >
+
+                            <div class="source-option-content">
+
+                                <div class="source-option-icon">
+                                    ZIP
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Arquivo ZIP
+                                    </strong>
+
+                                    <span>
+                                        Enviar os arquivos do seu projeto.
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <div
+                        id="githubSource"
+                        class="source-panel"
+                    >
+
+                        <div class="form-group">
+
+                            <label for="githubUrl">
+                                URL do repositório
+                            </label>
+
+                            <input
+                                type="url"
+                                id="githubUrl"
+                                name="githubUrl"
+                                placeholder="https://github.com/usuario/projeto"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="githubBranch">
+                                Branch
+                            </label>
+
+                            <input
+                                type="text"
+                                id="githubBranch"
+                                name="githubBranch"
+                                value="main"
+                                placeholder="main"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="zipSource"
+                        class="source-panel"
+                        hidden
+                    >
+
+                        <div class="upload-area">
+
+                            <input
+                                type="file"
+                                id="projectZip"
+                                accept=".zip,application/zip"
+                                hidden
+                            >
+
+                            <label
+                                for="projectZip"
+                                class="upload-label"
+                            >
+
+                                <span class="upload-icon">
+                                    +
+                                </span>
+
+                                <strong>
+                                    Selecionar arquivo ZIP
+                                </strong>
+
+                                <span>
+                                    Envie o projeto compactado.
+                                </span>
+
+                            </label>
+
+                            <div
+                                id="zipFileName"
+                                class="upload-file-name"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="create-bot-info">
+
+                <div class="info-item">
+
+                    <strong>
+                        01
+                    </strong>
+
+                    <div>
+                        <b>Configure</b>
+                        <span>
+                            Informe os dados básicos do seu bot.
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        02
+                    </strong>
+
+                    <div>
+                        <b>Importe</b>
+                        <span>
+                            Envie seu projeto pelo GitHub ou ZIP.
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        03
+                    </strong>
+
+                    <div>
+                        <b>Hospede</b>
+                        <span>
+                            Depois configure e coloque seu bot online.
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <span>
+                © 2026 Zyphor Cloud
+            </span>
+
+            <span>
+                Hospedagem de bots
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/criar-bot.js"></script>
+
+</body>
+
+</html>
