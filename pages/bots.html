@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Meus bots — Zyphor Cloud</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/bots.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container dashboard-nav">
+
+            <a href="dashboard.html" class="dashboard-logo">
+                ZYPHOR <span>CLOUD</span>
+            </a>
+
+            <nav class="dashboard-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="bots.html" class="active">Meus bots</a>
+                <a href="planos.html">Planos</a>
+                <a href="pagamentos.html">Pagamentos</a>
+                <a href="suporte.html">Suporte</a>
+            </nav>
+
+            <div class="dashboard-user">
+                <span id="userName">Carregando...</span>
+
+                <button id="logoutButton" class="btn btn-secondary">
+                    Sair
+                </button>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="bots-page">
+
+        <div class="container">
+
+            <section class="bots-header">
+
+                <div>
+                    <span class="hero-label">
+                        PROJETOS
+                    </span>
+
+                    <h1>Meus bots</h1>
+
+                    <p>
+                        Gerencie todos os seus projetos hospedados.
+                    </p>
+                </div>
+
+                <a
+                    href="criar-bot.html"
+                    class="btn btn-primary"
+                >
+                    + Criar bot
+                </a>
+
+            </section>
+
+
+            <section class="bots-toolbar">
+
+                <div class="bots-search">
+
+                    <input
+                        type="search"
+                        id="botSearch"
+                        placeholder="Pesquisar bot..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+                <div class="bots-filter">
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            Todos
+                        </option>
+
+                        <option value="online">
+                            Online
+                        </option>
+
+                        <option value="offline">
+                            Offline
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <section
+                id="botsList"
+                class="bots-grid"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        ...
+                    </div>
+
+                    <h3>
+                        Carregando bots
+                    </h3>
+
+                    <p>
+                        Aguarde um momento.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <span>
+                    © 2026 Zyphor Cloud
+                </span>
+
+                <span>
+                    Hospedagem de bots
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/bots.js"></script>
+
+</body>
+</html>
