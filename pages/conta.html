@@ -1,1 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Minha conta — Zyphor Cloud</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/conta.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="dashboard-logo"
+            >
+                ZYPHOR CLOUD
+            </a>
+
+            <nav class="dashboard-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="bots.html">
+                    Meus bots
+                </a>
+
+                <a href="planos.html">
+                    Planos
+                </a>
+
+                <a href="pagamentos.html">
+                    Pagamentos
+                </a>
+
+                <a href="suporte.html">
+                    Suporte
+                </a>
+
+            </nav>
+
+            <div class="dashboard-user">
+
+                <span id="userName">
+                    Usuário
+                </span>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-secondary"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="container account-page">
+
+        <section class="account-header">
+
+            <div>
+
+                <span class="card-label">
+                    CONTA
+                </span>
+
+                <h1>
+                    Minha conta
+                </h1>
+
+                <p>
+                    Gerencie seus dados e as configurações da sua conta.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="account-grid">
+
+
+            <!-- Informações -->
+
+            <div class="account-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            PERFIL
+                        </span>
+
+                        <h2>
+                            Informações da conta
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="accountForm">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                            disabled
+                        >
+
+                        <small class="form-help">
+                            O e-mail da conta não pode ser alterado por aqui.
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        id="accountMessage"
+                        class="auth-message"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        id="saveAccountButton"
+                        class="btn btn-primary btn-large"
+                    >
+                        Salvar alterações
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- Plano -->
+
+            <div class="account-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            ASSINATURA
+                        </span>
+
+                        <h2>
+                            Meu plano
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-plan">
+
+                    <div>
+
+                        <span class="account-plan-label">
+                            Plano atual
+                        </span>
+
+                        <strong id="accountPlan">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <a
+                        href="planos.html"
+                        class="btn btn-secondary"
+                    >
+                        Ver planos
+                    </a>
+
+                </div>
+
+
+                <div class="account-plan-details">
+
+                    <div class="account-detail">
+
+                        <span>
+                            RAM
+                        </span>
+
+                        <strong id="planRam">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail">
+
+                        <span>
+                            CPU
+                        </span>
+
+                        <strong id="planCpu">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail">
+
+                        <span>
+                            Armazenamento
+                        </span>
+
+                        <strong id="planStorage">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-detail">
+
+                        <span>
+                            Bots
+                        </span>
+
+                        <strong id="planBots">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Segurança -->
+
+            <div class="account-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SEGURANÇA
+                        </span>
+
+                        <h2>
+                            Segurança da conta
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-security-list">
+
+
+                    <div class="security-item">
+
+                        <div>
+
+                            <strong>
+                                Senha
+                            </strong>
+
+                            <span>
+                                Proteja sua conta com uma senha forte.
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="changePasswordButton"
+                            class="btn btn-secondary"
+                        >
+                            Alterar senha
+                        </button>
+
+                    </div>
+
+
+                    <div class="security-item">
+
+                        <div>
+
+                            <strong>
+                                Sessão
+                            </strong>
+
+                            <span>
+                                Encerre a sessão atual neste dispositivo.
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="logoutSecurityButton"
+                            class="btn btn-secondary"
+                        >
+                            Sair
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Zona de perigo -->
+
+            <div class="account-card account-danger">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            ZONA DE PERIGO
+                        </span>
+
+                        <h2>
+                            Ações da conta
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="danger-content">
+
+                    <div>
+
+                        <strong>
+                            Excluir conta
+                        </strong>
+
+                        <p>
+                            A exclusão da conta remove seus dados e projetos conforme as regras da plataforma.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="deleteAccountButton"
+                        class="btn btn-danger"
+                    >
+                        Excluir conta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <span>
+                © 2026 Zyphor Cloud
+            </span>
+
+            <span>
+                Hospedagem de bots e projetos.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/api.js"></script>
+
+    <script src="../js/conta.js"></script>
+
+</body>
+
+</html>
