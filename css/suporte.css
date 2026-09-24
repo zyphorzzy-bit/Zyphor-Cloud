@@ -1,478 +1,451 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+.support-page {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
 
-<head>
-    <meta charset="UTF-8">
+.support-header {
+    margin-bottom: 32px;
+}
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+.support-header h1 {
+    margin: 8px 0;
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+}
 
-    <title>Suporte — Zyphor Cloud</title>
+.support-header p {
+    margin: 0;
+    color: var(--text-secondary);
+}
 
-    <link
-        rel="stylesheet"
-        href="../css/global.css"
-    >
 
-    <link
-        rel="stylesheet"
-        href="../css/suporte.css"
-    >
+/* Cards */
 
-    <link
-        rel="stylesheet"
-        href="../css/responsive.css"
-    >
-</head>
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
 
-<body>
+.support-card {
+    display: flex;
+    gap: 20px;
 
-    <header class="dashboard-header">
+    padding: 26px;
 
-        <div class="container dashboard-nav">
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
 
-            <a
-                href="dashboard.html"
-                class="dashboard-logo"
-            >
-                ZYPHOR CLOUD
-            </a>
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
 
-            <nav class="dashboard-links">
+.support-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+}
 
-                <a href="dashboard.html">
-                    Dashboard
-                </a>
+.support-main-card {
+    border-color: #303030;
+}
 
-                <a href="bots.html">
-                    Meus bots
-                </a>
 
-                <a href="planos.html">
-                    Planos
-                </a>
+/* Ícones */
 
-                <a href="pagamentos.html">
-                    Pagamentos
-                </a>
+.support-card-icon {
+    flex-shrink: 0;
 
-                <a href="suporte.html">
-                    Suporte
-                </a>
+    width: 46px;
+    height: 46px;
 
-            </nav>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            <div class="dashboard-user">
+    border-radius: 12px;
 
-                <span id="userName">
-                    Usuário
-                </span>
+    background: #181818;
+    border: 1px solid var(--border);
 
-                <button
-                    type="button"
-                    id="logoutButton"
-                    class="btn btn-secondary"
-                >
-                    Sair
-                </button>
+    color: var(--text);
 
-            </div>
+    font-size: 20px;
+    font-weight: 700;
+}
 
-        </div>
 
-    </header>
+/* Conteúdo */
 
+.support-card-content {
+    flex: 1;
+}
 
-    <main class="container support-page">
+.support-card-content h2 {
+    margin: 6px 0 8px;
 
-        <section class="support-header">
+    font-size: 20px;
+    color: var(--text);
+}
 
-            <span class="card-label">
-                SUPORTE
-            </span>
+.support-card-content p {
+    margin: 0 0 20px;
 
-            <h1>
-                Como podemos ajudar?
-            </h1>
+    color: var(--text-secondary);
 
-            <p>
-                Encontre respostas ou entre em contato com nossa equipe.
-            </p>
+    font-size: 14px;
+    line-height: 1.6;
+}
 
-        </section>
 
+/* Formulário */
 
-        <section class="support-grid">
+.ticket-section {
+    margin-top: 24px;
+}
 
+.ticket-card {
+    display: block;
+}
 
-            <!-- Abrir chamado -->
+.ticket-card .card-header {
+    margin-bottom: 24px;
+}
 
-            <div class="support-card support-main-card">
+.ticket-card .card-header h2 {
+    margin: 6px 0 0;
 
-                <div class="support-card-icon">
-                    ?
-                </div>
+    color: var(--text);
+    font-size: 21px;
+}
 
-                <div class="support-card-content">
+.ticket-card .form-group {
+    margin-bottom: 20px;
+}
 
-                    <span class="card-label">
-                        ATENDIMENTO
-                    </span>
+.ticket-card label {
+    display: block;
 
-                    <h2>
-                        Abrir chamado
-                    </h2>
+    margin-bottom: 8px;
 
-                    <p>
-                        Precisa de ajuda com seu bot, conta, pagamento ou hospedagem?
-                        Envie uma solicitação para nossa equipe.
-                    </p>
+    color: var(--text);
 
-                    <button
-                        type="button"
-                        id="openTicketButton"
-                        class="btn btn-primary"
-                    >
-                        Abrir chamado
-                    </button>
+    font-size: 14px;
+    font-weight: 600;
+}
 
-                </div>
+.ticket-card input,
+.ticket-card select,
+.ticket-card textarea {
+    width: 100%;
 
-            </div>
+    border: 1px solid var(--border);
+    border-radius: 10px;
 
+    background: var(--bg-soft);
+    color: var(--text);
 
-            <!-- Meus chamados -->
+    outline: none;
 
-            <div class="support-card">
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
 
-                <div class="support-card-icon">
-                    ≡
-                </div>
+.ticket-card input,
+.ticket-card select {
+    min-height: 46px;
+    padding: 0 14px;
+}
 
-                <div class="support-card-content">
+.ticket-card textarea {
+    min-height: 150px;
+    padding: 13px 14px;
 
-                    <span class="card-label">
-                        CHAMADOS
-                    </span>
+    resize: vertical;
 
-                    <h2>
-                        Meus chamados
-                    </h2>
+    font-family: inherit;
+    line-height: 1.5;
+}
 
-                    <p>
-                        Consulte seus chamados e acompanhe o atendimento da equipe.
-                    </p>
+.ticket-card input:focus,
+.ticket-card select:focus,
+.ticket-card textarea:focus {
+    border-color: var(--border-light);
+    background: #101010;
+}
 
-                    <button
-                        type="button"
-                        id="viewTicketsButton"
-                        class="btn btn-secondary"
-                    >
-                        Ver chamados
-                    </button>
+.ticket-card .form-help {
+    display: block;
 
-                </div>
+    margin-top: 7px;
 
-            </div>
+    color: var(--text-muted);
 
+    font-size: 12px;
+    line-height: 1.5;
+}
 
-        </section>
 
+/* Ações */
 
-        <!-- Formulário -->
+.ticket-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 
-        <section
-            id="ticketSection"
-            class="ticket-section hidden"
-        >
+    margin-top: 24px;
+}
 
-            <div class="support-card ticket-card">
 
-                <div class="card-header">
+/* Chamados */
 
-                    <div>
+.tickets-section {
+    margin-top: 30px;
+}
 
-                        <span class="card-label">
-                            NOVO CHAMADO
-                        </span>
+.section-header {
+    margin-bottom: 18px;
+}
 
-                        <h2>
-                            Fale com o suporte
-                        </h2>
+.section-header h2 {
+    margin: 6px 0 0;
 
-                    </div>
+    color: var(--text);
+    font-size: 22px;
+}
 
-                </div>
 
+/* Item */
 
-                <form id="ticketForm">
+.ticket-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 
+    padding: 18px;
 
-                    <div class="form-group">
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
 
-                        <label for="ticketSubject">
-                            Assunto
-                        </label>
+    margin-bottom: 10px;
+}
 
-                        <input
-                            type="text"
-                            id="ticketSubject"
-                            placeholder="Ex: Meu bot não inicia"
-                            maxlength="120"
-                            required
-                        >
+.ticket-item-info {
+    min-width: 0;
+}
 
-                    </div>
+.ticket-item-title {
+    margin-bottom: 5px;
 
+    color: var(--text);
 
-                    <div class="form-group">
+    font-size: 15px;
+    font-weight: 600;
 
-                        <label for="ticketCategory">
-                            Categoria
-                        </label>
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-                        <select
-                            id="ticketCategory"
-                            required
-                        >
+.ticket-item-meta {
+    color: var(--text-muted);
 
-                            <option value="">
-                                Selecione uma categoria
-                            </option>
+    font-size: 12px;
+}
 
-                            <option value="bot">
-                                Problema com bot
-                            </option>
+.ticket-item-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-                            <option value="account">
-                                Conta
-                            </option>
+    flex-shrink: 0;
+}
 
-                            <option value="payment">
-                                Pagamento
-                            </option>
 
-                            <option value="hosting">
-                                Hospedagem
-                            </option>
+/* Status */
 
-                            <option value="other">
-                                Outro
-                            </option>
+.ticket-status {
+    display: inline-flex;
+    align-items: center;
 
-                        </select>
+    min-height: 28px;
+    padding: 0 10px;
 
-                    </div>
+    border-radius: 999px;
 
+    font-size: 11px;
+    font-weight: 700;
 
-                    <div class="form-group">
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 
-                        <label for="ticketMessage">
-                            Mensagem
-                        </label>
+    background: #191919;
+    color: var(--text-secondary);
+}
 
-                        <textarea
-                            id="ticketMessage"
-                            rows="7"
-                            maxlength="4000"
-                            placeholder="Explique o que aconteceu..."
-                            required
-                        ></textarea>
+.ticket-status.open {
+    color: #55d88a;
+    background: rgba(85, 216, 138, 0.08);
+}
 
-                        <small class="form-help">
-                            Explique o problema com o máximo de detalhes possível.
-                        </small>
+.ticket-status.pending {
+    color: #d8d8d8;
+    background: rgba(216, 216, 216, 0.08);
+}
 
-                    </div>
+.ticket-status.closed {
+    color: #777777;
+    background: rgba(119, 119, 119, 0.08);
+}
 
 
-                    <div
-                        id="ticketMessageStatus"
-                        class="auth-message"
-                    ></div>
+/* FAQ */
 
+.faq-section {
+    margin-top: 45px;
+}
 
-                    <div class="ticket-actions">
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-                        <button
-                            type="button"
-                            id="cancelTicketButton"
-                            class="btn btn-secondary"
-                        >
-                            Cancelar
-                        </button>
+.faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
 
-                        <button
-                            type="submit"
-                            id="ticketButton"
-                            class="btn btn-primary"
-                        >
-                            Enviar chamado
-                        </button>
+    overflow: hidden;
+}
 
-                    </div>
+.faq-item summary {
+    position: relative;
 
+    padding: 18px 45px 18px 18px;
 
-                </form>
+    color: var(--text);
 
-            </div>
+    font-size: 14px;
+    font-weight: 600;
 
-        </section>
+    cursor: pointer;
 
+    list-style: none;
+}
 
-        <!-- Histórico -->
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
 
-        <section
-            id="ticketsSection"
-            class="tickets-section hidden"
-        >
+.faq-item summary::after {
+    content: "+";
 
-            <div class="section-header">
+    position: absolute;
+    right: 18px;
+    top: 50%;
 
-                <div>
+    transform: translateY(-50%);
 
-                    <span class="card-label">
-                        HISTÓRICO
-                    </span>
+    color: var(--text-secondary);
 
-                    <h2>
-                        Meus chamados
-                    </h2>
+    font-size: 20px;
+    font-weight: 400;
+}
 
-                </div>
+.faq-item[open] summary::after {
+    content: "−";
+}
 
-            </div>
+.faq-item p {
+    margin: 0;
 
+    padding: 0 18px 18px;
 
-            <div id="ticketsList">
+    color: var(--text-secondary);
 
-                <div class="empty-state">
+    font-size: 13px;
+    line-height: 1.6;
+}
 
-                    <div class="empty-icon">
-                        —
-                    </div>
 
-                    <p>
-                        Nenhum chamado encontrado.
-                    </p>
+/* Mobile */
 
-                </div>
+@media (max-width: 900px) {
 
-            </div>
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
 
-        </section>
+}
 
 
-        <!-- FAQ -->
+@media (max-width: 700px) {
 
-        <section class="faq-section">
+    .support-page {
+        padding-top: 35px;
+        padding-bottom: 50px;
+    }
 
-            <div class="section-header">
+    .support-header h1 {
+        font-size: 28px;
+    }
 
-                <div>
+    .support-card {
+        padding: 20px;
+    }
 
-                    <span class="card-label">
-                        AJUDA
-                    </span>
+    .ticket-actions {
+        flex-direction: column-reverse;
+    }
 
-                    <h2>
-                        Perguntas frequentes
-                    </h2>
+    .ticket-actions .btn {
+        width: 100%;
+    }
 
-                </div>
+    .ticket-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 
-            </div>
+    .ticket-item-right {
+        width: 100%;
+        justify-content: space-between;
+    }
 
+}
 
-            <div class="faq-list">
 
+@media (max-width: 480px) {
 
-                <details class="faq-item">
+    .support-header h1 {
+        font-size: 25px;
+    }
 
-                    <summary>
-                        Como criar um bot?
-                    </summary>
+    .support-card {
+        padding: 17px;
+        border-radius: 13px;
+    }
 
-                    <p>
-                        Acesse "Meus bots", escolha "Criar bot" e configure
-                        a origem e os dados do seu projeto.
-                    </p>
+    .support-card-icon {
+        width: 40px;
+        height: 40px;
 
-                </details>
+        font-size: 17px;
+    }
 
+    .support-card-content h2 {
+        font-size: 18px;
+    }
 
-                <details class="faq-item">
+    .ticket-item-right {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 
-                    <summary>
-                        Como enviar um projeto do GitHub?
-                    </summary>
-
-                    <p>
-                        Na criação do bot, selecione GitHub e informe o
-                        endereço do repositório e a branch desejada.
-                    </p>
-
-                </details>
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        Como funciona o pagamento?
-                    </summary>
-
-                    <p>
-                        Selecione um plano, realize o pagamento via PIX
-                        e envie o comprovante para análise.
-                    </p>
-
-                </details>
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        Meu bot está offline. O que faço?
-                    </summary>
-
-                    <p>
-                        Verifique os logs e a configuração do projeto.
-                        Se o problema continuar, abra um chamado.
-                    </p>
-
-                </details>
-
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer class="dashboard-footer">
-
-        <div class="container">
-
-            <span>
-                © 2026 Zyphor Cloud
-            </span>
-
-            <span>
-                Hospedagem de bots e projetos.
-            </span>
-
-        </div>
-
-    </footer>
-
-
-    <script src="../js/api.js"></script>
-
-    <script src="../js/suporte.js"></script>
-
-</body>
-
-</html>
+}
