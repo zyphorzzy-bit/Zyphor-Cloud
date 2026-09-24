@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Criar conta — Zyphor Cloud</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <section class="auth-info">
+            <a href="../index.html" class="auth-logo">
+                ZYPHOR <span>CLOUD</span>
+            </a>
+
+            <div class="auth-info-content">
+                <span class="hero-label">ZYPhor Cloud</span>
+
+                <h1>
+                    Crie sua conta.
+                    <span>Comece a hospedar.</span>
+                </h1>
+
+                <p>
+                    Tenha um painel completo para gerenciar seus bots,
+                    arquivos, recursos e implantações.
+                </p>
+
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <strong>01</strong>
+                        <div>
+                            <b>Gerencie seus bots</b>
+                            <span>Controle seus projetos em um único painel.</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-feature">
+                        <strong>02</strong>
+                        <div>
+                            <b>Controle seus arquivos</b>
+                            <span>Edite e organize os arquivos do seu projeto.</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-feature">
+                        <strong>03</strong>
+                        <div>
+                            <b>Acompanhe sua hospedagem</b>
+                            <span>Veja status, logs e recursos utilizados.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="auth-card-wrapper">
+
+            <div class="auth-card">
+
+                <div class="auth-card-header">
+                    <span class="auth-card-label">ZYPhor Cloud</span>
+
+                    <h2>Criar conta</h2>
+
+                    <p>
+                        Crie sua conta para começar.
+                    </p>
+                </div>
+
+
+                <form id="registerForm">
+
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Crie uma senha"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="confirmPassword">
+                            Confirmar senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Digite a senha novamente"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
+
+
+                    <div id="registerMessage" class="auth-message"></div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-large"
+                    >
+                        Criar conta
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>ou</span>
+                </div>
+
+
+                <a href="login.html" class="btn btn-secondary btn-large">
+                    Já tenho uma conta
+                </a>
+
+
+                <a href="../index.html" class="auth-back">
+                    ← Voltar para o início
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+
+</body>
+</html>
