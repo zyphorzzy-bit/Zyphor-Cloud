@@ -1,1 +1,174 @@
+/* =========================================================
+   ZYPHOR CLOUD — RESPONSIVE
+   ========================================================= */
 
+@media (max-width: 900px) {
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .navbar {
+        width: calc(100% - 32px);
+    }
+
+    .hero {
+        width: calc(100% - 32px);
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 80px 0;
+        gap: 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 360px;
+    }
+
+    .dashboard-preview {
+        transform: none;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .navbar {
+        width: calc(100% - 28px);
+        height: 64px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-actions .btn-secondary {
+        display: none;
+    }
+
+    .hero {
+        width: calc(100% - 28px);
+        padding: 65px 0 75px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 10vw, 55px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero-visual {
+        min-height: 320px;
+    }
+
+    .dashboard-preview {
+        width: 100%;
+    }
+
+    .section-heading {
+        width: calc(100% - 28px);
+    }
+
+    .resource-grid {
+        width: calc(100% - 28px);
+        grid-template-columns: 1fr;
+    }
+
+    .home-cta {
+        width: calc(100% - 28px);
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        height: 60px;
+    }
+
+    .nav-logo {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 0 65px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        line-height: 1.04;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+    }
+
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-card {
+        padding: 11px;
+    }
+
+    .resources {
+        padding: 65px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .home-cta {
+        margin-bottom: 70px;
+        padding: 38px 20px;
+    }
+
+    .home-cta h2 {
+        font-size: 24px;
+    }
+
+    .footer {
+        width: calc(100% - 28px);
+    }
+}
