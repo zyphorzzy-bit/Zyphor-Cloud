@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bot — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Projeto</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/bot.css">
@@ -17,30 +18,59 @@
 
         <div class="container dashboard-nav">
 
-            <a href="dashboard.html" class="dashboard-logo">
+            <a href="../index.html" class="logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
             <nav class="dashboard-links">
-                <a href="dashboard.html">Dashboard</a>
-                <a href="bots.html" class="active">Meus bots</a>
-                <a href="planos.html">Planos</a>
-                <a href="pagamentos.html">Pagamentos</a>
-                <a href="suporte.html">Suporte</a>
+
+                <a href="dashboard.html" data-i18n="nav.dashboard">
+                    Dashboard
+                </a>
+
+                <a href="bots.html" class="active" data-i18n="nav.projects">
+                    Meus projetos
+                </a>
+
+                <a href="planos.html" data-i18n="nav.plans">
+                    Planos
+                </a>
+
+                <a href="suporte.html" data-i18n="nav.support">
+                    Suporte
+                </a>
+
             </nav>
 
-            <div class="dashboard-user">
+            <div class="dashboard-actions">
 
-                <span id="userName">
-                    Carregando...
-                </span>
+                <div class="language-selector">
 
-                <button
-                    id="logoutButton"
-                    class="btn btn-secondary"
-                >
-                    Sair
-                </button>
+                    <button class="language-btn" type="button">
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <a href="conta.html" class="account-button" data-i18n="nav.account">
+                    Minha conta
+                </a>
 
             </div>
 
@@ -56,38 +86,52 @@
 
             <!-- VOLTAR -->
 
-            <a href="bots.html" class="back-link">
-                ← Voltar para meus bots
+            <a
+                href="bots.html"
+                class="back-link"
+                data-i18n="bot.back"
+            >
+                ← Voltar para projetos
             </a>
 
 
-            <!-- CABEÇALHO DO BOT -->
+            <!-- CABEÇALHO DO PROJETO -->
 
             <section class="bot-header">
 
-                <div class="bot-title">
+                <div class="bot-header-info">
 
-                    <span class="hero-label">
-                        BOT
-                    </span>
+                    <div class="bot-avatar">
+                        Z
+                    </div>
 
-                    <h1 id="botName">
-                        Carregando...
-                    </h1>
+                    <div>
 
-                    <p id="botDescription">
-                        Carregando informações do projeto...
-                    </p>
+                        <span
+                            class="bot-type"
+                            data-i18n="bot.type"
+                        >
+                            BOT
+                        </span>
+
+                        <h1 data-i18n="bot.projectName">
+                            Meu projeto
+                        </h1>
+
+                        <p data-i18n="bot.projectDescription">
+                            Gerencie arquivos, configurações, recursos e deploy.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                <div class="bot-status-area">
+                <div class="bot-status">
 
-                    <span
-                        id="botStatus"
-                        class="status-badge status-offline"
-                    >
+                    <span class="status-dot"></span>
+
+                    <span data-i18n="bot.offline">
                         Offline
                     </span>
 
@@ -96,346 +140,519 @@
             </section>
 
 
-            <!-- CONTROLES -->
+            <!-- AÇÕES -->
 
-            <section class="bot-controls card">
+            <section class="bot-actions">
 
-                <div class="bot-control-info">
+                <button
+                    type="button"
+                    class="primary-button"
+                    data-i18n="bot.start"
+                >
+                    Iniciar
+                </button>
 
-                    <span class="section-label">
-                        CONTROLE
+                <button
+                    type="button"
+                    class="secondary-button"
+                    data-i18n="bot.restart"
+                >
+                    Reiniciar
+                </button>
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    data-i18n="bot.stop"
+                >
+                    Parar
+                </button>
+
+            </section>
+
+
+            <!-- RESUMO -->
+
+            <section class="bot-stats">
+
+                <div class="stat-card">
+
+                    <span data-i18n="bot.cpu">
+                        CPU
                     </span>
 
-                    <h2>Gerenciamento</h2>
-
-                    <p>
-                        Controle o estado do seu bot.
-                    </p>
+                    <strong>0%</strong>
 
                 </div>
 
+                <div class="stat-card">
 
-                <div class="bot-control-buttons">
+                    <span data-i18n="bot.memory">
+                        Memória
+                    </span>
 
-                    <button
-                        id="startBot"
-                        class="btn btn-primary"
-                    >
-                        Iniciar
-                    </button>
+                    <strong>0 MB</strong>
 
-                    <button
-                        id="stopBot"
-                        class="btn btn-secondary"
-                    >
-                        Parar
-                    </button>
+                </div>
 
-                    <button
-                        id="restartBot"
-                        class="btn btn-secondary"
-                    >
-                        Reiniciar
-                    </button>
+                <div class="stat-card">
 
-                    <button
-                        id="deployBot"
-                        class="btn btn-blue"
-                    >
-                        Deploy
-                    </button>
+                    <span data-i18n="bot.storage">
+                        Armazenamento
+                    </span>
+
+                    <strong>0 MB</strong>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span data-i18n="bot.uptime">
+                        Uptime
+                    </span>
+
+                    <strong>00:00:00</strong>
 
                 </div>
 
             </section>
 
 
-            <!-- INFORMAÇÕES -->
+            <!-- NAVEGAÇÃO DO PROJETO -->
 
-            <section class="bot-section">
+            <section class="bot-panel">
 
-                <div class="section-header">
+                <div class="bot-tabs">
 
-                    <div>
-                        <span class="section-label">
-                            PROJETO
-                        </span>
+                    <button
+                        type="button"
+                        class="active"
+                        data-tab="overview"
+                        data-i18n="bot.tabOverview"
+                    >
+                        Visão geral
+                    </button>
 
-                        <h2>Informações</h2>
-                    </div>
+                    <button
+                        type="button"
+                        data-tab="files"
+                        data-i18n="bot.tabFiles"
+                    >
+                        Arquivos
+                    </button>
 
-                </div>
+                    <button
+                        type="button"
+                        data-tab="variables"
+                        data-i18n="bot.tabVariables"
+                    >
+                        Variáveis
+                    </button>
 
+                    <button
+                        type="button"
+                        data-tab="logs"
+                        data-i18n="bot.tabLogs"
+                    >
+                        Logs
+                    </button>
 
-                <div class="bot-info-grid">
-
-                    <div class="card bot-info-card">
-
-                        <span>
-                            Nome
-                        </span>
-
-                        <strong id="infoName">
-                            —
-                        </strong>
-
-                    </div>
-
-
-                    <div class="card bot-info-card">
-
-                        <span>
-                            Linguagem
-                        </span>
-
-                        <strong id="infoLanguage">
-                            —
-                        </strong>
-
-                    </div>
-
-
-                    <div class="card bot-info-card">
-
-                        <span>
-                            Runtime
-                        </span>
-
-                        <strong id="infoRuntime">
-                            —
-                        </strong>
-
-                    </div>
-
-
-                    <div class="card bot-info-card">
-
-                        <span>
-                            ID
-                        </span>
-
-                        <strong id="infoId">
-                            —
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- RECURSOS -->
-
-            <section class="bot-section">
-
-                <div class="section-header">
-
-                    <div>
-                        <span class="section-label">
-                            RECURSOS
-                        </span>
-
-                        <h2>Uso do bot</h2>
-                    </div>
+                    <button
+                        type="button"
+                        data-tab="settings"
+                        data-i18n="bot.tabSettings"
+                    >
+                        Configurações
+                    </button>
 
                 </div>
 
 
-                <div class="bot-resources card">
+                <!-- VISÃO GERAL -->
 
-                    <div class="bot-resource">
+                <div class="bot-tab-content active" id="overview">
+
+                    <div class="panel-heading">
 
                         <div>
-                            <span>RAM</span>
 
-                            <strong id="ramUsage">
-                                0 MB
-                            </strong>
-                        </div>
+                            <h2 data-i18n="bot.overviewTitle">
+                                Visão geral
+                            </h2>
 
-                        <div class="resource-bar">
-                            <span
-                                id="ramBar"
-                                style="width: 0%"
-                            ></span>
+                            <p data-i18n="bot.overviewDescription">
+                                Informações e status do seu projeto.
+                            </p>
+
                         </div>
 
                     </div>
 
 
-                    <div class="bot-resource">
+                    <div class="overview-grid">
+
+                        <div class="info-card">
+
+                            <span data-i18n="bot.runtime">
+                                Runtime
+                            </span>
+
+                            <strong>
+                                Node.js
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span data-i18n="bot.version">
+                                Versão
+                            </span>
+
+                            <strong>
+                                22
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span data-i18n="bot.region">
+                                Região
+                            </span>
+
+                            <strong>
+                                Brazil
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span data-i18n="bot.status">
+                                Status
+                            </span>
+
+                            <strong data-i18n="bot.offline">
+                                Offline
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="command-card">
 
                         <div>
-                            <span>CPU</span>
 
-                            <strong id="cpuUsage">
-                                0%
-                            </strong>
+                            <span data-i18n="bot.startCommand">
+                                Comando de inicialização
+                            </span>
+
+                            <code>
+                                npm start
+                            </code>
+
                         </div>
 
-                        <div class="resource-bar">
-                            <span
-                                id="cpuBar"
-                                style="width: 0%"
-                            ></span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="bot-resource">
-
-                        <div>
-                            <span>Armazenamento</span>
-
-                            <strong id="storageUsage">
-                                0 MB
-                            </strong>
-                        </div>
-
-                        <div class="resource-bar">
-                            <span
-                                id="storageBar"
-                                style="width: 0%"
-                            ></span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- CONSOLE -->
-
-            <section class="bot-section">
-
-                <div class="section-header">
-
-                    <div>
-                        <span class="section-label">
-                            EXECUÇÃO
-                        </span>
-
-                        <h2>Console</h2>
-                    </div>
-
-                </div>
-
-
-                <div class="console card">
-
-                    <div class="console-header">
-
-                        <span>
-                            Logs
-                        </span>
-
-                        <span
-                            id="consoleStatus"
-                            class="console-status"
+                        <button
+                            type="button"
+                            data-i18n="bot.edit"
                         >
-                            Aguardando...
-                        </span>
+                            Editar
+                        </button>
 
-                    </div>
-
-
-                    <div
-                        id="consoleOutput"
-                        class="console-output"
-                    >
-                        <span>
-                            Aguardando logs do bot...
-                        </span>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ARQUIVOS -->
-
-            <section class="bot-section">
-
-                <div class="section-header">
-
-                    <div>
-                        <span class="section-label">
-                            PROJETO
-                        </span>
-
-                        <h2>Arquivos</h2>
-                    </div>
-
-                    <button
-                        id="openFiles"
-                        class="btn btn-secondary"
-                    >
-                        Gerenciar arquivos
-                    </button>
-
-                </div>
-
-
-                <div class="card bot-files-placeholder">
-
-                    <div class="empty-icon">
-                        /
-                    </div>
-
-                    <h3>
-                        Gerenciador de arquivos
-                    </h3>
-
-                    <p>
-                        Aqui ficarão os arquivos do seu bot,
-                        variáveis e configurações.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- ZONA DE PERIGO -->
-
-            <section class="bot-section danger-section">
-
-                <div class="section-header">
-
-                    <div>
-                        <span class="section-label">
-                            AVANÇADO
-                        </span>
-
-                        <h2>Zona de perigo</h2>
                     </div>
 
                 </div>
 
 
-                <div class="card danger-card">
+                <!-- ARQUIVOS -->
 
-                    <div>
-                        <h3>
-                            Excluir bot
+                <div class="bot-tab-content" id="files">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2 data-i18n="bot.filesTitle">
+                                Arquivos
+                            </h2>
+
+                            <p data-i18n="bot.filesDescription">
+                                Gerencie os arquivos do seu projeto.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-i18n="bot.upload"
+                        >
+                            Enviar arquivo
+                        </button>
+
+                    </div>
+
+
+                    <div class="file-browser">
+
+                        <div class="file-row">
+
+                            <span class="file-icon">
+                                📁
+                            </span>
+
+                            <span>
+                                src/
+                            </span>
+
+                        </div>
+
+                        <div class="file-row">
+
+                            <span class="file-icon">
+                                📄
+                            </span>
+
+                            <span>
+                                index.js
+                            </span>
+
+                        </div>
+
+                        <div class="file-row">
+
+                            <span class="file-icon">
+                                📄
+                            </span>
+
+                            <span>
+                                package.json
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VARIÁVEIS -->
+
+                <div class="bot-tab-content" id="variables">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2 data-i18n="bot.variablesTitle">
+                                Variáveis
+                            </h2>
+
+                            <p data-i18n="bot.variablesDescription">
+                                Configure as variáveis de ambiente do projeto.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-i18n="bot.addVariable"
+                        >
+                            + Adicionar
+                        </button>
+
+                    </div>
+
+
+                    <div class="variables-empty">
+
+                        <span class="empty-icon">
+                            #
+                        </span>
+
+                        <h3 data-i18n="bot.noVariables">
+                            Nenhuma variável configurada
                         </h3>
 
-                        <p>
-                            Essa ação removerá o bot da sua conta.
+                        <p data-i18n="bot.noVariablesDescription">
+                            Adicione variáveis de ambiente para configurar seu projeto.
                         </p>
+
                     </div>
 
-                    <button
-                        id="deleteBot"
-                        class="btn btn-danger"
-                    >
-                        Excluir bot
-                    </button>
+                </div>
+
+
+                <!-- LOGS -->
+
+                <div class="bot-tab-content" id="logs">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2 data-i18n="bot.logsTitle">
+                                Logs
+                            </h2>
+
+                            <p data-i18n="bot.logsDescription">
+                                Acompanhe os eventos e mensagens do seu projeto.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="logs-terminal">
+
+                        <div>
+                            <span class="log-time">
+                                00:00:00
+                            </span>
+
+                            <span data-i18n="bot.logWaiting">
+                                Aguardando execução do projeto...
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIGURAÇÕES -->
+
+                <div class="bot-tab-content" id="settings">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <h2 data-i18n="bot.settingsTitle">
+                                Configurações
+                            </h2>
+
+                            <p data-i18n="bot.settingsDescription">
+                                Configure as principais opções do projeto.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-list">
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <h3 data-i18n="bot.projectNameSetting">
+                                    Nome do projeto
+                                </h3>
+
+                                <p data-i18n="bot.projectNameSettingDescription">
+                                    Nome exibido no painel.
+                                </p>
+
+                            </div>
+
+                            <input
+                                type="text"
+                                value="Meu projeto"
+                                data-i18n-placeholder="bot.projectNamePlaceholder"
+                            >
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <h3 data-i18n="bot.runtimeSetting">
+                                    Runtime
+                                </h3>
+
+                                <p data-i18n="bot.runtimeSettingDescription">
+                                    Ambiente usado para executar o projeto.
+                                </p>
+
+                            </div>
+
+                            <select>
+
+                                <option>
+                                    Node.js
+                                </option>
+
+                                <option>
+                                    Python
+                                </option>
+
+                                <option>
+                                    Java
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <h3 data-i18n="bot.startCommandSetting">
+                                    Comando de inicialização
+                                </h3>
+
+                                <p data-i18n="bot.startCommandSettingDescription">
+                                    Comando utilizado para iniciar o projeto.
+                                </p>
+
+                            </div>
+
+                            <input
+                                type="text"
+                                value="npm start"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AVISO -->
+
+            <section class="dashboard-notice">
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3 data-i18n="bot.noticeTitle">
+                        Área visual
+                    </h3>
+
+                    <p data-i18n="bot.noticeDescription">
+                        Os controles desta página são apenas visuais nesta etapa. A execução real, arquivos, logs, variáveis e deploy serão conectados ao backend posteriormente.
+                    </p>
 
                 </div>
 
@@ -446,19 +663,31 @@
     </main>
 
 
-    <footer class="footer">
+    <footer class="site-footer">
 
         <div class="container">
 
-            <div class="footer-content">
+            <div class="footer-bottom">
 
-                <span>
-                    © 2026 Zyphor Cloud
+                <span data-i18n="footer.copyright">
+                    © 2026 Zyphor Cloud. Todos os direitos reservados.
                 </span>
 
-                <span>
-                    Hospedagem de bots
-                </span>
+                <div class="footer-links">
+
+                    <a href="termos.html" data-i18n="footer.terms">
+                        Termos
+                    </a>
+
+                    <a href="privacidade.html" data-i18n="footer.privacy">
+                        Privacidade
+                    </a>
+
+                    <a href="uso-aceitavel.html" data-i18n="footer.acceptableUse">
+                        Uso aceitável
+                    </a>
+
+                </div>
 
             </div>
 
@@ -467,8 +696,9 @@
     </footer>
 
 
-    <script src="../js/api.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/bot.js"></script>
 
 </body>
+
 </html>
