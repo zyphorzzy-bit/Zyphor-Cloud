@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Dashboard</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -17,27 +18,79 @@
 
         <div class="container dashboard-nav">
 
-            <a href="dashboard.html" class="dashboard-logo">
+            <a href="../index.html" class="logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
             <nav class="dashboard-links">
-                <a href="dashboard.html" class="active">Dashboard</a>
-                <a href="bots.html">Meus bots</a>
-                <a href="planos.html">Planos</a>
-                <a href="pagamentos.html">Pagamentos</a>
-                <a href="suporte.html">Suporte</a>
+
+                <a
+                    href="dashboard.html"
+                    class="active"
+                    data-i18n="nav.dashboard"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="bots.html"
+                    data-i18n="nav.projects"
+                >
+                    Meus projetos
+                </a>
+
+                <a
+                    href="planos.html"
+                    data-i18n="nav.plans"
+                >
+                    Planos
+                </a>
+
+                <a
+                    href="suporte.html"
+                    data-i18n="nav.support"
+                >
+                    Suporte
+                </a>
+
             </nav>
 
-            <div class="dashboard-user">
+            <div class="dashboard-actions">
 
-                <span id="userName">
-                    Carregando...
-                </span>
+                <div class="language-selector">
 
-                <button id="logoutButton" class="btn btn-secondary">
-                    Sair
-                </button>
+                    <button
+                        class="language-btn"
+                        type="button"
+                    >
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="conta.html"
+                    class="account-button"
+                    data-i18n="nav.account"
+                >
+                    Minha conta
+                </a>
 
             </div>
 
@@ -56,145 +109,165 @@
             <section class="dashboard-welcome">
 
                 <div>
-                    <span class="hero-label">
+
+                    <span
+                        class="dashboard-badge"
+                        data-i18n="dashboard.badge"
+                    >
                         PAINEL
                     </span>
 
-                    <h1>
-                        Olá, <span id="welcomeName">...</span>.
+                    <h1 data-i18n="dashboard.title">
+                        Bem-vindo ao Zyphor Cloud.
                     </h1>
 
-                    <p>
-                        Gerencie seus bots e acompanhe sua hospedagem.
+                    <p data-i18n="dashboard.subtitle">
+                        Gerencie seus projetos, recursos e configurações em um só lugar.
                     </p>
+
                 </div>
 
-                <a href="criar-bot.html" class="btn btn-primary">
-                    + Criar bot
+                <a
+                    href="criar-bot.html"
+                    class="primary-button"
+                    data-i18n="dashboard.createProject"
+                >
+                    + Criar projeto
                 </a>
 
             </section>
 
 
-            <!-- ESTATÍSTICAS -->
+            <!-- RESUMO -->
 
             <section class="dashboard-stats">
 
-                <div class="dashboard-stat card">
+                <div class="stat-card">
 
-                    <span class="stat-label">
-                        BOTS
+                    <span
+                        class="stat-label"
+                        data-i18n="dashboard.activeProjects"
+                    >
+                        Projetos ativos
                     </span>
 
-                    <strong id="botsCount">
-                        0
-                    </strong>
+                    <strong>0</strong>
 
-                    <span class="stat-description">
-                        Bots cadastrados
-                    </span>
+                    <small data-i18n="dashboard.activeProjectsDescription">
+                        Nenhum projeto ativo
+                    </small>
 
                 </div>
 
 
-                <div class="dashboard-stat card">
+                <div class="stat-card">
 
-                    <span class="stat-label">
-                        ONLINE
+                    <span
+                        class="stat-label"
+                        data-i18n="dashboard.storage"
+                    >
+                        Armazenamento
                     </span>
 
-                    <strong id="onlineCount">
-                        0
-                    </strong>
+                    <strong>0 GB</strong>
 
-                    <span class="stat-description">
-                        Bots em execução
-                    </span>
+                    <small data-i18n="dashboard.storageDescription">
+                        Espaço utilizado
+                    </small>
 
                 </div>
 
 
-                <div class="dashboard-stat card">
+                <div class="stat-card">
 
-                    <span class="stat-label">
-                        PLANO
+                    <span
+                        class="stat-label"
+                        data-i18n="dashboard.memory"
+                    >
+                        Memória
                     </span>
 
-                    <strong id="planName">
-                        Free
-                    </strong>
+                    <strong>0 MB</strong>
 
-                    <span class="stat-description">
+                    <small data-i18n="dashboard.memoryDescription">
+                        Memória utilizada
+                    </small>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span
+                        class="stat-label"
+                        data-i18n="dashboard.plan"
+                    >
                         Plano atual
                     </span>
 
-                </div>
-
-
-                <div class="dashboard-stat card">
-
-                    <span class="stat-label">
-                        STATUS
-                    </span>
-
-                    <strong class="status-online">
-                        Ativo
+                    <strong data-i18n="dashboard.freePlan">
+                        Free
                     </strong>
 
-                    <span class="stat-description">
-                        Conta
-                    </span>
+                    <small data-i18n="dashboard.planDescription">
+                        Plano atual da conta
+                    </small>
 
                 </div>
 
             </section>
 
 
-            <!-- BOTS -->
+            <!-- PROJETOS -->
 
             <section class="dashboard-section">
 
-                <div class="section-header">
+                <div class="section-heading">
 
                     <div>
-                        <span class="section-label">
-                            SEUS PROJETOS
-                        </span>
 
-                        <h2>Meus bots</h2>
+                        <h2 data-i18n="dashboard.projectsTitle">
+                            Meus projetos
+                        </h2>
+
+                        <p data-i18n="dashboard.projectsDescription">
+                            Gerencie seus bots, sites e aplicações.
+                        </p>
+
                     </div>
 
-                    <a href="bots.html" class="btn btn-secondary">
+                    <a
+                        href="bots.html"
+                        class="section-link"
+                        data-i18n="dashboard.viewAll"
+                    >
                         Ver todos
                     </a>
 
                 </div>
 
 
-                <div id="dashboardBots" class="dashboard-bots">
+                <div class="empty-state">
 
-                    <div class="empty-state">
-
-                        <div class="empty-icon">
-                            +
-                        </div>
-
-                        <h3>
-                            Nenhum bot ainda
-                        </h3>
-
-                        <p>
-                            Crie seu primeiro bot para começar.
-                        </p>
-
-                        <a
-                            href="criar-bot.html"
-                            class="btn btn-primary"
-                        >
-                            Criar primeiro bot
-                        </a>
-
+                    <div class="empty-icon">
+                        +
                     </div>
+
+                    <h3 data-i18n="dashboard.noProjectsTitle">
+                        Você ainda não possui projetos.
+                    </h3>
+
+                    <p data-i18n="dashboard.noProjectsDescription">
+                        Crie seu primeiro projeto e comece a usar o Zyphor Cloud.
+                    </p>
+
+                    <a
+                        href="criar-bot.html"
+                        class="primary-button"
+                        data-i18n="dashboard.createFirstProject"
+                    >
+                        Criar primeiro projeto
+                    </a>
 
                 </div>
 
@@ -205,162 +278,144 @@
 
             <section class="dashboard-section">
 
-                <div class="section-header">
+                <div class="section-heading">
 
                     <div>
-                        <span class="section-label">
-                            RECURSOS
-                        </span>
 
-                        <h2>Seu plano</h2>
+                        <h2 data-i18n="dashboard.resourcesTitle">
+                            Recursos
+                        </h2>
+
+                        <p data-i18n="dashboard.resourcesDescription">
+                            Acesse rapidamente as principais áreas da plataforma.
+                        </p>
+
                     </div>
-
-                    <a href="planos.html" class="btn btn-secondary">
-                        Ver planos
-                    </a>
 
                 </div>
 
 
-                <div class="resource-card card">
+                <div class="dashboard-grid">
 
-                    <div class="resource-header">
+
+                    <a
+                        href="bots.html"
+                        class="dashboard-card"
+                    >
+
+                        <div class="card-icon">
+                            ◈
+                        </div>
 
                         <div>
-                            <span class="resource-plan-label">
-                                PLANO ATUAL
-                            </span>
 
-                            <h3 id="resourcePlanName">
-                                Free
+                            <h3 data-i18n="dashboard.cardProjects">
+                                Meus projetos
                             </h3>
-                        </div>
 
-                        <span class="badge badge-online">
-                            Ativo
-                        </span>
-
-                    </div>
-
-
-                    <div class="resource-list">
-
-                        <div class="resource-item">
-
-                            <div>
-                                <span>RAM</span>
-                                <strong id="ramUsage">
-                                    0 MB / 512 MB
-                                </strong>
-                            </div>
-
-                            <div class="resource-bar">
-                                <span
-                                    id="ramBar"
-                                    style="width: 0%"
-                                ></span>
-                            </div>
+                            <p data-i18n="dashboard.cardProjectsDescription">
+                                Visualize e gerencie seus projetos.
+                            </p>
 
                         </div>
 
+                    </a>
 
-                        <div class="resource-item">
 
-                            <div>
-                                <span>CPU</span>
-                                <strong id="cpuUsage">
-                                    0% / 25%
-                                </strong>
-                            </div>
+                    <a
+                        href="planos.html"
+                        class="dashboard-card"
+                    >
 
-                            <div class="resource-bar">
-                                <span
-                                    id="cpuBar"
-                                    style="width: 0%"
-                                ></span>
-                            </div>
+                        <div class="card-icon">
+                            ◆
+                        </div>
+
+                        <div>
+
+                            <h3 data-i18n="dashboard.cardPlans">
+                                Planos
+                            </h3>
+
+                            <p data-i18n="dashboard.cardPlansDescription">
+                                Consulte recursos e planos disponíveis.
+                            </p>
 
                         </div>
 
+                    </a>
 
-                        <div class="resource-item">
 
-                            <div>
-                                <span>Armazenamento</span>
-                                <strong id="storageUsage">
-                                    0 MB / 1 GB
-                                </strong>
-                            </div>
+                    <a
+                        href="pagamentos.html"
+                        class="dashboard-card"
+                    >
 
-                            <div class="resource-bar">
-                                <span
-                                    id="storageBar"
-                                    style="width: 0%"
-                                ></span>
-                            </div>
+                        <div class="card-icon">
+                            $
+                        </div>
+
+                        <div>
+
+                            <h3 data-i18n="dashboard.cardPayments">
+                                Pagamentos
+                            </h3>
+
+                            <p data-i18n="dashboard.cardPaymentsDescription">
+                                Consulte seus pagamentos e comprovantes.
+                            </p>
 
                         </div>
 
-                    </div>
+                    </a>
+
+
+                    <a
+                        href="suporte.html"
+                        class="dashboard-card"
+                    >
+
+                        <div class="card-icon">
+                            ?
+                        </div>
+
+                        <div>
+
+                            <h3 data-i18n="dashboard.cardSupport">
+                                Suporte
+                            </h3>
+
+                            <p data-i18n="dashboard.cardSupportDescription">
+                                Entre em contato com nossa equipe.
+                            </p>
+
+                        </div>
+
+                    </a>
+
 
                 </div>
 
             </section>
 
 
-            <!-- ATALHOS -->
+            <!-- AVISO -->
 
-            <section class="dashboard-section">
+            <section class="dashboard-notice">
 
-                <div class="section-header">
-
-                    <div>
-                        <span class="section-label">
-                            ACESSO RÁPIDO
-                        </span>
-
-                        <h2>Atalhos</h2>
-                    </div>
-
+                <div class="notice-icon">
+                    !
                 </div>
 
+                <div>
 
-                <div class="dashboard-shortcuts">
+                    <h3 data-i18n="dashboard.noticeTitle">
+                        Plataforma em desenvolvimento
+                    </h3>
 
-                    <a href="criar-bot.html" class="shortcut-card card">
-                        <strong>+</strong>
-                        <div>
-                            <h3>Criar bot</h3>
-                            <p>Adicione um novo projeto.</p>
-                        </div>
-                    </a>
-
-
-                    <a href="planos.html" class="shortcut-card card">
-                        <strong>↗</strong>
-                        <div>
-                            <h3>Planos</h3>
-                            <p>Veja os recursos disponíveis.</p>
-                        </div>
-                    </a>
-
-
-                    <a href="pagamentos.html" class="shortcut-card card">
-                        <strong>R$</strong>
-                        <div>
-                            <h3>Pagamentos</h3>
-                            <p>Consulte seus pagamentos.</p>
-                        </div>
-                    </a>
-
-
-                    <a href="suporte.html" class="shortcut-card card">
-                        <strong>?</strong>
-                        <div>
-                            <h3>Suporte</h3>
-                            <p>Precisa de ajuda?</p>
-                        </div>
-                    </a>
+                    <p data-i18n="dashboard.noticeDescription">
+                        Algumas funções ainda estão sendo preparadas. O painel visual já está disponível, enquanto os recursos de hospedagem serão integrados posteriormente.
+                    </p>
 
                 </div>
 
@@ -371,19 +426,40 @@
     </main>
 
 
-    <footer class="footer">
+    <footer class="site-footer">
 
         <div class="container">
 
-            <div class="footer-content">
+            <div class="footer-bottom">
 
-                <span>
-                    © 2026 Zyphor Cloud
+                <span data-i18n="footer.copyright">
+                    © 2026 Zyphor Cloud. Todos os direitos reservados.
                 </span>
 
-                <span>
-                    Hospedagem de bots
-                </span>
+                <div class="footer-links">
+
+                    <a
+                        href="termos.html"
+                        data-i18n="footer.terms"
+                    >
+                        Termos
+                    </a>
+
+                    <a
+                        href="privacidade.html"
+                        data-i18n="footer.privacy"
+                    >
+                        Privacidade
+                    </a>
+
+                    <a
+                        href="uso-aceitavel.html"
+                        data-i18n="footer.acceptableUse"
+                    >
+                        Uso aceitável
+                    </a>
+
+                </div>
 
             </div>
 
@@ -392,8 +468,9 @@
     </footer>
 
 
-    <script src="../js/api.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/dashboard.js"></script>
 
 </body>
+
 </html>
