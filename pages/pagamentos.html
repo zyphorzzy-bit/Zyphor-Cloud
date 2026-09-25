@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pagamentos — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Pagamentos</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/pagamentos.css">
@@ -16,33 +16,65 @@
 
     <header class="dashboard-header">
 
-        <div class="dashboard-nav">
+        <div class="container dashboard-nav">
 
-            <a href="dashboard.html" class="dashboard-logo">
+            <a href="../index.html" class="logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
             <nav class="dashboard-links">
-                <a href="dashboard.html">Dashboard</a>
-                <a href="bots.html">Meus bots</a>
-                <a href="planos.html">Planos</a>
-                <a href="pagamentos.html" class="active">Pagamentos</a>
-                <a href="suporte.html">Suporte</a>
+
+                <a href="dashboard.html" data-i18n="nav.dashboard">
+                    Dashboard
+                </a>
+
+                <a href="bots.html" data-i18n="nav.projects">
+                    Meus projetos
+                </a>
+
+                <a href="planos.html" data-i18n="nav.plans">
+                    Planos
+                </a>
+
+                <a href="suporte.html" data-i18n="nav.support">
+                    Suporte
+                </a>
+
             </nav>
 
-            <div class="dashboard-user">
+            <div class="dashboard-actions">
 
-                <span id="userName">
-                    Usuário
-                </span>
+                <div class="language-selector">
 
-                <button
-                    type="button"
-                    id="logoutButton"
-                    class="btn btn-secondary btn-small"
+                    <button class="language-btn" type="button">
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="conta.html"
+                    class="account-button"
+                    data-i18n="nav.account"
                 >
-                    Sair
-                </button>
+                    Minha conta
+                </a>
 
             </div>
 
@@ -55,27 +87,52 @@
 
         <div class="container">
 
+            <!-- CABEÇALHO -->
+
             <section class="payments-header">
+
+                <span class="payments-badge" data-i18n="payments.badge">
+                    PAGAMENTOS
+                </span>
+
+                <h1 data-i18n="payments.title">
+                    Pagamentos
+                </h1>
+
+                <p data-i18n="payments.subtitle">
+                    Consulte seu plano, pagamentos e comprovantes.
+                </p>
+
+            </section>
+
+
+            <!-- PLANO ATUAL -->
+
+            <section class="payment-current-plan">
 
                 <div>
 
-                    <span class="hero-label">
-                        ZYPHOR CLOUD
+                    <span
+                        class="plan-label"
+                        data-i18n="payments.currentPlan"
+                    >
+                        Plano atual
                     </span>
 
-                    <h1>
-                        Pagamentos
-                    </h1>
+                    <h2 data-i18n="payments.freePlan">
+                        Free
+                    </h2>
 
-                    <p>
-                        Gerencie suas compras, planos e comprovantes.
+                    <p data-i18n="payments.freePlanDescription">
+                        Você está utilizando o plano gratuito.
                     </p>
 
                 </div>
 
                 <a
                     href="planos.html"
-                    class="btn btn-primary"
+                    class="primary-button"
+                    data-i18n="payments.changePlan"
                 >
                     Ver planos
                 </a>
@@ -83,203 +140,166 @@
             </section>
 
 
-            <section class="payment-grid">
+            <!-- PAGAMENTO -->
 
-                <div class="payment-card">
+            <section class="payment-section">
 
-                    <div class="card-header">
+                <div class="section-heading">
 
-                        <span class="card-label">
-                            NOVO PAGAMENTO
-                        </span>
+                    <div>
 
-                        <h2>
-                            Escolher plano
+                        <h2 data-i18n="payments.makePayment">
+                            Realizar pagamento
                         </h2>
 
-                        <p>
-                            Selecione o plano que deseja contratar.
+                        <p data-i18n="payments.makePaymentDescription">
+                            Escolha um plano para continuar.
                         </p>
 
                     </div>
 
+                </div>
 
-                    <form id="paymentForm">
 
-                        <div class="form-group">
+                <div class="payment-methods">
 
-                            <label for="paymentPlan">
-                                Plano
-                            </label>
 
-                            <select
-                                id="paymentPlan"
-                                required
-                            >
+                    <div class="payment-method-card active">
 
-                                <option value="">
-                                    Selecione um plano
-                                </option>
+                        <div class="payment-method-icon">
+                            PIX
+                        </div>
 
-                                <option value="free">
-                                    Free — R$ 0,00/mês
-                                </option>
+                        <div>
 
-                                <option value="bronze">
-                                    Bronze — R$ 4,90/mês
-                                </option>
+                            <h3 data-i18n="payments.pixTitle">
+                                PIX
+                            </h3>
 
-                                <option value="prata">
-                                    Prata — R$ 9,90/mês
-                                </option>
-
-                                <option value="ouro">
-                                    Ouro — R$ 17,90/mês
-                                </option>
-
-                                <option value="diamante">
-                                    Diamante — R$ 29,90/mês
-                                </option>
-
-                            </select>
+                            <p data-i18n="payments.pixDescription">
+                                Pagamento rápido por PIX.
+                            </p>
 
                         </div>
 
+                    </div>
 
-                        <div
-                            id="selectedPlan"
-                            class="selected-plan"
-                            hidden
-                        >
 
-                            <div>
+                    <div class="payment-method-card">
 
-                                <span>
-                                    Plano selecionado
-                                </span>
+                        <div class="payment-method-icon">
+                            $
+                        </div>
 
-                                <strong id="selectedPlanName">
-                                    —
-                                </strong>
+                        <div>
 
-                            </div>
+                            <h3 data-i18n="payments.internationalTitle">
+                                Pagamento internacional
+                            </h3>
 
-                            <strong id="selectedPlanPrice">
+                            <p data-i18n="payments.internationalDescription">
+                                Métodos internacionais estarão disponíveis futuramente.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PIX -->
+
+            <section class="pix-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2 data-i18n="payments.pixPaymentTitle">
+                            Pagamento via PIX
+                        </h2>
+
+                        <p data-i18n="payments.pixPaymentDescription">
+                            O plano será ativado após a confirmação do pagamento.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pix-card">
+
+                    <div class="pix-qr">
+
+                        <div class="qr-placeholder">
+                            QR
+                        </div>
+
+                        <span data-i18n="payments.qrCode">
+                            QR Code
+                        </span>
+
+                    </div>
+
+
+                    <div class="pix-details">
+
+                        <div class="payment-info">
+
+                            <span data-i18n="payments.amount">
+                                Valor
+                            </span>
+
+                            <strong>
                                 R$ 0,00
                             </strong>
 
                         </div>
 
 
-                        <div
-                            id="paymentMessage"
-                            class="auth-message"
-                        ></div>
+                        <div class="payment-info">
 
-
-                        <button
-                            type="submit"
-                            id="paymentButton"
-                            class="btn btn-primary btn-large"
-                        >
-                            Continuar
-                        </button>
-
-                    </form>
-
-                </div>
-
-
-                <div class="payment-card pix-card">
-
-                    <div class="card-header">
-
-                        <span class="card-label">
-                            PIX
-                        </span>
-
-                        <h2>
-                            Pagamento manual
-                        </h2>
-
-                        <p>
-                            Após pagar, envie o comprovante para análise.
-                        </p>
-
-                    </div>
-
-
-                    <div class="pix-box">
-
-                        <span class="pix-label">
-                            CHAVE PIX
-                        </span>
-
-                        <strong id="pixKey">
-                            Aguardando configuração
-                        </strong>
-
-                        <button
-                            type="button"
-                            id="copyPix"
-                            class="btn btn-secondary btn-small"
-                        >
-                            Copiar chave
-                        </button>
-
-                    </div>
-
-
-                    <div class="pix-info">
-
-                        <div>
-                            <span>
-                                Recebedor
+                            <span data-i18n="payments.pixCode">
+                                Código PIX
                             </span>
 
-                            <strong id="pixReceiverName">
-                                —
-                            </strong>
+                            <div class="copy-field">
+
+                                <input
+                                    type="text"
+                                    value=""
+                                    placeholder="Código PIX"
+                                    data-i18n-placeholder="payments.pixPlaceholder"
+                                    readonly
+                                >
+
+                                <button
+                                    type="button"
+                                    data-i18n="payments.copy"
+                                >
+                                    Copiar
+                                </button>
+
+                            </div>
+
                         </div>
 
-                        <div>
-                            <span>
-                                Banco
+
+                        <div class="payment-warning">
+
+                            <span class="notice-icon">
+                                !
                             </span>
 
-                            <strong id="pixBank">
-                                —
-                            </strong>
+                            <p data-i18n="payments.pixWarning">
+                                O pagamento não será considerado confirmado apenas pelo envio do comprovante. Aguarde a análise e aprovação.
+                            </p>
+
                         </div>
-
-                    </div>
-
-
-                    <div class="payment-instructions">
-
-                        <strong>
-                            Como funciona
-                        </strong>
-
-                        <ol>
-
-                            <li>
-                                Escolha seu plano.
-                            </li>
-
-                            <li>
-                                Faça o pagamento via PIX.
-                            </li>
-
-                            <li>
-                                Envie o comprovante.
-                            </li>
-
-                            <li>
-                                Aguarde a aprovação.
-                            </li>
-
-                        </ol>
 
                     </div>
 
@@ -288,125 +308,160 @@
             </section>
 
 
-            <section
-                id="proofSection"
-                class="payment-card proof-card"
-                hidden
-            >
+            <!-- COMPROVANTE -->
 
-                <div class="card-header">
+            <section class="proof-section">
 
-                    <span class="card-label">
-                        COMPROVANTE
-                    </span>
+                <div class="section-heading">
 
-                    <h2>
-                        Enviar comprovante
-                    </h2>
+                    <div>
 
-                    <p>
-                        Envie o comprovante do pagamento para análise.
-                    </p>
+                        <h2 data-i18n="payments.proofTitle">
+                            Enviar comprovante
+                        </h2>
+
+                        <p data-i18n="payments.proofDescription">
+                            Após realizar o PIX, envie o comprovante para análise.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                <form id="proofForm">
+                <div class="proof-upload">
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+                    <h3 data-i18n="payments.uploadTitle">
+                        Envie seu comprovante
+                    </h3>
+
+                    <p data-i18n="payments.uploadDescription">
+                        Selecione uma imagem ou arquivo do comprovante.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        data-i18n="payments.chooseFile"
+                    >
+                        Escolher arquivo
+                    </button>
+
+                </div>
+
+
+                <div class="proof-form">
 
                     <div class="form-group">
 
-                        <label for="proofFile">
-                            Arquivo do comprovante
-                        </label>
-
-                        <input
-                            type="file"
-                            id="proofFile"
-                            accept="image/*,.pdf"
-                            required
+                        <label
+                            for="paymentPlan"
+                            data-i18n="payments.plan"
                         >
-
-                        <span class="form-help">
-                            Formatos aceitos: JPG, PNG e PDF.
-                        </span>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="proofNote">
-                            Observação
+                            Plano
                         </label>
 
-                        <textarea
-                            id="proofNote"
-                            rows="4"
-                            maxlength="500"
-                            placeholder="Observação opcional..."
-                        ></textarea>
+                        <select id="paymentPlan">
+
+                            <option data-i18n="payments.selectPlan">
+                                Selecione um plano
+                            </option>
+
+                            <option>
+                                Bronze
+                            </option>
+
+                            <option>
+                                Prata
+                            </option>
+
+                            <option>
+                                Ouro
+                            </option>
+
+                            <option>
+                                Diamante
+                            </option>
+
+                        </select>
 
                     </div>
-
-
-                    <div
-                        id="proofMessage"
-                        class="auth-message"
-                    ></div>
 
 
                     <button
-                        type="submit"
-                        id="proofButton"
-                        class="btn btn-primary"
+                        type="button"
+                        class="primary-button"
+                        data-i18n="payments.sendProof"
                     >
                         Enviar comprovante
                     </button>
 
-                </form>
+                </div>
 
             </section>
 
 
+            <!-- HISTÓRICO -->
+
             <section class="payment-history">
 
-                <div class="section-header">
+                <div class="section-heading">
 
                     <div>
 
-                        <span class="card-label">
-                            HISTÓRICO
-                        </span>
-
-                        <h2>
-                            Meus pagamentos
+                        <h2 data-i18n="payments.historyTitle">
+                            Histórico de pagamentos
                         </h2>
+
+                        <p data-i18n="payments.historyDescription">
+                            Consulte seus pagamentos anteriores.
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <div
-                    id="paymentsList"
-                    class="payments-list"
-                >
+                <div class="history-empty">
 
-                    <div class="empty-state">
-
-                        <div class="empty-icon">
-                            $
-                        </div>
-
-                        <h3>
-                            Carregando pagamentos...
-                        </h3>
-
-                        <p>
-                            Aguarde enquanto buscamos seu histórico.
-                        </p>
-
+                    <div class="empty-icon">
+                        $
                     </div>
+
+                    <h3 data-i18n="payments.emptyTitle">
+                        Nenhum pagamento encontrado
+                    </h3>
+
+                    <p data-i18n="payments.emptyDescription">
+                        Seus pagamentos aparecerão aqui depois que forem realizados.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- AVISO -->
+
+            <section class="dashboard-notice">
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3 data-i18n="payments.noticeTitle">
+                        Pagamentos em desenvolvimento
+                    </h3>
+
+                    <p data-i18n="payments.noticeDescription">
+                        Esta área é apenas visual nesta etapa. O processamento de pagamentos, análise de comprovantes e ativação dos planos serão conectados ao backend posteriormente.
+                    </p>
 
                 </div>
 
@@ -417,24 +472,40 @@
     </main>
 
 
-    <footer class="dashboard-footer">
+    <footer class="site-footer">
 
         <div class="container">
 
-            <span>
-                © 2026 Zyphor Cloud
-            </span>
+            <div class="footer-bottom">
 
-            <span>
-                Pagamentos seguros e analisados manualmente
-            </span>
+                <span data-i18n="footer.copyright">
+                    © 2026 Zyphor Cloud. Todos os direitos reservados.
+                </span>
+
+                <div class="footer-links">
+
+                    <a href="termos.html" data-i18n="footer.terms">
+                        Termos
+                    </a>
+
+                    <a href="privacidade.html" data-i18n="footer.privacy">
+                        Privacidade
+                    </a>
+
+                    <a href="uso-aceitavel.html" data-i18n="footer.acceptableUse">
+                        Uso aceitável
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-    <script src="../js/api.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/pagamentos.js"></script>
 
 </body>
