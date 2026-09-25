@@ -1,763 +1,737 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title data-i18n-title="admin.title">Administração • Zyphor Cloud</title>
 
-    <title>Administração — Zyphor Cloud</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/global.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/admin.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/responsive.css"
-    >
+    <link rel="icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
-<body>
+<body class="dashboard-page admin-page">
 
-    <header class="dashboard-header">
+<header class="dashboard-header">
+    <div class="dashboard-container dashboard-nav">
 
-        <div class="container dashboard-nav">
+        <a href="dashboard.html" class="brand">
+            <img src="assets/logo.png" alt="Zyphor Cloud">
+            <span>Zyphor Cloud</span>
+        </a>
 
-            <a
-                href="dashboard.html"
-                class="dashboard-logo"
-            >
-                ZYPHOR CLOUD
+        <nav class="dashboard-links">
+            <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="bots.html" data-i18n="nav.bots">Meus Projetos</a>
+            <a href="planos.html" data-i18n="nav.plans">Planos</a>
+            <a href="suporte.html" data-i18n="nav.support">Suporte</a>
+            <a href="admin.html" class="active" data-i18n="nav.admin">Admin</a>
+        </nav>
+
+        <div class="dashboard-actions">
+
+            <div class="language-selector">
+                <button class="language-btn" type="button">
+                    🇧🇷 Português
+                </button>
+
+                <div class="language-menu">
+                    <button type="button" data-lang="pt-BR">
+                        🇧🇷 Português
+                    </button>
+
+                    <button type="button" data-lang="en-US">
+                        🇺🇸 English
+                    </button>
+
+                    <button type="button" data-lang="es">
+                        🇪🇸 Español
+                    </button>
+                </div>
+            </div>
+
+            <a href="conta.html" class="account-btn">
+                <span data-i18n="nav.account">Conta</span>
             </a>
 
-            <nav class="dashboard-links">
+        </div>
+    </div>
+</header>
 
-                <a href="dashboard.html">
-                    Dashboard
-                </a>
 
-                <a href="bots.html">
-                    Bots
-                </a>
+<main class="admin-main">
+    <div class="dashboard-container">
 
-                <a href="planos.html">
-                    Planos
-                </a>
+        <section class="admin-hero">
 
-                <a href="pagamentos.html">
-                    Pagamentos
-                </a>
-
-                <a href="suporte.html">
-                    Suporte
-                </a>
-
-                <a
-                    href="admin.html"
-                    class="active"
-                >
-                    Admin
-                </a>
-
-            </nav>
-
-            <div class="dashboard-user">
-
-                <span id="userName">
-                    Administrador
+            <div>
+                <span class="dashboard-badge" data-i18n="admin.badge">
+                    Administração
                 </span>
+
+                <h1 data-i18n="admin.title">
+                    Painel administrativo
+                </h1>
+
+                <p data-i18n="admin.subtitle">
+                    Gerencie usuários, pagamentos, anúncios e configurações da Zyphor Cloud.
+                </p>
+            </div>
+
+            <div class="admin-status">
+                <span class="status-dot"></span>
+                <span data-i18n="admin.systemOnline">
+                    Sistema online
+                </span>
+            </div>
+
+        </section>
+
+
+        <!-- ESTATÍSTICAS -->
+
+        <section class="admin-stats">
+
+            <article class="admin-stat-card">
+                <span class="stat-label" data-i18n="admin.stats.users">
+                    Usuários
+                </span>
+
+                <strong id="adminUsersCount">
+                    0
+                </strong>
+
+                <small data-i18n="admin.stats.usersDescription">
+                    Usuários cadastrados
+                </small>
+            </article>
+
+
+            <article class="admin-stat-card">
+                <span class="stat-label" data-i18n="admin.stats.projects">
+                    Projetos
+                </span>
+
+                <strong id="adminProjectsCount">
+                    0
+                </strong>
+
+                <small data-i18n="admin.stats.projectsDescription">
+                    Projetos registrados
+                </small>
+            </article>
+
+
+            <article class="admin-stat-card">
+                <span class="stat-label" data-i18n="admin.stats.activePlans">
+                    Planos ativos
+                </span>
+
+                <strong id="adminPlansCount">
+                    0
+                </strong>
+
+                <small data-i18n="admin.stats.activePlansDescription">
+                    Assinaturas ativas
+                </small>
+            </article>
+
+
+            <article class="admin-stat-card">
+                <span class="stat-label" data-i18n="admin.stats.pendingPayments">
+                    Pagamentos pendentes
+                </span>
+
+                <strong id="adminPendingPayments">
+                    0
+                </strong>
+
+                <small data-i18n="admin.stats.pendingPaymentsDescription">
+                    Aguardando análise
+                </small>
+            </article>
+
+        </section>
+
+
+        <!-- PAGAMENTOS -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+                <div>
+                    <span class="section-kicker" data-i18n="admin.payments.kicker">
+                        Financeiro
+                    </span>
+
+                    <h2 data-i18n="admin.payments.title">
+                        Pagamentos
+                    </h2>
+
+                    <p data-i18n="admin.payments.description">
+                        Analise pagamentos enviados pelos usuários e aprove ou recuse solicitações.
+                    </p>
+                </div>
+
+                <a href="pagamentos.html" class="admin-link" data-i18n="admin.payments.view">
+                    Ver pagamentos
+                </a>
+            </div>
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="admin.table.user">Usuário</th>
+                            <th data-i18n="admin.table.plan">Plano</th>
+                            <th data-i18n="admin.table.value">Valor</th>
+                            <th data-i18n="admin.table.status">Status</th>
+                            <th data-i18n="admin.table.date">Data</th>
+                            <th data-i18n="admin.table.actions">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="adminPaymentsTable">
+
+                        <tr class="empty-row">
+                            <td colspan="6">
+
+                                <div class="admin-empty">
+
+                                    <span class="empty-icon">₿</span>
+
+                                    <strong data-i18n="admin.payments.emptyTitle">
+                                        Nenhum pagamento pendente
+                                    </strong>
+
+                                    <p data-i18n="admin.payments.emptyDescription">
+                                        Novos pagamentos enviados aparecerão aqui.
+                                    </p>
+
+                                </div>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- USUÁRIOS -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <span class="section-kicker" data-i18n="admin.users.kicker">
+                        Contas
+                    </span>
+
+                    <h2 data-i18n="admin.users.title">
+                        Usuários
+                    </h2>
+
+                    <p data-i18n="admin.users.description">
+                        Consulte e gerencie as contas cadastradas na plataforma.
+                    </p>
+                </div>
 
                 <button
                     type="button"
-                    id="logoutButton"
-                    class="btn btn-secondary"
+                    class="admin-link-button"
+                    id="refreshUsers"
+                    data-i18n="admin.users.refresh"
                 >
-                    Sair
+                    Atualizar
                 </button>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th data-i18n="admin.table.user">Usuário</th>
+                            <th data-i18n="admin.table.email">E-mail</th>
+                            <th data-i18n="admin.table.plan">Plano</th>
+                            <th data-i18n="admin.table.projects">Projetos</th>
+                            <th data-i18n="admin.table.status">Status</th>
+                            <th data-i18n="admin.table.actions">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="adminUsersTable">
+
+                        <tr class="empty-row">
+                            <td colspan="6">
+
+                                <div class="admin-empty">
+
+                                    <span class="empty-icon">◎</span>
+
+                                    <strong data-i18n="admin.users.emptyTitle">
+                                        Nenhum usuário encontrado
+                                    </strong>
+
+                                    <p data-i18n="admin.users.emptyDescription">
+                                        Os usuários cadastrados aparecerão aqui.
+                                    </p>
+
+                                </div>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANÚNCIOS -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <span class="section-kicker" data-i18n="admin.announcements.kicker">
+                        Comunicação
+                    </span>
+
+                    <h2 data-i18n="admin.announcements.title">
+                        Anúncios
+                    </h2>
+
+                    <p data-i18n="admin.announcements.description">
+                        Publique avisos importantes para os usuários da Zyphor Cloud.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="admin-form-card">
+
+                <div class="form-group">
+
+                    <label for="announcementTitle" data-i18n="admin.announcements.titleLabel">
+                        Título
+                    </label>
+
+                    <input
+                        type="text"
+                        id="announcementTitle"
+                        data-i18n-placeholder="admin.announcements.titlePlaceholder"
+                        placeholder="Título do anúncio"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="announcementMessage" data-i18n="admin.announcements.messageLabel">
+                        Mensagem
+                    </label>
+
+                    <textarea
+                        id="announcementMessage"
+                        rows="5"
+                        data-i18n-placeholder="admin.announcements.messagePlaceholder"
+                        placeholder="Digite a mensagem do anúncio..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="publishAnnouncement"
+                        data-i18n="admin.announcements.publish"
+                    >
+                        Publicar anúncio
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="clearAnnouncement"
+                        data-i18n="admin.announcements.clear"
+                    >
+                        Limpar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="announcement-list" id="announcementList">
+
+                <div class="admin-empty">
+
+                    <span class="empty-icon">!</span>
+
+                    <strong data-i18n="admin.announcements.emptyTitle">
+                        Nenhum anúncio publicado
+                    </strong>
+
+                    <p data-i18n="admin.announcements.emptyDescription">
+                        Os anúncios criados aparecerão aqui.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONFIGURAÇÕES -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <span class="section-kicker" data-i18n="admin.settings.kicker">
+                        Sistema
+                    </span>
+
+                    <h2 data-i18n="admin.settings.title">
+                        Configurações
+                    </h2>
+
+                    <p data-i18n="admin.settings.description">
+                        Controle algumas funções gerais da plataforma.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+                <div class="setting-card">
+
+                    <div class="setting-info">
+
+                        <strong data-i18n="admin.settings.maintenance">
+                            Modo manutenção
+                        </strong>
+
+                        <p data-i18n="admin.settings.maintenanceDescription">
+                            Bloqueia o acesso normal à plataforma durante uma manutenção.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="maintenanceMode"
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="setting-card">
+
+                    <div class="setting-info">
+
+                        <strong data-i18n="admin.settings.registration">
+                            Novos cadastros
+                        </strong>
+
+                        <p data-i18n="admin.settings.registrationDescription">
+                            Permite ou bloqueia novos usuários de criarem contas.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="registrationEnabled"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="setting-card">
+
+                    <div class="setting-info">
+
+                        <strong data-i18n="admin.settings.deployments">
+                            Novos deploys
+                        </strong>
+
+                        <p data-i18n="admin.settings.deploymentsDescription">
+                            Controla se novos projetos podem realizar deploy.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="deploymentsEnabled"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="setting-card">
+
+                    <div class="setting-info">
+
+                        <strong data-i18n="admin.settings.announcements">
+                            Anúncios globais
+                        </strong>
+
+                        <p data-i18n="admin.settings.announcementsDescription">
+                            Permite exibir avisos gerais dentro da plataforma.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="announcementsEnabled"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PIX -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <span class="section-kicker" data-i18n="admin.pix.kicker">
+                        Pagamentos
+                    </span>
+
+                    <h2 data-i18n="admin.pix.title">
+                        Configuração do PIX
+                    </h2>
+
+                    <p data-i18n="admin.pix.description">
+                        Configure os dados utilizados para pagamentos via PIX.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="admin-form-card">
+
+                <div class="form-group">
+
+                    <label for="pixKey" data-i18n="admin.pix.keyLabel">
+                        Chave PIX
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pixKey"
+                        data-i18n-placeholder="admin.pix.keyPlaceholder"
+                        placeholder="Digite a chave PIX"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="pixName" data-i18n="admin.pix.nameLabel">
+                        Nome do recebedor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pixName"
+                        data-i18n-placeholder="admin.pix.namePlaceholder"
+                        placeholder="Nome do recebedor"
+                    >
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="savePixSettings"
+                        data-i18n="admin.pix.save"
+                    >
+                        Salvar configurações
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVISO -->
+
+        <section class="admin-notice">
+
+            <div class="notice-icon">!</div>
+
+            <div>
+
+                <strong data-i18n="admin.notice.title">
+                    Área restrita
+                </strong>
+
+                <p data-i18n="admin.notice.description">
+                    Este painel é destinado exclusivamente aos administradores autorizados da Zyphor Cloud.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="dashboard-container">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="brand">
+                    <img src="assets/logo.png" alt="Zyphor Cloud">
+                    <span>Zyphor Cloud</span>
+                </a>
+
+                <p data-i18n="footer.description">
+                    Hospedagem simples, estável e feita para seus projetos.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3 data-i18n="footer.platform">
+                    Plataforma
+                </h3>
+
+                <a href="planos.html" data-i18n="nav.plans">
+                    Planos
+                </a>
+
+                <a href="dashboard.html" data-i18n="nav.dashboard">
+                    Dashboard
+                </a>
+
+                <a href="suporte.html" data-i18n="nav.support">
+                    Suporte
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3 data-i18n="footer.legal">
+                    Legal
+                </h3>
+
+                <a href="termos.html" data-i18n="footer.terms">
+                    Termos
+                </a>
+
+                <a href="privacidade.html" data-i18n="footer.privacy">
+                    Privacidade
+                </a>
+
+                <a href="uso-aceitavel.html" data-i18n="footer.acceptableUse">
+                    Uso aceitável
+                </a>
 
             </div>
 
         </div>
 
-    </header>
 
-
-    <main class="container admin-page">
-
-        <section class="admin-header">
-
-            <div>
-
-                <span class="card-label">
-                    ADMINISTRAÇÃO
-                </span>
-
-                <h1>
-                    Painel administrativo
-                </h1>
-
-                <p>
-                    Gerencie usuários, pagamentos, bots e configurações da plataforma.
-                </p>
-
-            </div>
-
-            <span
-                id="adminRole"
-                class="admin-role"
-            >
-                Admin
-            </span>
-
-        </section>
-
-
-        <!-- Estatísticas -->
-
-        <section class="admin-stats">
-
-            <div class="admin-stat">
-
-                <span>
-                    Usuários
-                </span>
-
-                <strong id="totalUsers">
-                    —
-                </strong>
-
-            </div>
-
-
-            <div class="admin-stat">
-
-                <span>
-                    Bots
-                </span>
-
-                <strong id="totalBots">
-                    —
-                </strong>
-
-            </div>
-
-
-            <div class="admin-stat">
-
-                <span>
-                    Bots online
-                </span>
-
-                <strong id="onlineBots">
-                    —
-                </strong>
-
-            </div>
-
-
-            <div class="admin-stat">
-
-                <span>
-                    Pagamentos pendentes
-                </span>
-
-                <strong id="pendingPayments">
-                    —
-                </strong>
-
-            </div>
-
-        </section>
-
-
-        <!-- Navegação administrativa -->
-
-        <section class="admin-menu">
-
-            <button
-                type="button"
-                class="admin-menu-button active"
-                data-section="overview"
-            >
-                Visão geral
-            </button>
-
-            <button
-                type="button"
-                class="admin-menu-button"
-                data-section="payments"
-            >
-                Pagamentos
-            </button>
-
-            <button
-                type="button"
-                class="admin-menu-button"
-                data-section="users"
-            >
-                Usuários
-            </button>
-
-            <button
-                type="button"
-                class="admin-menu-button"
-                data-section="announcements"
-            >
-                Anúncios
-            </button>
-
-            <button
-                type="button"
-                class="admin-menu-button"
-                data-section="settings"
-            >
-                Configurações
-            </button>
-
-        </section>
-
-
-        <!-- Visão geral -->
-
-        <section
-            id="adminOverview"
-            class="admin-section"
-        >
-
-            <div class="admin-grid">
-
-
-                <div class="admin-card">
-
-                    <div class="card-header">
-
-                        <div>
-
-                            <span class="card-label">
-                                SISTEMA
-                            </span>
-
-                            <h2>
-                                Status da plataforma
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="system-status">
-
-                        <div class="system-status-item">
-
-                            <span class="status-dot online"></span>
-
-                            <div>
-
-                                <strong>
-                                    API
-                                </strong>
-
-                                <span>
-                                    Operacional
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="system-status-item">
-
-                            <span class="status-dot online"></span>
-
-                            <div>
-
-                                <strong>
-                                    Banco de dados
-                                </strong>
-
-                                <span>
-                                    Operacional
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="system-status-item">
-
-                            <span class="status-dot online"></span>
-
-                            <div>
-
-                                <strong>
-                                    Runner
-                                </strong>
-
-                                <span>
-                                    Operacional
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="admin-card">
-
-                    <div class="card-header">
-
-                        <div>
-
-                            <span class="card-label">
-                                ATIVIDADE
-                            </span>
-
-                            <h2>
-                                Atividade recente
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-
-                    <div id="recentActivity">
-
-                        <div class="admin-empty">
-                            Nenhuma atividade recente.
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Pagamentos -->
-
-        <section
-            id="adminPayments"
-            class="admin-section hidden"
-        >
-
-            <div class="admin-card">
-
-                <div class="card-header">
-
-                    <div>
-
-                        <span class="card-label">
-                            FINANCEIRO
-                        </span>
-
-                        <h2>
-                            Pagamentos pendentes
-                        </h2>
-
-                    </div>
-
-                    <button
-                        type="button"
-                        id="refreshPayments"
-                        class="btn btn-secondary"
-                    >
-                        Atualizar
-                    </button>
-
-                </div>
-
-
-                <div id="adminPaymentsList">
-
-                    <div class="admin-empty">
-                        Carregando pagamentos...
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Usuários -->
-
-        <section
-            id="adminUsers"
-            class="admin-section hidden"
-        >
-
-            <div class="admin-card">
-
-                <div class="card-header">
-
-                    <div>
-
-                        <span class="card-label">
-                            CONTAS
-                        </span>
-
-                        <h2>
-                            Usuários
-                        </h2>
-
-                    </div>
-
-                    <input
-                        type="search"
-                        id="userSearch"
-                        class="admin-search"
-                        placeholder="Pesquisar usuário..."
-                    >
-
-                </div>
-
-
-                <div id="adminUsersList">
-
-                    <div class="admin-empty">
-                        Carregando usuários...
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Anúncios -->
-
-        <section
-            id="adminAnnouncements"
-            class="admin-section hidden"
-        >
-
-            <div class="admin-card">
-
-                <div class="card-header">
-
-                    <div>
-
-                        <span class="card-label">
-                            COMUNICAÇÃO
-                        </span>
-
-                        <h2>
-                            Criar anúncio
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <form id="announcementForm">
-
-                    <div class="form-group">
-
-                        <label for="announcementTitle">
-                            Título
-                        </label>
-
-                        <input
-                            type="text"
-                            id="announcementTitle"
-                            maxlength="120"
-                            placeholder="Título do anúncio"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="announcementMessage">
-                            Mensagem
-                        </label>
-
-                        <textarea
-                            id="announcementMessage"
-                            rows="7"
-                            maxlength="4000"
-                            placeholder="Mensagem do anúncio..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="announcementType">
-                            Tipo
-                        </label>
-
-                        <select id="announcementType">
-
-                            <option value="info">
-                                Informação
-                            </option>
-
-                            <option value="maintenance">
-                                Manutenção
-                            </option>
-
-                            <option value="warning">
-                                Aviso
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div
-                        id="announcementMessageStatus"
-                        class="auth-message"
-                    ></div>
-
-
-                    <button
-                        type="submit"
-                        id="announcementButton"
-                        class="btn btn-primary"
-                    >
-                        Publicar anúncio
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- Configurações -->
-
-        <section
-            id="adminSettings"
-            class="admin-section hidden"
-        >
-
-            <div class="admin-grid">
-
-
-                <div class="admin-card">
-
-                    <div class="card-header">
-
-                        <div>
-
-                            <span class="card-label">
-                                PIX
-                            </span>
-
-                            <h2>
-                                Configuração de pagamento
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-
-                    <form id="pixSettingsForm">
-
-                        <div class="form-group">
-
-                            <label for="pixKeyInput">
-                                Chave PIX
-                            </label>
-
-                            <input
-                                type="text"
-                                id="pixKeyInput"
-                                placeholder="Chave PIX"
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="pixReceiverInput">
-                                Recebedor
-                            </label>
-
-                            <input
-                                type="text"
-                                id="pixReceiverInput"
-                                placeholder="Nome do recebedor"
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="pixBankInput">
-                                Banco
-                            </label>
-
-                            <input
-                                type="text"
-                                id="pixBankInput"
-                                placeholder="Nome do banco"
-                            >
-
-                        </div>
-
-
-                        <div
-                            id="pixSettingsMessage"
-                            class="auth-message"
-                        ></div>
-
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary"
-                        >
-                            Salvar PIX
-                        </button>
-
-                    </form>
-
-                </div>
-
-
-                <div class="admin-card">
-
-                    <div class="card-header">
-
-                        <div>
-
-                            <span class="card-label">
-                                SISTEMA
-                            </span>
-
-                            <h2>
-                                Configurações gerais
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="admin-setting-list">
-
-                        <div class="admin-setting">
-
-                            <div>
-
-                                <strong>
-                                    Modo de manutenção
-                                </strong>
-
-                                <span>
-                                    Impede novos deploys durante manutenção.
-                                </span>
-
-                            </div>
-
-                            <label class="switch">
-
-                                <input
-                                    type="checkbox"
-                                    id="maintenanceMode"
-                                >
-
-                                <span class="switch-slider"></span>
-
-                            </label>
-
-                        </div>
-
-
-                        <div class="admin-setting">
-
-                            <div>
-
-                                <strong>
-                                    Novos cadastros
-                                </strong>
-
-                                <span>
-                                    Permitir novas contas na plataforma.
-                                </span>
-
-                            </div>
-
-                            <label class="switch">
-
-                                <input
-                                    type="checkbox"
-                                    id="registrationEnabled"
-                                    checked
-                                >
-
-                                <span class="switch-slider"></span>
-
-                            </label>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer class="dashboard-footer">
-
-        <div class="container">
+        <div class="footer-bottom">
 
             <span>
                 © 2026 Zyphor Cloud
             </span>
 
-            <span>
-                Painel administrativo
+            <span data-i18n="footer.rights">
+                Todos os direitos reservados.
             </span>
 
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
-    <script src="../js/api.js"></script>
-
-    <script src="../js/admin.js"></script>
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/i18n.js"></script>
 
 </body>
-
 </html>
