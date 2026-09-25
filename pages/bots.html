@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meus bots — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Meus Projetos</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/bots.css">
@@ -17,24 +18,64 @@
 
         <div class="container dashboard-nav">
 
-            <a href="dashboard.html" class="dashboard-logo">
+            <a href="../index.html" class="logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
             <nav class="dashboard-links">
-                <a href="dashboard.html">Dashboard</a>
-                <a href="bots.html" class="active">Meus bots</a>
-                <a href="planos.html">Planos</a>
-                <a href="pagamentos.html">Pagamentos</a>
-                <a href="suporte.html">Suporte</a>
+
+                <a href="dashboard.html" data-i18n="nav.dashboard">
+                    Dashboard
+                </a>
+
+                <a href="bots.html" class="active" data-i18n="nav.projects">
+                    Meus projetos
+                </a>
+
+                <a href="planos.html" data-i18n="nav.plans">
+                    Planos
+                </a>
+
+                <a href="suporte.html" data-i18n="nav.support">
+                    Suporte
+                </a>
+
             </nav>
 
-            <div class="dashboard-user">
-                <span id="userName">Carregando...</span>
+            <div class="dashboard-actions">
 
-                <button id="logoutButton" class="btn btn-secondary">
-                    Sair
-                </button>
+                <div class="language-selector">
+
+                    <button class="language-btn" type="button">
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="conta.html"
+                    class="account-button"
+                    data-i18n="nav.account"
+                >
+                    Minha conta
+                </a>
+
             </div>
 
         </div>
@@ -46,57 +87,82 @@
 
         <div class="container">
 
+
+            <!-- CABEÇALHO -->
+
             <section class="bots-header">
 
                 <div>
-                    <span class="hero-label">
+
+                    <span class="bots-badge" data-i18n="projects.badge">
                         PROJETOS
                     </span>
 
-                    <h1>Meus bots</h1>
+                    <h1 data-i18n="projects.title">
+                        Meus projetos
+                    </h1>
 
-                    <p>
-                        Gerencie todos os seus projetos hospedados.
+                    <p data-i18n="projects.subtitle">
+                        Gerencie seus bots, sites e aplicações hospedados no Zyphor Cloud.
                     </p>
+
                 </div>
 
                 <a
                     href="criar-bot.html"
-                    class="btn btn-primary"
+                    class="primary-button"
+                    data-i18n="projects.create"
                 >
-                    + Criar bot
+                    + Criar projeto
                 </a>
 
             </section>
 
 
-            <section class="bots-toolbar">
+            <!-- FILTROS -->
 
-                <div class="bots-search">
+            <section class="projects-toolbar">
+
+                <div class="project-search">
 
                     <input
                         type="search"
-                        id="botSearch"
-                        placeholder="Pesquisar bot..."
-                        autocomplete="off"
+                        placeholder="Pesquisar projetos..."
+                        data-i18n-placeholder="projects.searchPlaceholder"
                     >
 
                 </div>
 
-                <div class="bots-filter">
+                <div class="project-filter">
 
-                    <select id="statusFilter">
+                    <select>
 
-                        <option value="all">
+                        <option
+                            value="all"
+                            data-i18n="projects.filterAll"
+                        >
                             Todos
                         </option>
 
-                        <option value="online">
-                            Online
+                        <option
+                            value="bot"
+                            data-i18n="projects.filterBots"
+                        >
+                            Bots
                         </option>
 
-                        <option value="offline">
-                            Offline
+                        <option
+                            value="site"
+                            data-i18n="projects.filterSites"
+                        >
+                            Sites
+                        </option>
+
+                        <option
+                            value="app"
+                            data-i18n="projects.filterApps"
+                        >
+                            Aplicações
                         </option>
 
                     </select>
@@ -106,23 +172,151 @@
             </section>
 
 
-            <section
-                id="botsList"
-                class="bots-grid"
-            >
+            <!-- LISTA -->
+
+            <section class="projects-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2 data-i18n="projects.listTitle">
+                            Seus projetos
+                        </h2>
+
+                        <p data-i18n="projects.listDescription">
+                            Todos os seus projetos aparecerão aqui.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESTADO VAZIO -->
 
                 <div class="empty-state">
 
                     <div class="empty-icon">
-                        ...
+                        +
                     </div>
 
-                    <h3>
-                        Carregando bots
+                    <h3 data-i18n="projects.emptyTitle">
+                        Nenhum projeto encontrado
                     </h3>
 
-                    <p>
-                        Aguarde um momento.
+                    <p data-i18n="projects.emptyDescription">
+                        Você ainda não criou nenhum projeto. Comece criando seu primeiro projeto.
+                    </p>
+
+                    <a
+                        href="criar-bot.html"
+                        class="primary-button"
+                        data-i18n="projects.emptyButton"
+                    >
+                        Criar projeto
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- TIPOS -->
+
+            <section class="project-types">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2 data-i18n="projects.typesTitle">
+                            O que você pode hospedar?
+                        </h2>
+
+                        <p data-i18n="projects.typesDescription">
+                            Escolha o tipo de projeto que deseja criar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-types-grid">
+
+
+                    <div class="project-type-card">
+
+                        <div class="project-type-icon">
+                            🤖
+                        </div>
+
+                        <h3 data-i18n="projects.typeBot">
+                            Bots
+                        </h3>
+
+                        <p data-i18n="projects.typeBotDescription">
+                            Hospede bots para Discord, WhatsApp, Telegram e outras plataformas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-type-card">
+
+                        <div class="project-type-icon">
+                            ◇
+                        </div>
+
+                        <h3 data-i18n="projects.typeSite">
+                            Sites
+                        </h3>
+
+                        <p data-i18n="projects.typeSiteDescription">
+                            Publique sites, landing pages, portfólios e dashboards.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-type-card">
+
+                        <div class="project-type-icon">
+                            ⚙
+                        </div>
+
+                        <h3 data-i18n="projects.typeApp">
+                            Aplicações
+                        </h3>
+
+                        <p data-i18n="projects.typeAppDescription">
+                            Execute aplicações e APIs usando diferentes linguagens e runtimes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AVISO -->
+
+            <section class="dashboard-notice">
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3 data-i18n="projects.noticeTitle">
+                        Hospedagem em desenvolvimento
+                    </h3>
+
+                    <p data-i18n="projects.noticeDescription">
+                        Esta área já possui a estrutura visual, mas os recursos reais de criação, deploy e execução serão integrados posteriormente.
                     </p>
 
                 </div>
@@ -134,19 +328,31 @@
     </main>
 
 
-    <footer class="footer">
+    <footer class="site-footer">
 
         <div class="container">
 
-            <div class="footer-content">
+            <div class="footer-bottom">
 
-                <span>
-                    © 2026 Zyphor Cloud
+                <span data-i18n="footer.copyright">
+                    © 2026 Zyphor Cloud. Todos os direitos reservados.
                 </span>
 
-                <span>
-                    Hospedagem de bots
-                </span>
+                <div class="footer-links">
+
+                    <a href="termos.html" data-i18n="footer.terms">
+                        Termos
+                    </a>
+
+                    <a href="privacidade.html" data-i18n="footer.privacy">
+                        Privacidade
+                    </a>
+
+                    <a href="uso-aceitavel.html" data-i18n="footer.acceptableUse">
+                        Uso aceitável
+                    </a>
+
+                </div>
 
             </div>
 
@@ -155,8 +361,9 @@
     </footer>
 
 
-    <script src="../js/api.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/bots.js"></script>
 
 </body>
+
 </html>
