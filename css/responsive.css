@@ -1,174 +1,546 @@
-/* =========================================================
+/* =========================================
    ZYPHOR CLOUD — RESPONSIVE
-   ========================================================= */
+   Celular • Tablet • Desktop
+========================================= */
+
+
+/* =========================================
+   BASE — TABLETS E TELAS MENORES
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .container {
+        width: min(92%, 1100px);
+    }
+
+    /* NAVBAR */
+
+    .navbar,
+    header .container {
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 80px 0 65px;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 6vw, 68px);
+    }
+
+    .hero p {
+        max-width: 600px;
+    }
+
+
+    /* DASHBOARD PREVIEW */
+
+    .dashboard-preview {
+        transform: none;
+    }
+
+    .dashboard-preview img {
+        max-width: 100%;
+    }
+
+
+    /* CARDS */
+
+    .resource-grid,
+    .project-grid {
+        gap: 16px;
+    }
+
+    .resource-card,
+    .project-card {
+        min-width: 0;
+    }
+
+
+    /* FOOTER */
+
+    .platform-list {
+        gap: 10px;
+    }
+
+    .platform-card {
+        min-width: 135px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 900px) {
 
     .container {
-        width: calc(100% - 32px);
+        width: min(92%, 850px);
     }
+
+
+    /* NAVBAR */
 
     .navbar {
-        width: calc(100% - 32px);
+        min-height: 70px;
     }
 
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
     .hero {
-        width: calc(100% - 32px);
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding: 80px 0;
-        gap: 50px;
+        padding: 70px 0 55px;
     }
 
     .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
         text-align: center;
     }
 
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        max-width: 750px;
+        font-size: clamp(40px, 8vw, 62px);
+    }
+
+    .hero p {
+        max-width: 650px;
     }
 
     .hero-buttons {
         justify-content: center;
     }
 
+
+    /* HERO IMAGE */
+
+    .hero-image,
     .hero-visual {
-        min-height: 360px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
+
+    .hero-image img,
+    .hero-visual img {
+        width: min(100%, 600px);
+    }
+
+
+    /* DASHBOARD */
 
     .dashboard-preview {
-        transform: none;
+        width: 100%;
+        overflow: hidden;
     }
 
-    .resource-grid {
-        grid-template-columns: 1fr;
+
+    /* GRIDS */
+
+    .resource-grid,
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 50px 30px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* =========================================
+   MOBILE
+========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
     .container {
-        width: calc(100% - 28px);
+        width: min(92%, 680px);
     }
 
+
+    /* NAVBAR */
+
     .navbar {
-        width: calc(100% - 28px);
-        height: 64px;
+        padding: 14px 0;
+    }
+
+    .navbar .container,
+    header .container {
+        flex-wrap: wrap;
     }
 
     .nav-links {
-        display: none;
+        width: 100%;
+        order: 3;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 10px 16px;
+        padding-top: 8px;
     }
 
-    .nav-actions .btn-secondary {
-        display: none;
+    .nav-links a {
+        font-size: 13px;
     }
+
+
+    /* LANGUAGE */
+
+    .language-selector {
+        position: relative;
+    }
+
+    .language-menu {
+        right: 0;
+        left: auto;
+    }
+
+
+    /* HERO */
 
     .hero {
-        width: calc(100% - 28px);
-        padding: 65px 0 75px;
+        padding: 55px 0 45px;
+    }
+
+    .hero-content {
+        gap: 28px;
     }
 
     .hero h1 {
-        font-size: clamp(40px, 10vw, 55px);
-        letter-spacing: -2px;
+        font-size: clamp(34px, 10vw, 50px);
+        line-height: 1.05;
     }
 
-    .hero-description {
-        font-size: 12px;
+    .hero p {
+        font-size: 15px;
+        line-height: 1.7;
     }
 
-    .hero-visual {
-        min-height: 320px;
+
+    /* BUTTONS */
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
     }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* DASHBOARD */
 
     .dashboard-preview {
+        border-radius: 14px;
+    }
+
+    .dashboard-preview img {
         width: 100%;
+        height: auto;
     }
 
-    .section-heading {
-        width: calc(100% - 28px);
+
+    /* SECTIONS */
+
+    section {
+        padding-left: 0;
+        padding-right: 0;
     }
 
-    .resource-grid {
-        width: calc(100% - 28px);
+
+    /* RESOURCE / PROJECT CARDS */
+
+    .resource-grid,
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
-    .home-cta {
-        width: calc(100% - 28px);
+    .resource-card,
+    .project-card {
+        width: 100%;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 40px 22px;
+        border-radius: 16px;
+    }
+
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    .cta p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+    /* FOOTER */
+
+    .footer-platforms {
+        padding: 35px 0 25px;
+    }
+
+    .platform-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .platform-card {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .platform-card img {
+        width: 23px;
+        height: 23px;
+    }
+
+    .platform-card span {
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+
+    /* FLOATING */
+
+    .zyphor-floating {
+        top: 14px;
+        right: 14px;
+
+        padding: 8px 12px;
+
+        font-size: 12px;
+        border-radius: 9px;
+
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        background: #ff4fa3;
+        color: #fff;
+        border-color: #ff4fa3;
+
+        z-index: 999;
+    }
+
+
+    /* LEGAL PAGES */
+
+    .legal-header .container {
+        width: min(92%, 680px);
+    }
+
+    .legal-header nav {
+        gap: 12px 16px;
+    }
+
+    .legal-page {
+        padding-top: 50px;
     }
 }
 
 
-/* =========================================================
-   CELULAR
-   ========================================================= */
+/* =========================================
+   CELULAR PEQUENO
+========================================= */
 
 @media (max-width: 480px) {
 
-    .navbar {
-        height: 60px;
+    .container {
+        width: min(92%, 430px);
     }
 
-    .nav-logo {
+
+    /* NAV */
+
+    .logo span {
+        font-size: 15px;
+    }
+
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav-links {
+        gap: 9px 13px;
+    }
+
+    .nav-links a {
         font-size: 12px;
     }
 
+
+    /* HERO */
+
     .hero {
-        padding: 55px 0 65px;
+        padding: 45px 0 40px;
     }
 
     .hero h1 {
-        font-size: 40px;
-        line-height: 1.04;
+        font-size: 34px;
     }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    /* BUTTONS */
 
     .hero-buttons {
-        flex-direction: column;
-        width: 100%;
+        gap: 10px;
     }
 
-    .hero-buttons .btn {
-        width: 100%;
+
+    /* DASHBOARD */
+
+    .dashboard-preview {
+        border-radius: 12px;
     }
 
-    .hero-visual {
-        min-height: 280px;
+
+    /* CTA */
+
+    .cta {
+        padding: 32px 18px;
     }
 
-    .preview-grid {
+    .cta h2 {
+        font-size: 24px;
+    }
+
+
+    /* PLATFORMS */
+
+    .platform-list {
         grid-template-columns: 1fr;
     }
 
-    .preview-card {
-        padding: 11px;
+    .platform-card {
+        padding: 11px 13px;
     }
 
-    .resources {
-        padding: 65px 0;
+
+    /* FLOATING */
+
+    .zyphor-floating {
+        top: 10px;
+        right: 10px;
+
+        padding: 7px 10px;
+        font-size: 11px;
+
+        max-width: 125px;
     }
 
-    .section-heading h2 {
-        font-size: 24px;
+
+    /* LEGAL */
+
+    .legal-page {
+        padding-top: 40px;
+        padding-bottom: 55px;
     }
 
-    .home-cta {
-        margin-bottom: 70px;
-        padding: 38px 20px;
+    .legal-header nav a {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   CELULARES MUITO PEQUENOS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: 94%;
     }
 
-    .home-cta h2 {
-        font-size: 24px;
+    .hero h1 {
+        font-size: 30px;
     }
 
-    .footer {
-        width: calc(100% - 28px);
+    .hero p {
+        font-size: 13px;
+    }
+
+    .nav-links {
+        gap: 8px 10px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .platform-card span {
+        font-size: 12px;
+    }
+
+    .zyphor-floating {
+        max-width: 110px;
+        font-size: 10px;
     }
 }
