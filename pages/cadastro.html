@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Criar conta — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Criar conta</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/auth.css">
@@ -15,163 +16,223 @@
 
     <main class="auth-page">
 
-        <section class="auth-info">
+        <div class="auth-card">
+
             <a href="../index.html" class="auth-logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
-            <div class="auth-info-content">
-                <span class="hero-label">ZYPhor Cloud</span>
+            <div class="auth-header">
 
-                <h1>
-                    Crie sua conta.
-                    <span>Comece a hospedar.</span>
+                <span class="auth-badge">
+                    ZYPHOR CLOUD
+                </span>
+
+                <h1 data-i18n="auth.registerTitle">
+                    Criar conta
                 </h1>
 
-                <p>
-                    Tenha um painel completo para gerenciar seus bots,
-                    arquivos, recursos e implantações.
+                <p data-i18n="auth.registerDescription">
+                    Crie sua conta para começar a usar a Zyphor Cloud.
                 </p>
 
-                <div class="auth-features">
-                    <div class="auth-feature">
-                        <strong>01</strong>
-                        <div>
-                            <b>Gerencie seus bots</b>
-                            <span>Controle seus projetos em um único painel.</span>
-                        </div>
-                    </div>
-
-                    <div class="auth-feature">
-                        <strong>02</strong>
-                        <div>
-                            <b>Controle seus arquivos</b>
-                            <span>Edite e organize os arquivos do seu projeto.</span>
-                        </div>
-                    </div>
-
-                    <div class="auth-feature">
-                        <strong>03</strong>
-                        <div>
-                            <b>Acompanhe sua hospedagem</b>
-                            <span>Veja status, logs e recursos utilizados.</span>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </section>
 
 
-        <section class="auth-card-wrapper">
+            <!-- IDIOMA -->
 
-            <div class="auth-card">
+            <div class="language-selector auth-language">
 
-                <div class="auth-card-header">
-                    <span class="auth-card-label">ZYPhor Cloud</span>
+                <button
+                    class="language-btn"
+                    type="button"
+                    aria-label="Selecionar idioma"
+                >
+                    🇧🇷 Português
+                </button>
 
-                    <h2>Criar conta</h2>
+                <div class="language-menu">
 
-                    <p>
-                        Crie sua conta para começar.
-                    </p>
-                </div>
-
-
-                <form id="registerForm">
-
-                    <div class="form-group">
-                        <label for="name">Nome</label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Seu nome"
-                            autocomplete="name"
-                            required
-                        >
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="seu@email.com"
-                            autocomplete="email"
-                            required
-                        >
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="password">Senha</label>
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Crie uma senha"
-                            autocomplete="new-password"
-                            required
-                        >
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="confirmPassword">
-                            Confirmar senha
-                        </label>
-
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            placeholder="Digite a senha novamente"
-                            autocomplete="new-password"
-                            required
-                        >
-                    </div>
-
-
-                    <div id="registerMessage" class="auth-message"></div>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary btn-large"
-                    >
-                        Criar conta
+                    <button type="button" data-lang="pt-BR">
+                        🇧🇷 Português
                     </button>
 
-                </form>
+                    <button type="button" data-lang="en-US">
+                        🇺🇸 English
+                    </button>
 
+                    <button type="button" data-lang="es">
+                        🇪🇸 Español
+                    </button>
 
-                <div class="auth-divider">
-                    <span>ou</span>
                 </div>
-
-
-                <a href="login.html" class="btn btn-secondary btn-large">
-                    Já tenho uma conta
-                </a>
-
-
-                <a href="../index.html" class="auth-back">
-                    ← Voltar para o início
-                </a>
 
             </div>
 
-        </section>
+
+            <!-- FORMULÁRIO -->
+
+            <form class="auth-form">
+
+                <div class="form-group">
+
+                    <label
+                        for="name"
+                        data-i18n="auth.name"
+                    >
+                        Nome
+                    </label>
+
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="Digite seu nome"
+                        data-i18n-placeholder="auth.namePlaceholder"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label
+                        for="email"
+                        data-i18n="auth.email"
+                    >
+                        E-mail
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="Digite seu e-mail"
+                        data-i18n-placeholder="auth.emailPlaceholder"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label
+                        for="password"
+                        data-i18n="auth.password"
+                    >
+                        Senha
+                    </label>
+
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="new-password"
+                        placeholder="Crie uma senha"
+                        data-i18n-placeholder="auth.passwordPlaceholder"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label
+                        for="confirm-password"
+                        data-i18n="auth.confirmPassword"
+                    >
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        id="confirm-password"
+                        name="confirm-password"
+                        type="password"
+                        autocomplete="new-password"
+                        placeholder="Digite a senha novamente"
+                        data-i18n-placeholder="auth.confirmPasswordPlaceholder"
+                    >
+
+                </div>
+
+
+                <label class="auth-check">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                    >
+
+                    <span>
+                        <span data-i18n="auth.accept">
+                            Eu aceito os
+                        </span>
+
+                        <a
+                            href="termos.html"
+                            data-i18n="footer.terms"
+                        >
+                            Termos
+                        </a>
+
+                        <span data-i18n="auth.and">
+                            e a
+                        </span>
+
+                        <a
+                            href="privacidade.html"
+                            data-i18n="footer.privacy"
+                        >
+                            Política de Privacidade
+                        </a>.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                    data-i18n="auth.createAccount"
+                >
+                    Criar conta
+                </button>
+
+            </form>
+
+
+            <div class="auth-divider">
+                <span data-i18n="auth.alreadyAccount">
+                    Já possui uma conta?
+                </span>
+            </div>
+
+
+            <a
+                href="login.html"
+                class="auth-secondary-button"
+                data-i18n="nav.login"
+            >
+                Entrar
+            </a>
+
+
+            <a
+                href="../index.html"
+                class="auth-back"
+                data-i18n="auth.backHome"
+            >
+                ← Voltar para o início
+            </a>
+
+        </div>
 
     </main>
 
 
-    <script src="../js/api.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/auth.js"></script>
 
 </body>
