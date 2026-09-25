@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Criar bot — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Criar Projeto</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/criar-bot.css">
@@ -16,30 +16,62 @@
 
     <header class="dashboard-header">
 
-        <div class="dashboard-nav">
+        <div class="container dashboard-nav">
 
-            <a href="dashboard.html" class="dashboard-logo">
+            <a href="../index.html" class="logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
             <nav class="dashboard-links">
-                <a href="dashboard.html">Dashboard</a>
-                <a href="bots.html" class="active">Meus bots</a>
-                <a href="planos.html">Planos</a>
-                <a href="pagamentos.html">Pagamentos</a>
-                <a href="suporte.html">Suporte</a>
+
+                <a href="dashboard.html" data-i18n="nav.dashboard">
+                    Dashboard
+                </a>
+
+                <a href="bots.html" class="active" data-i18n="nav.projects">
+                    Meus projetos
+                </a>
+
+                <a href="planos.html" data-i18n="nav.plans">
+                    Planos
+                </a>
+
+                <a href="suporte.html" data-i18n="nav.support">
+                    Suporte
+                </a>
+
             </nav>
 
-            <div class="dashboard-user">
-                <span id="userName">Usuário</span>
+            <div class="dashboard-actions">
 
-                <button
-                    type="button"
-                    id="logoutButton"
-                    class="btn btn-secondary btn-small"
-                >
-                    Sair
-                </button>
+                <div class="language-selector">
+
+                    <button class="language-btn" type="button">
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <a href="conta.html" class="account-button" data-i18n="nav.account">
+                    Minha conta
+                </a>
+
             </div>
 
         </div>
@@ -47,68 +79,192 @@
     </header>
 
 
-    <main class="create-bot-page">
+    <main class="create-project-page">
 
         <div class="container">
 
-            <a href="bots.html" class="back-link">
-                ← Voltar para meus bots
+
+            <!-- VOLTAR -->
+
+            <a
+                href="bots.html"
+                class="back-link"
+                data-i18n="createProject.back"
+            >
+                ← Voltar para projetos
             </a>
 
 
-            <section class="create-bot-header">
+            <!-- CABEÇALHO -->
 
-                <span class="hero-label">
-                    ZYPHOR CLOUD
+            <section class="create-header">
+
+                <span class="create-badge" data-i18n="createProject.badge">
+                    NOVO PROJETO
                 </span>
 
-                <h1>
-                    Criar novo bot
+                <h1 data-i18n="createProject.title">
+                    Crie seu projeto
                 </h1>
 
-                <p>
-                    Configure seu projeto e escolha como deseja importar
-                    os arquivos do bot.
+                <p data-i18n="createProject.subtitle">
+                    Escolha o tipo de projeto e configure a origem dos seus arquivos.
                 </p>
 
             </section>
 
 
-            <section class="create-bot-layout">
+            <form class="create-project-form">
 
-                <div class="create-bot-card">
 
-                    <div class="card-header">
+                <!-- TIPO -->
 
-                        <span class="card-label">
-                            CONFIGURAÇÃO
-                        </span>
+                <section class="create-section">
 
-                        <h2>
-                            Informações do bot
-                        </h2>
+                    <div class="section-heading">
 
-                        <p>
-                            Defina as informações básicas do seu projeto.
-                        </p>
+                        <div>
+
+                            <h2 data-i18n="createProject.typeTitle">
+                                Tipo de projeto
+                            </h2>
+
+                            <p data-i18n="createProject.typeDescription">
+                                Escolha o que você deseja hospedar.
+                            </p>
+
+                        </div>
 
                     </div>
 
 
-                    <form id="createBotForm">
+                    <div class="project-type-selector">
+
+
+                        <label class="project-option">
+
+                            <input
+                                type="radio"
+                                name="projectType"
+                                value="bot"
+                                checked
+                            >
+
+                            <div class="project-option-content">
+
+                                <span class="project-option-icon">
+                                    🤖
+                                </span>
+
+                                <strong data-i18n="createProject.bot">
+                                    Bot
+                                </strong>
+
+                                <small data-i18n="createProject.botDescription">
+                                    Discord, WhatsApp, Telegram e outros.
+                                </small>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="project-option">
+
+                            <input
+                                type="radio"
+                                name="projectType"
+                                value="site"
+                            >
+
+                            <div class="project-option-content">
+
+                                <span class="project-option-icon">
+                                    ◇
+                                </span>
+
+                                <strong data-i18n="createProject.site">
+                                    Site
+                                </strong>
+
+                                <small data-i18n="createProject.siteDescription">
+                                    Sites, landing pages e dashboards.
+                                </small>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="project-option">
+
+                            <input
+                                type="radio"
+                                name="projectType"
+                                value="application"
+                            >
+
+                            <div class="project-option-content">
+
+                                <span class="project-option-icon">
+                                    ⚙
+                                </span>
+
+                                <strong data-i18n="createProject.application">
+                                    Aplicação
+                                </strong>
+
+                                <small data-i18n="createProject.applicationDescription">
+                                    APIs e aplicações em diferentes runtimes.
+                                </small>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- INFORMAÇÕES -->
+
+                <section class="create-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <h2 data-i18n="createProject.infoTitle">
+                                Informações
+                            </h2>
+
+                            <p data-i18n="createProject.infoDescription">
+                                Defina as informações básicas do projeto.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
 
                         <div class="form-group">
 
-                            <label for="botName">
-                                Nome do bot
+                            <label
+                                for="projectName"
+                                data-i18n="createProject.name"
+                            >
+                                Nome do projeto
                             </label>
 
                             <input
+                                id="projectName"
+                                name="projectName"
                                 type="text"
-                                id="botName"
-                                name="botName"
                                 placeholder="Ex: Meu Bot"
-                                maxlength="50"
+                                data-i18n-placeholder="createProject.namePlaceholder"
                                 required
                             >
 
@@ -117,178 +273,74 @@
 
                         <div class="form-group">
 
-                            <label for="botDescription">
+                            <label
+                                for="projectDescription"
+                                data-i18n="createProject.description"
+                            >
                                 Descrição
                             </label>
 
-                            <textarea
-                                id="botDescription"
-                                name="botDescription"
-                                placeholder="Descreva seu projeto..."
-                                maxlength="250"
-                                rows="4"
-                            ></textarea>
-
-                        </div>
-
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-
-                                <label for="botLanguage">
-                                    Linguagem
-                                </label>
-
-                                <select
-                                    id="botLanguage"
-                                    name="language"
-                                    required
-                                >
-
-                                    <option value="">
-                                        Selecione
-                                    </option>
-
-                                    <option value="javascript">
-                                        JavaScript
-                                    </option>
-
-                                    <option value="typescript">
-                                        TypeScript
-                                    </option>
-
-                                    <option value="python">
-                                        Python
-                                    </option>
-
-                                    <option value="java">
-                                        Java
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="botRuntime">
-                                    Runtime
-                                </label>
-
-                                <select
-                                    id="botRuntime"
-                                    name="runtime"
-                                >
-
-                                    <option value="">
-                                        Automático
-                                    </option>
-
-                                    <option value="nodejs">
-                                        Node.js
-                                    </option>
-
-                                    <option value="python">
-                                        Python
-                                    </option>
-
-                                    <option value="java">
-                                        Java
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="startCommand">
-                                Comando de inicialização
-                            </label>
-
                             <input
+                                id="projectDescription"
+                                name="projectDescription"
                                 type="text"
-                                id="startCommand"
-                                name="startCommand"
-                                placeholder="Ex: node index.js"
+                                placeholder="Descrição do projeto"
+                                data-i18n-placeholder="createProject.descriptionPlaceholder"
                             >
 
-                            <span class="form-help">
-                                Será usado para iniciar seu bot.
-                            </span>
-
                         </div>
 
+                    </div>
 
-                        <div
-                            id="createBotMessage"
-                            class="auth-message"
-                        ></div>
+                </section>
 
 
-                        <button
-                            type="submit"
-                            class="btn btn-primary btn-large"
-                            id="createBotButton"
-                        >
-                            Continuar
-                        </button>
+                <!-- ORIGEM -->
 
-                    </form>
+                <section class="create-section">
 
-                </div>
+                    <div class="section-heading">
 
+                        <div>
 
-                <div class="create-bot-card">
+                            <h2 data-i18n="createProject.sourceTitle">
+                                Origem dos arquivos
+                            </h2>
 
-                    <div class="card-header">
+                            <p data-i18n="createProject.sourceDescription">
+                                Escolha como deseja enviar o projeto.
+                            </p>
 
-                        <span class="card-label">
-                            ORIGEM DO PROJETO
-                        </span>
-
-                        <h2>
-                            Como deseja adicionar os arquivos?
-                        </h2>
-
-                        <p>
-                            Escolha uma das opções para importar seu projeto.
-                        </p>
+                        </div>
 
                     </div>
 
 
                     <div class="source-options">
 
+
                         <label class="source-option">
 
                             <input
                                 type="radio"
-                                name="sourceType"
+                                name="source"
                                 value="github"
                                 checked
                             >
 
-                            <div class="source-option-content">
+                            <div>
 
-                                <div class="source-option-icon">
-                                    GH
-                                </div>
+                                <span class="source-icon">
+                                    Git
+                                </span>
 
-                                <div>
-                                    <strong>
-                                        GitHub
-                                    </strong>
+                                <strong data-i18n="createProject.github">
+                                    Repositório GitHub
+                                </strong>
 
-                                    <span>
-                                        Importar um repositório do GitHub.
-                                    </span>
-                                </div>
+                                <small data-i18n="createProject.githubDescription">
+                                    Conecte um repositório do GitHub.
+                                </small>
 
                             </div>
 
@@ -299,25 +351,23 @@
 
                             <input
                                 type="radio"
-                                name="sourceType"
+                                name="source"
                                 value="zip"
                             >
 
-                            <div class="source-option-content">
+                            <div>
 
-                                <div class="source-option-icon">
+                                <span class="source-icon">
                                     ZIP
-                                </div>
+                                </span>
 
-                                <div>
-                                    <strong>
-                                        Arquivo ZIP
-                                    </strong>
+                                <strong data-i18n="createProject.zip">
+                                    Arquivo .zip
+                                </strong>
 
-                                    <span>
-                                        Enviar os arquivos do seu projeto.
-                                    </span>
-                                </div>
+                                <small data-i18n="createProject.zipDescription">
+                                    Envie os arquivos do projeto diretamente.
+                                </small>
 
                             </div>
 
@@ -326,140 +376,303 @@
                     </div>
 
 
-                    <div
-                        id="githubSource"
-                        class="source-panel"
-                    >
+                    <div class="source-fields">
+
 
                         <div class="form-group">
 
-                            <label for="githubUrl">
+                            <label
+                                for="repository"
+                                data-i18n="createProject.repository"
+                            >
                                 URL do repositório
                             </label>
 
                             <input
+                                id="repository"
+                                name="repository"
                                 type="url"
-                                id="githubUrl"
-                                name="githubUrl"
                                 placeholder="https://github.com/usuario/projeto"
+                                data-i18n-placeholder="createProject.repositoryPlaceholder"
                             >
+
+                        </div>
+
+
+                        <div class="upload-box">
+
+                            <div class="upload-icon">
+                                ↑
+                            </div>
+
+                            <h3 data-i18n="createProject.uploadTitle">
+                                Envie seu arquivo .zip
+                            </h3>
+
+                            <p data-i18n="createProject.uploadDescription">
+                                Arraste o arquivo aqui ou selecione no dispositivo.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                data-i18n="createProject.chooseFile"
+                            >
+                                Escolher arquivo
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RUNTIME -->
+
+                <section class="create-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <h2 data-i18n="createProject.runtimeTitle">
+                                Runtime
+                            </h2>
+
+                            <p data-i18n="createProject.runtimeDescription">
+                                Configure o ambiente que será utilizado pelo projeto.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="runtime"
+                                data-i18n="createProject.runtime"
+                            >
+                                Linguagem / Runtime
+                            </label>
+
+                            <select id="runtime" name="runtime">
+
+                                <option>
+                                    Node.js
+                                </option>
+
+                                <option>
+                                    Python
+                                </option>
+
+                                <option>
+                                    Java
+                                </option>
+
+                                <option>
+                                    Outro
+                                </option>
+
+                            </select>
 
                         </div>
 
 
                         <div class="form-group">
 
-                            <label for="githubBranch">
-                                Branch
+                            <label
+                                for="version"
+                                data-i18n="createProject.version"
+                            >
+                                Versão
                             </label>
+
+                            <select id="version" name="version">
+
+                                <option>
+                                    Automático
+                                </option>
+
+                                <option>
+                                    22
+                                </option>
+
+                                <option>
+                                    20
+                                </option>
+
+                                <option>
+                                    18
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="system"
+                                data-i18n="createProject.system"
+                            >
+                                Sistema
+                            </label>
+
+                            <select id="system" name="system">
+
+                                <option data-i18n="createProject.systemAuto">
+                                    Automático
+                                </option>
+
+                                <option>
+                                    Linux
+                                </option>
+
+                                <option data-i18n="createProject.systemOther">
+                                    Outro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="startCommand"
+                                data-i18n="createProject.startCommand"
+                            >
+                                Comando de inicialização
+                            </label>
+
+                            <input
+                                id="startCommand"
+                                name="startCommand"
+                                type="text"
+                                value="npm start"
+                                placeholder="Ex: npm start"
+                                data-i18n-placeholder="createProject.startCommandPlaceholder"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- VARIÁVEIS -->
+
+                <section class="create-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <h2 data-i18n="createProject.variablesTitle">
+                                Variáveis de ambiente
+                            </h2>
+
+                            <p data-i18n="createProject.variablesDescription">
+                                Adicione tokens, chaves e outras configurações necessárias.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-i18n="createProject.addVariable"
+                        >
+                            + Adicionar variável
+                        </button>
+
+                    </div>
+
+
+                    <div class="variables-preview">
+
+                        <div class="variable-row">
 
                             <input
                                 type="text"
-                                id="githubBranch"
-                                name="githubBranch"
-                                value="main"
-                                placeholder="main"
+                                placeholder="Nome"
+                                data-i18n-placeholder="createProject.variableName"
                             >
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        id="zipSource"
-                        class="source-panel"
-                        hidden
-                    >
-
-                        <div class="upload-area">
 
                             <input
-                                type="file"
-                                id="projectZip"
-                                accept=".zip,application/zip"
-                                hidden
+                                type="password"
+                                placeholder="Valor"
+                                data-i18n-placeholder="createProject.variableValue"
                             >
 
-                            <label
-                                for="projectZip"
-                                class="upload-label"
+                            <button
+                                type="button"
+                                class="remove-variable"
+                                aria-label="Remover"
+                                data-i18n-title="createProject.removeVariable"
                             >
-
-                                <span class="upload-icon">
-                                    +
-                                </span>
-
-                                <strong>
-                                    Selecionar arquivo ZIP
-                                </strong>
-
-                                <span>
-                                    Envie o projeto compactado.
-                                </span>
-
-                            </label>
-
-                            <div
-                                id="zipFileName"
-                                class="upload-file-name"
-                            ></div>
+                                ×
+                            </button>
 
                         </div>
 
                     </div>
 
+                </section>
+
+
+                <!-- AÇÕES -->
+
+                <section class="create-actions">
+
+                    <a
+                        href="bots.html"
+                        class="secondary-button"
+                        data-i18n="createProject.cancel"
+                    >
+                        Cancelar
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        data-i18n="createProject.createButton"
+                    >
+                        Criar projeto
+                    </button>
+
+                </section>
+
+
+            </form>
+
+
+            <!-- AVISO -->
+
+            <section class="dashboard-notice">
+
+                <div class="notice-icon">
+                    !
                 </div>
 
-            </section>
+                <div>
 
+                    <h3 data-i18n="createProject.noticeTitle">
+                        Criação visual
+                    </h3>
 
-            <section class="create-bot-info">
-
-                <div class="info-item">
-
-                    <strong>
-                        01
-                    </strong>
-
-                    <div>
-                        <b>Configure</b>
-                        <span>
-                            Informe os dados básicos do seu bot.
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <strong>
-                        02
-                    </strong>
-
-                    <div>
-                        <b>Importe</b>
-                        <span>
-                            Envie seu projeto pelo GitHub ou ZIP.
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <strong>
-                        03
-                    </strong>
-
-                    <div>
-                        <b>Hospede</b>
-                        <span>
-                            Depois configure e coloque seu bot online.
-                        </span>
-                    </div>
+                    <p data-i18n="createProject.noticeDescription">
+                        Esta página está preparada visualmente. A criação real do projeto, conexão com GitHub, upload, armazenamento e deploy serão integrados ao backend posteriormente.
+                    </p>
 
                 </div>
 
@@ -470,24 +683,40 @@
     </main>
 
 
-    <footer class="dashboard-footer">
+    <footer class="site-footer">
 
         <div class="container">
 
-            <span>
-                © 2026 Zyphor Cloud
-            </span>
+            <div class="footer-bottom">
 
-            <span>
-                Hospedagem de bots
-            </span>
+                <span data-i18n="footer.copyright">
+                    © 2026 Zyphor Cloud. Todos os direitos reservados.
+                </span>
+
+                <div class="footer-links">
+
+                    <a href="termos.html" data-i18n="footer.terms">
+                        Termos
+                    </a>
+
+                    <a href="privacidade.html" data-i18n="footer.privacy">
+                        Privacidade
+                    </a>
+
+                    <a href="uso-aceitavel.html" data-i18n="footer.acceptableUse">
+                        Uso aceitável
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-    <script src="../js/api.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/criar-bot.js"></script>
 
 </body>
