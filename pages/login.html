@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Entre na sua conta Zyphor Cloud."
-    >
-
-    <title>Entrar — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Entrar</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/auth.css">
@@ -24,218 +16,199 @@
 
     <main class="auth-page">
 
-        <!-- LADO ESQUERDO -->
+        <div class="auth-card">
 
-        <section class="auth-info">
+            <!-- LOGO -->
 
             <a href="../index.html" class="auth-logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
-            <div class="auth-info-content">
 
-                <span class="eyebrow">
+            <!-- CABEÇALHO -->
+
+            <div class="auth-header">
+
+                <span class="auth-badge">
                     ZYPHOR CLOUD
                 </span>
 
-                <h1>
-                    Seus bots.
-                    <span>Seu controle.</span>
+                <h1 data-i18n="auth.loginTitle">
+                    Entrar
                 </h1>
 
-                <p>
-                    Acesse sua conta para gerenciar seus bots,
-                    projetos, recursos e implantações em um único lugar.
+                <p data-i18n="auth.loginDescription">
+                    Entre na sua conta para acessar seus projetos.
                 </p>
 
-                <div class="auth-features">
+            </div>
 
-                    <div class="auth-feature">
-                        <div class="feature-icon">01</div>
 
-                        <div>
-                            <strong>Gerencie seus bots</strong>
-                            <span>
-                                Controle seus projetos diretamente pelo painel.
-                            </span>
-                        </div>
-                    </div>
+            <!-- IDIOMA -->
 
-                    <div class="auth-feature">
-                        <div class="feature-icon">02</div>
+            <div class="language-selector auth-language">
 
-                        <div>
-                            <strong>Monitore seus projetos</strong>
-                            <span>
-                                Consulte status, recursos e registros.
-                            </span>
-                        </div>
-                    </div>
+                <button
+                    class="language-btn"
+                    type="button"
+                    aria-label="Selecionar idioma"
+                >
+                    🇧🇷 Português
+                </button>
 
-                    <div class="auth-feature">
-                        <div class="feature-icon">03</div>
+                <div class="language-menu">
 
-                        <div>
-                            <strong>Tenha tudo organizado</strong>
-                            <span>
-                                Arquivos, configurações e implantações em um só lugar.
-                            </span>
-                        </div>
-                    </div>
+                    <button
+                        type="button"
+                        data-lang="pt-BR"
+                    >
+                        🇧🇷 Português
+                    </button>
+
+                    <button
+                        type="button"
+                        data-lang="en-US"
+                    >
+                        🇺🇸 English
+                    </button>
+
+                    <button
+                        type="button"
+                        data-lang="es"
+                    >
+                        🇪🇸 Español
+                    </button>
 
                 </div>
 
             </div>
 
-            <div class="auth-info-footer">
-                © 2026 Zyphor Cloud
-            </div>
 
-        </section>
+            <!-- FORMULÁRIO -->
 
+            <form class="auth-form">
 
-        <!-- FORMULÁRIO -->
+                <div class="form-group">
 
-        <section class="auth-box">
+                    <label
+                        for="email"
+                        data-i18n="auth.email"
+                    >
+                        E-mail
+                    </label>
 
-            <div class="auth-card">
-
-                <div class="auth-card-header">
-
-                    <span class="auth-mobile-logo">
-                        ZYPHOR <span>CLOUD</span>
-                    </span>
-
-                    <h2>
-                        Bem-vindo de volta
-                    </h2>
-
-                    <p>
-                        Entre na sua conta para continuar.
-                    </p>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="Digite seu e-mail"
+                        data-i18n-placeholder="auth.emailPlaceholder"
+                        required
+                    >
 
                 </div>
 
 
-                <form id="loginForm">
+                <div class="form-group">
 
-                    <div class="form-group">
+                    <label
+                        for="password"
+                        data-i18n="auth.password"
+                    >
+                        Senha
+                    </label>
 
-                        <label for="email">
-                            E-mail
-                        </label>
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                        placeholder="Digite sua senha"
+                        data-i18n-placeholder="auth.loginPasswordPlaceholder"
+                        required
+                    >
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="seu@email.com"
-                            autocomplete="email"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <div class="form-label-row">
-
-                            <label for="password">
-                                Senha
-                            </label>
-
-                            <a href="#" class="forgot-password">
-                                Esqueci minha senha
-                            </a>
-
-                        </div>
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Digite sua senha"
-                            autocomplete="current-password"
-                            required
-                        >
-
-                    </div>
+                </div>
 
 
-                    <label class="remember-me">
+                <div class="auth-options">
+
+                    <label class="auth-check">
 
                         <input
                             type="checkbox"
                             id="remember"
+                            name="remember"
                         >
 
-                        <span>
+                        <span data-i18n="auth.remember">
                             Lembrar de mim
                         </span>
 
                     </label>
 
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary auth-submit"
+                    <a
+                        href="#"
+                        data-i18n="auth.forgotPassword"
                     >
-                        Entrar
-                    </button>
+                        Esqueci minha senha
+                    </a>
 
-                    <div
-                        id="loginMessage"
-                        class="auth-message"
-                        aria-live="polite"
-                    ></div>
-
-                </form>
-
-
-                <div class="auth-divider">
-                    <span>ou</span>
                 </div>
 
 
-                <a
-                    href="#"
-                    class="discord-login"
-                    id="discordLogin"
+                <button
+                    type="submit"
+                    class="auth-button"
+                    data-i18n="auth.loginButton"
                 >
-                    <span class="discord-icon">D</span>
+                    Entrar
+                </button>
 
-                    Continuar com Discord
-                </a>
+            </form>
 
 
-                <p class="auth-register">
+            <!-- CRIAR CONTA -->
 
+            <div class="auth-divider">
+
+                <span data-i18n="auth.noAccount">
                     Ainda não possui uma conta?
-
-                    <a href="cadastro.html">
-                        Criar conta
-                    </a>
-
-                </p>
-
-
-                <a
-                    href="../index.html"
-                    class="back-home"
-                >
-                    ← Voltar para o início
-                </a>
+                </span>
 
             </div>
 
-        </section>
+
+            <a
+                href="cadastro.html"
+                class="auth-secondary-button"
+                data-i18n="nav.signup"
+            >
+                Criar conta
+            </a>
+
+
+            <!-- VOLTAR -->
+
+            <a
+                href="../index.html"
+                class="auth-back"
+                data-i18n="auth.backHome"
+            >
+                ← Voltar para o início
+            </a>
+
+        </div>
 
     </main>
 
 
-    <script src="../js/api.js"></script>
+    <!-- SCRIPTS -->
+
+    <script src="../js/i18n.js"></script>
     <script src="../js/auth.js"></script>
 
 </body>
+
 </html>
