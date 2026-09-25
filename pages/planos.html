@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Planos — Zyphor Cloud</title>
+    <title>Zyphor Cloud — Planos</title>
 
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/planos.css">
@@ -14,423 +14,483 @@
 
 <body>
 
-    <header class="dashboard-header">
+    <div class="page">
 
-        <div class="dashboard-nav">
+        <!-- =========================
+             NAVBAR
+        ========================== -->
 
-            <a href="../index.html" class="dashboard-logo">
+        <header class="page-header">
+
+            <a href="../index.html" class="logo">
                 ZYPHOR <span>CLOUD</span>
             </a>
 
-            <nav class="dashboard-links">
-                <a href="../index.html">Início</a>
-                <a href="planos.html" class="active">Planos</a>
-                <a href="suporte.html">Suporte</a>
+            <nav class="nav-links">
+
+                <a href="../index.html" data-i18n="nav.home">
+                    Início
+                </a>
+
+                <a href="planos.html" class="active" data-i18n="nav.plans">
+                    Planos
+                </a>
+
+                <a href="suporte.html" data-i18n="nav.support">
+                    Suporte
+                </a>
+
             </nav>
 
-            <div class="dashboard-user">
+            <div class="header-actions">
+
+                <!-- IDIOMA -->
+
+                <div class="language-selector">
+
+                    <button
+                        class="language-btn"
+                        type="button"
+                        aria-label="Selecionar idioma"
+                    >
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
 
                 <a
                     href="login.html"
-                    class="btn btn-secondary btn-small"
+                    class="btn btn-secondary"
+                    data-i18n="nav.login"
                 >
                     Entrar
                 </a>
 
                 <a
                     href="cadastro.html"
-                    class="btn btn-primary btn-small"
+                    class="btn btn-primary"
+                    data-i18n="nav.signup"
                 >
                     Criar conta
                 </a>
 
             </div>
 
-        </div>
-
-    </header>
+        </header>
 
 
-    <main class="plans-page">
+        <!-- =========================
+             CONTEÚDO
+        ========================== -->
 
-        <div class="container">
+        <main class="plans-page">
 
-            <section class="plans-header">
+            <section class="plans-hero">
 
-                <span class="hero-label">
+                <span class="plans-badge">
                     ZYPHOR CLOUD
                 </span>
 
                 <h1>
-                    Escolha seu plano.
+                    <span data-i18n="plans.title">
+                        Planos
+                    </span>
                 </h1>
 
-                <p>
-                    Recursos para hospedar e gerenciar seus bots
-                    dentro do Zyphor Cloud.
+                <p data-i18n="plans.description">
+                    Escolha o plano ideal para seus projetos.
                 </p>
 
             </section>
 
 
-            <section
-                class="plans-grid"
-                id="plansGrid"
-            >
+            <!-- =========================
+                 PLANOS
+            ========================== -->
 
-                <div class="plan-card">
+            <section class="plans-grid">
 
-                    <div class="plan-top">
+                <!-- FREE -->
 
-                        <span class="plan-name">
+                <article class="plan-card">
+
+                    <div class="plan-header">
+
+                        <h2 data-i18n="plans.free">
                             Free
-                        </span>
+                        </h2>
 
-                        <span class="plan-badge">
-                            GRATUITO
-                        </span>
+                        <p data-i18n="plans.freeDescription">
+                            Para começar.
+                        </p>
 
                     </div>
 
                     <div class="plan-price">
-                        <strong>R$ 0,00</strong>
-                        <span>/mês</span>
+                        <strong>R$0,00</strong>
+                        <span data-i18n="plans.month">
+                            /mês
+                        </span>
                     </div>
-
-                    <p class="plan-description">
-                        Para começar e testar a plataforma.
-                    </p>
-
-                    <div class="plan-divider"></div>
 
                     <ul class="plan-features">
 
                         <li>
-                            <span>✓</span>
-                            512 MB de RAM
+                            512 MB RAM
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            0,25 vCPU
+                            0.25 vCPU
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            1 GB de armazenamento
+                            1 GB armazenamento
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            Até 2 bots*
+                            2 bots
                         </li>
 
                     </ul>
 
                     <a
                         href="cadastro.html"
-                        class="btn btn-secondary btn-large plan-button"
+                        class="plan-button"
+                        data-i18n="plans.start"
                     >
-                        Começar grátis
+                        Começar
                     </a>
 
-                </div>
+                </article>
 
 
-                <div class="plan-card">
+                <!-- BRONZE -->
 
-                    <div class="plan-top">
+                <article class="plan-card">
 
-                        <span class="plan-name">
+                    <div class="plan-header">
+
+                        <h2 data-i18n="plans.bronze">
                             Bronze
-                        </span>
+                        </h2>
+
+                        <p data-i18n="plans.bronzeDescription">
+                            Para projetos pequenos.
+                        </p>
 
                     </div>
 
                     <div class="plan-price">
-                        <strong>R$ 4,90</strong>
-                        <span>/mês</span>
+                        <strong>R$4,90</strong>
+                        <span data-i18n="plans.month">
+                            /mês
+                        </span>
                     </div>
-
-                    <p class="plan-description">
-                        Mais recursos para seus primeiros projetos.
-                    </p>
-
-                    <div class="plan-divider"></div>
 
                     <ul class="plan-features">
 
                         <li>
-                            <span>✓</span>
-                            1 GB de RAM
+                            1 GB RAM
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            0,50 vCPU
+                            0.50 vCPU
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            3 GB de armazenamento
+                            3 GB armazenamento
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            Até 5 bots*
+                            5 bots
                         </li>
 
                     </ul>
 
                     <a
                         href="cadastro.html"
-                        class="btn btn-secondary btn-large plan-button"
+                        class="plan-button"
+                        data-i18n="plans.choose"
                     >
-                        Escolher Bronze
+                        Escolher plano
                     </a>
 
-                </div>
+                </article>
 
 
-                <div class="plan-card plan-featured">
+                <!-- PRATA -->
 
-                    <div class="plan-highlight">
-                        MAIS RECURSOS
+                <article class="plan-card featured">
+
+                    <div class="plan-tag" data-i18n="plans.popular">
+                        Popular
                     </div>
 
-                    <div class="plan-top">
+                    <div class="plan-header">
 
-                        <span class="plan-name">
+                        <h2 data-i18n="plans.silver">
                             Prata
-                        </span>
+                        </h2>
+
+                        <p data-i18n="plans.silverDescription">
+                            Para projetos em crescimento.
+                        </p>
 
                     </div>
 
                     <div class="plan-price">
-                        <strong>R$ 9,90</strong>
-                        <span>/mês</span>
+                        <strong>R$9,90</strong>
+                        <span data-i18n="plans.month">
+                            /mês
+                        </span>
                     </div>
-
-                    <p class="plan-description">
-                        Para quem precisa de mais capacidade.
-                    </p>
-
-                    <div class="plan-divider"></div>
 
                     <ul class="plan-features">
 
                         <li>
-                            <span>✓</span>
-                            2 GB de RAM
+                            2 GB RAM
                         </li>
 
                         <li>
-                            <span>✓</span>
                             1 vCPU
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            6 GB de armazenamento
+                            6 GB armazenamento
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            Até 10 bots*
+                            10 bots
                         </li>
 
                     </ul>
 
                     <a
                         href="cadastro.html"
-                        class="btn btn-primary btn-large plan-button"
+                        class="plan-button"
+                        data-i18n="plans.choose"
                     >
-                        Escolher Prata
+                        Escolher plano
                     </a>
 
-                </div>
+                </article>
 
 
-                <div class="plan-card">
+                <!-- OURO -->
 
-                    <div class="plan-top">
+                <article class="plan-card">
 
-                        <span class="plan-name">
+                    <div class="plan-header">
+
+                        <h2 data-i18n="plans.gold">
                             Ouro
-                        </span>
+                        </h2>
+
+                        <p data-i18n="plans.goldDescription">
+                            Para projetos maiores.
+                        </p>
 
                     </div>
 
                     <div class="plan-price">
-                        <strong>R$ 17,90</strong>
-                        <span>/mês</span>
+                        <strong>R$17,90</strong>
+                        <span data-i18n="plans.month">
+                            /mês
+                        </span>
                     </div>
-
-                    <p class="plan-description">
-                        Para projetos maiores e mais exigentes.
-                    </p>
-
-                    <div class="plan-divider"></div>
 
                     <ul class="plan-features">
 
                         <li>
-                            <span>✓</span>
-                            4 GB de RAM
+                            4 GB RAM
                         </li>
 
                         <li>
-                            <span>✓</span>
                             2 vCPU
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            12 GB de armazenamento
+                            12 GB armazenamento
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            Até 20 bots*
+                            20 bots
                         </li>
 
                     </ul>
 
                     <a
                         href="cadastro.html"
-                        class="btn btn-secondary btn-large plan-button"
+                        class="plan-button"
+                        data-i18n="plans.choose"
                     >
-                        Escolher Ouro
+                        Escolher plano
                     </a>
 
-                </div>
+                </article>
 
 
-                <div class="plan-card">
+                <!-- DIAMANTE -->
 
-                    <div class="plan-top">
+                <article class="plan-card">
 
-                        <span class="plan-name">
+                    <div class="plan-header">
+
+                        <h2 data-i18n="plans.diamond">
                             Diamante
-                        </span>
+                        </h2>
+
+                        <p data-i18n="plans.diamondDescription">
+                            Para projetos avançados.
+                        </p>
 
                     </div>
 
                     <div class="plan-price">
-                        <strong>R$ 29,90</strong>
-                        <span>/mês</span>
+                        <strong>R$29,90</strong>
+                        <span data-i18n="plans.month">
+                            /mês
+                        </span>
                     </div>
-
-                    <p class="plan-description">
-                        Mais capacidade para projetos avançados.
-                    </p>
-
-                    <div class="plan-divider"></div>
 
                     <ul class="plan-features">
 
                         <li>
-                            <span>✓</span>
-                            8 GB de RAM
+                            8 GB RAM
                         </li>
 
                         <li>
-                            <span>✓</span>
                             4 vCPU
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            25 GB de armazenamento
+                            25 GB armazenamento
                         </li>
 
                         <li>
-                            <span>✓</span>
-                            Até 40 bots*
+                            40 bots
                         </li>
 
                     </ul>
 
                     <a
                         href="cadastro.html"
-                        class="btn btn-secondary btn-large plan-button"
+                        class="plan-button"
+                        data-i18n="plans.choose"
                     >
-                        Escolher Diamante
+                        Escolher plano
                     </a>
 
-                </div>
+                </article>
 
             </section>
 
 
-            <section class="plans-note">
+            <!-- =========================
+                 PAGAMENTO
+            ========================== -->
 
-                <strong>
-                    * Capacidade estimada
-                </strong>
+            <section class="plans-payment">
 
-                <p>
-                    A quantidade de bots que um plano consegue executar
-                    depende do consumo real de RAM, CPU e armazenamento
-                    de cada projeto.
+                <h2 data-i18n="plans.paymentTitle">
+                    Pagamentos
+                </h2>
+
+                <p data-i18n="plans.paymentDescription">
+                    No Brasil, os pagamentos podem ser realizados por PIX.
+                    Para outros países, métodos internacionais estarão disponíveis.
                 </p>
 
             </section>
 
+        </main>
 
-            <section class="plans-bottom">
 
-                <div>
+        <!-- =========================
+             FOOTER
+        ========================== -->
 
-                    <span class="hero-label">
+        <footer class="site-footer">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <strong>
                         ZYPHOR CLOUD
-                    </span>
+                    </strong>
 
-                    <h2>
-                        Precisa de mais recursos?
-                    </h2>
-
-                    <p>
-                        Escolha um plano maior conforme seus projetos
-                        crescerem.
+                    <p data-i18n="footer.description">
+                        Plataforma para hospedagem,
+                        gerenciamento e deploy de projetos.
                     </p>
 
                 </div>
 
-                <a
-                    href="suporte.html"
-                    class="btn btn-secondary"
-                >
-                    Falar com suporte
-                </a>
+                <div class="footer-links">
 
-            </section>
+                    <a
+                        href="termos.html"
+                        data-i18n="footer.terms"
+                    >
+                        Termos
+                    </a>
 
-        </div>
+                    <a
+                        href="privacidade.html"
+                        data-i18n="footer.privacy"
+                    >
+                        Privacidade
+                    </a>
 
-    </main>
+                    <a
+                        href="uso-aceitavel.html"
+                        data-i18n="footer.acceptable"
+                    >
+                        Uso aceitável
+                    </a>
+
+                    <a
+                        href="suporte.html"
+                        data-i18n="nav.support"
+                    >
+                        Suporte
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div
+                class="footer-bottom"
+                data-i18n="footer.rights"
+            >
+                © 2026 Zyphor Cloud. Todos os direitos reservados.
+            </div>
+
+        </footer>
+
+    </div>
 
 
-    <footer class="dashboard-footer">
-
-        <div class="container">
-
-            <span>
-                © 2026 Zyphor Cloud
-            </span>
-
-            <span>
-                Hospedagem de bots
-            </span>
-
-        </div>
-
-    </footer>
-
-
-    <script src="../js/api.js"></script>
-    <script src="../js/planos.js"></script>
+    <!-- IDIOMAS -->
+    <script src="../js/i18n.js"></script>
 
 </body>
-
 </html>
