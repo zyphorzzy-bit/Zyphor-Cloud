@@ -3,28 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Zyphor Cloud — Minha Conta</title>
 
-    <title>Minha conta — Zyphor Cloud</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/global.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/conta.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/responsive.css"
-    >
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/conta.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
@@ -33,50 +18,63 @@
 
         <div class="container dashboard-nav">
 
-            <a
-                href="dashboard.html"
-                class="dashboard-logo"
-            >
-                ZYPHOR CLOUD
+            <a href="../index.html" class="logo">
+                ZYPHOR <span>CLOUD</span>
             </a>
 
             <nav class="dashboard-links">
 
-                <a href="dashboard.html">
+                <a href="dashboard.html" data-i18n="nav.dashboard">
                     Dashboard
                 </a>
 
-                <a href="bots.html">
-                    Meus bots
+                <a href="bots.html" data-i18n="nav.projects">
+                    Meus projetos
                 </a>
 
-                <a href="planos.html">
+                <a href="planos.html" data-i18n="nav.plans">
                     Planos
                 </a>
 
-                <a href="pagamentos.html">
-                    Pagamentos
-                </a>
-
-                <a href="suporte.html">
+                <a href="suporte.html" data-i18n="nav.support">
                     Suporte
                 </a>
 
             </nav>
 
-            <div class="dashboard-user">
+            <div class="dashboard-actions">
 
-                <span id="userName">
-                    Usuário
-                </span>
+                <div class="language-selector">
 
-                <button
-                    type="button"
-                    id="logoutButton"
-                    class="btn btn-secondary"
+                    <button class="language-btn" type="button">
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="conta.html"
+                    class="account-button active"
+                    data-i18n="nav.account"
                 >
-                    Sair
-                </button>
+                    Minha conta
+                </a>
 
             </div>
 
@@ -85,367 +83,484 @@
     </header>
 
 
-    <main class="container account-page">
+    <main class="account-page">
 
-        <section class="account-header">
-
-            <div>
-
-                <span class="card-label">
-                    CONTA
-                </span>
-
-                <h1>
-                    Minha conta
-                </h1>
-
-                <p>
-                    Gerencie seus dados e as configurações da sua conta.
-                </p>
-
-            </div>
-
-        </section>
+        <div class="container">
 
 
-        <section class="account-grid">
+            <!-- CABEÇALHO -->
+
+            <section class="account-header">
+
+                <div>
+
+                    <span class="account-badge" data-i18n="account.badge">
+                        CONTA
+                    </span>
+
+                    <h1 data-i18n="account.title">
+                        Minha conta
+                    </h1>
+
+                    <p data-i18n="account.subtitle">
+                        Gerencie seus dados, segurança e preferências.
+                    </p>
+
+                </div>
+
+            </section>
 
 
-            <!-- Informações -->
+            <!-- PERFIL -->
 
-            <div class="account-card">
+            <section class="account-section">
 
-                <div class="card-header">
+                <div class="section-heading">
 
                     <div>
 
-                        <span class="card-label">
-                            PERFIL
-                        </span>
-
-                        <h2>
-                            Informações da conta
+                        <h2 data-i18n="account.profileTitle">
+                            Perfil
                         </h2>
+
+                        <p data-i18n="account.profileDescription">
+                            Atualize as informações da sua conta.
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <form id="accountForm">
+                <div class="account-card">
 
-                    <div class="form-group">
+                    <div class="profile-preview">
 
-                        <label for="name">
-                            Nome
-                        </label>
+                        <div class="profile-avatar">
+                            Z
+                        </div>
 
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Seu nome"
-                            autocomplete="name"
-                        >
+                        <div>
 
-                    </div>
+                            <h3 data-i18n="account.userName">
+                                Usuário Zyphor
+                            </h3>
 
+                            <p data-i18n="account.userEmail">
+                                usuario@email.com
+                            </p>
 
-                    <div class="form-group">
-
-                        <label for="email">
-                            E-mail
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="seu@email.com"
-                            autocomplete="email"
-                            disabled
-                        >
-
-                        <small class="form-help">
-                            O e-mail da conta não pode ser alterado por aqui.
-                        </small>
+                        </div>
 
                     </div>
 
 
-                    <div
-                        id="accountMessage"
-                        class="auth-message"
-                    ></div>
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label
+                                for="name"
+                                data-i18n="account.name"
+                            >
+                                Nome
+                            </label>
+
+                            <input
+                                id="name"
+                                type="text"
+                                placeholder="Seu nome"
+                                data-i18n-placeholder="account.namePlaceholder"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="email"
+                                data-i18n="account.email"
+                            >
+                                E-mail
+                            </label>
+
+                            <input
+                                id="email"
+                                type="email"
+                                placeholder="Seu e-mail"
+                                data-i18n-placeholder="account.emailPlaceholder"
+                            >
+
+                        </div>
+
+                    </div>
 
 
                     <button
-                        type="submit"
-                        id="saveAccountButton"
-                        class="btn btn-primary btn-large"
+                        type="button"
+                        class="primary-button"
+                        data-i18n="account.saveChanges"
                     >
                         Salvar alterações
                     </button>
 
-                </form>
+                </div>
 
-            </div>
+            </section>
 
 
-            <!-- Plano -->
+            <!-- SEGURANÇA -->
 
-            <div class="account-card">
+            <section class="account-section">
 
-                <div class="card-header">
+                <div class="section-heading">
 
                     <div>
 
-                        <span class="card-label">
-                            ASSINATURA
-                        </span>
-
-                        <h2>
-                            Meu plano
+                        <h2 data-i18n="account.securityTitle">
+                            Segurança
                         </h2>
+
+                        <p data-i18n="account.securityDescription">
+                            Proteja sua conta e altere sua senha.
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <div class="account-plan">
+                <div class="account-card">
 
-                    <div>
+                    <div class="form-group">
 
-                        <span class="account-plan-label">
-                            Plano atual
-                        </span>
+                        <label
+                            for="currentPassword"
+                            data-i18n="account.currentPassword"
+                        >
+                            Senha atual
+                        </label>
 
-                        <strong id="accountPlan">
-                            —
-                        </strong>
+                        <input
+                            id="currentPassword"
+                            type="password"
+                            placeholder="Digite sua senha atual"
+                            data-i18n-placeholder="account.currentPasswordPlaceholder"
+                        >
 
                     </div>
 
-                    <a
-                        href="planos.html"
-                        class="btn btn-secondary"
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label
+                                for="newPassword"
+                                data-i18n="account.newPassword"
+                            >
+                                Nova senha
+                            </label>
+
+                            <input
+                                id="newPassword"
+                                type="password"
+                                placeholder="Digite a nova senha"
+                                data-i18n-placeholder="account.newPasswordPlaceholder"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="confirmPassword"
+                                data-i18n="account.confirmPassword"
+                            >
+                                Confirmar nova senha
+                            </label>
+
+                            <input
+                                id="confirmPassword"
+                                type="password"
+                                placeholder="Confirme a nova senha"
+                                data-i18n-placeholder="account.confirmPasswordPlaceholder"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        data-i18n="account.changePassword"
                     >
-                        Ver planos
-                    </a>
+                        Alterar senha
+                    </button>
 
                 </div>
 
-
-                <div class="account-plan-details">
-
-                    <div class="account-detail">
-
-                        <span>
-                            RAM
-                        </span>
-
-                        <strong id="planRam">
-                            —
-                        </strong>
-
-                    </div>
+            </section>
 
 
-                    <div class="account-detail">
+            <!-- PREFERÊNCIAS -->
 
-                        <span>
-                            CPU
-                        </span>
+            <section class="account-section">
 
-                        <strong id="planCpu">
-                            —
-                        </strong>
-
-                    </div>
-
-
-                    <div class="account-detail">
-
-                        <span>
-                            Armazenamento
-                        </span>
-
-                        <strong id="planStorage">
-                            —
-                        </strong>
-
-                    </div>
-
-
-                    <div class="account-detail">
-
-                        <span>
-                            Bots
-                        </span>
-
-                        <strong id="planBots">
-                            —
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Segurança -->
-
-            <div class="account-card">
-
-                <div class="card-header">
+                <div class="section-heading">
 
                     <div>
 
-                        <span class="card-label">
-                            SEGURANÇA
-                        </span>
-
-                        <h2>
-                            Segurança da conta
+                        <h2 data-i18n="account.preferencesTitle">
+                            Preferências
                         </h2>
+
+                        <p data-i18n="account.preferencesDescription">
+                            Personalize algumas opções da sua conta.
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <div class="account-security-list">
+                <div class="account-card preferences-card">
 
 
-                    <div class="security-item">
+                    <div class="preference-row">
 
                         <div>
 
-                            <strong>
-                                Senha
-                            </strong>
+                            <h3 data-i18n="account.languageTitle">
+                                Idioma
+                            </h3>
 
-                            <span>
-                                Proteja sua conta com uma senha forte.
-                            </span>
+                            <p data-i18n="account.languageDescription">
+                                Escolha o idioma da plataforma.
+                            </p>
 
                         </div>
 
-                        <button
-                            type="button"
-                            id="changePasswordButton"
-                            class="btn btn-secondary"
-                        >
-                            Alterar senha
-                        </button>
+
+                        <select id="accountLanguage">
+
+                            <option value="pt-BR">
+                                🇧🇷 Português
+                            </option>
+
+                            <option value="en-US">
+                                🇺🇸 English
+                            </option>
+
+                            <option value="es">
+                                🇪🇸 Español
+                            </option>
+
+                        </select>
 
                     </div>
 
 
-                    <div class="security-item">
+                    <div class="preference-row">
 
                         <div>
 
-                            <strong>
-                                Sessão
-                            </strong>
+                            <h3 data-i18n="account.emailNotifications">
+                                Notificações por e-mail
+                            </h3>
 
-                            <span>
-                                Encerre a sessão atual neste dispositivo.
-                            </span>
+                            <p data-i18n="account.emailNotificationsDescription">
+                                Receba avisos importantes sobre sua conta e projetos.
+                            </p>
 
                         </div>
 
-                        <button
-                            type="button"
-                            id="logoutSecurityButton"
-                            class="btn btn-secondary"
-                        >
-                            Sair
-                        </button>
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
 
                     </div>
 
 
+                    <div class="preference-row">
+
+                        <div>
+
+                            <h3 data-i18n="account.maintenanceNotifications">
+                                Avisos de manutenção
+                            </h3>
+
+                            <p data-i18n="account.maintenanceNotificationsDescription">
+                                Receba informações sobre manutenções e indisponibilidades.
+                            </p>
+
+                        </div>
+
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
                 </div>
 
-            </div>
+            </section>
 
 
-            <!-- Zona de perigo -->
+            <!-- CONTA -->
 
-            <div class="account-card account-danger">
+            <section class="account-section danger-section">
 
-                <div class="card-header">
+                <div class="section-heading">
 
                     <div>
 
-                        <span class="card-label">
-                            ZONA DE PERIGO
-                        </span>
-
-                        <h2>
-                            Ações da conta
+                        <h2 data-i18n="account.accountTitle">
+                            Conta
                         </h2>
 
+                        <p data-i18n="account.accountDescription">
+                            Ações relacionadas à sua conta.
+                        </p>
+
                     </div>
 
                 </div>
 
 
-                <div class="danger-content">
+                <div class="account-card danger-card">
 
                     <div>
 
-                        <strong>
-                            Excluir conta
-                        </strong>
+                        <h3 data-i18n="account.logoutTitle">
+                            Sair da conta
+                        </h3>
 
-                        <p>
-                            A exclusão da conta remove seus dados e projetos conforme as regras da plataforma.
+                        <p data-i18n="account.logoutDescription">
+                            Encerra sua sessão neste dispositivo.
                         </p>
 
                     </div>
 
                     <button
                         type="button"
-                        id="deleteAccountButton"
-                        class="btn btn-danger"
+                        class="secondary-button"
+                        data-i18n="account.logout"
+                    >
+                        Sair
+                    </button>
+
+                </div>
+
+
+                <div class="account-card danger-card">
+
+                    <div>
+
+                        <h3 data-i18n="account.deleteTitle">
+                            Excluir conta
+                        </h3>
+
+                        <p data-i18n="account.deleteDescription">
+                            Exclua permanentemente sua conta e os dados associados.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="danger-button"
+                        data-i18n="account.delete"
                     >
                         Excluir conta
                     </button>
 
                 </div>
 
-            </div>
+            </section>
 
 
-        </section>
+            <!-- AVISO -->
+
+            <section class="dashboard-notice">
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3 data-i18n="account.noticeTitle">
+                        Área visual
+                    </h3>
+
+                    <p data-i18n="account.noticeDescription">
+                        As alterações desta página ainda são apenas visuais. O gerenciamento real da conta será conectado ao backend posteriormente.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
 
     </main>
 
 
-    <footer class="dashboard-footer">
+    <footer class="site-footer">
 
         <div class="container">
 
-            <span>
-                © 2026 Zyphor Cloud
-            </span>
+            <div class="footer-bottom">
 
-            <span>
-                Hospedagem de bots e projetos.
-            </span>
+                <span data-i18n="footer.copyright">
+                    © 2026 Zyphor Cloud. Todos os direitos reservados.
+                </span>
+
+                <div class="footer-links">
+
+                    <a href="termos.html" data-i18n="footer.terms">
+                        Termos
+                    </a>
+
+                    <a href="privacidade.html" data-i18n="footer.privacy">
+                        Privacidade
+                    </a>
+
+                    <a href="uso-aceitavel.html" data-i18n="footer.acceptableUse">
+                        Uso aceitável
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-    <script src="../js/api.js"></script>
-
+    <script src="../js/i18n.js"></script>
     <script src="../js/conta.js"></script>
 
 </body>
