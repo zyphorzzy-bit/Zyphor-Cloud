@@ -3,28 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Zyphor Cloud — Suporte</title>
 
-    <title>Suporte — Zyphor Cloud</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/global.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/suporte.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../css/responsive.css"
-    >
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/suporte.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
@@ -33,50 +18,63 @@
 
         <div class="container dashboard-nav">
 
-            <a
-                href="dashboard.html"
-                class="dashboard-logo"
-            >
-                ZYPHOR CLOUD
+            <a href="../index.html" class="logo">
+                ZYPHOR <span>CLOUD</span>
             </a>
 
             <nav class="dashboard-links">
 
-                <a href="dashboard.html">
+                <a href="dashboard.html" data-i18n="nav.dashboard">
                     Dashboard
                 </a>
 
-                <a href="bots.html">
-                    Meus bots
+                <a href="bots.html" data-i18n="nav.projects">
+                    Meus projetos
                 </a>
 
-                <a href="planos.html">
+                <a href="planos.html" data-i18n="nav.plans">
                     Planos
                 </a>
 
-                <a href="pagamentos.html">
-                    Pagamentos
-                </a>
-
-                <a href="suporte.html">
+                <a href="suporte.html" class="active" data-i18n="nav.support">
                     Suporte
                 </a>
 
             </nav>
 
-            <div class="dashboard-user">
+            <div class="dashboard-actions">
 
-                <span id="userName">
-                    Usuário
-                </span>
+                <div class="language-selector">
 
-                <button
-                    type="button"
-                    id="logoutButton"
-                    class="btn btn-secondary"
+                    <button class="language-btn" type="button">
+                        🇧🇷 Português
+                    </button>
+
+                    <div class="language-menu">
+
+                        <button type="button" data-lang="pt-BR">
+                            🇧🇷 Português
+                        </button>
+
+                        <button type="button" data-lang="en-US">
+                            🇺🇸 English
+                        </button>
+
+                        <button type="button" data-lang="es">
+                            🇪🇸 Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="conta.html"
+                    class="account-button"
+                    data-i18n="nav.account"
                 >
-                    Sair
-                </button>
+                    Minha conta
+                </a>
 
             </div>
 
@@ -85,392 +83,355 @@
     </header>
 
 
-    <main class="container support-page">
+    <main class="support-page">
 
-        <section class="support-header">
-
-            <span class="card-label">
-                SUPORTE
-            </span>
-
-            <h1>
-                Como podemos ajudar?
-            </h1>
-
-            <p>
-                Encontre respostas ou entre em contato com nossa equipe.
-            </p>
-
-        </section>
+        <div class="container">
 
 
-        <section class="support-grid">
+            <!-- CABEÇALHO -->
+
+            <section class="support-header">
+
+                <span class="support-badge" data-i18n="support.badge">
+                    SUPORTE
+                </span>
+
+                <h1 data-i18n="support.title">
+                    Como podemos ajudar?
+                </h1>
+
+                <p data-i18n="support.subtitle">
+                    Entre em contato com nossa equipe ou consulte seus chamados.
+                </p>
+
+            </section>
 
 
-            <!-- Abrir chamado -->
+            <!-- NOVO CHAMADO -->
 
-            <div class="support-card support-main-card">
+            <section class="support-section">
 
-                <div class="support-card-icon">
-                    ?
-                </div>
-
-                <div class="support-card-content">
-
-                    <span class="card-label">
-                        ATENDIMENTO
-                    </span>
-
-                    <h2>
-                        Abrir chamado
-                    </h2>
-
-                    <p>
-                        Precisa de ajuda com seu bot, conta, pagamento ou hospedagem?
-                        Envie uma solicitação para nossa equipe.
-                    </p>
-
-                    <button
-                        type="button"
-                        id="openTicketButton"
-                        class="btn btn-primary"
-                    >
-                        Abrir chamado
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Meus chamados -->
-
-            <div class="support-card">
-
-                <div class="support-card-icon">
-                    ≡
-                </div>
-
-                <div class="support-card-content">
-
-                    <span class="card-label">
-                        CHAMADOS
-                    </span>
-
-                    <h2>
-                        Meus chamados
-                    </h2>
-
-                    <p>
-                        Consulte seus chamados e acompanhe o atendimento da equipe.
-                    </p>
-
-                    <button
-                        type="button"
-                        id="viewTicketsButton"
-                        class="btn btn-secondary"
-                    >
-                        Ver chamados
-                    </button>
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-        <!-- Formulário -->
-
-        <section
-            id="ticketSection"
-            class="ticket-section hidden"
-        >
-
-            <div class="support-card ticket-card">
-
-                <div class="card-header">
+                <div class="section-heading">
 
                     <div>
 
-                        <span class="card-label">
-                            NOVO CHAMADO
-                        </span>
-
-                        <h2>
-                            Fale com o suporte
+                        <h2 data-i18n="support.newTicketTitle">
+                            Abrir chamado
                         </h2>
+
+                        <p data-i18n="support.newTicketDescription">
+                            Envie sua dúvida ou solicitação para nossa equipe.
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <form id="ticketForm">
+                <form class="support-form">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label
+                                for="subject"
+                                data-i18n="support.subject"
+                            >
+                                Assunto
+                            </label>
+
+                            <input
+                                id="subject"
+                                type="text"
+                                placeholder="Digite o assunto"
+                                data-i18n-placeholder="support.subjectPlaceholder"
+                            >
+
+                        </div>
 
 
-                    <div class="form-group">
+                        <div class="form-group">
 
-                        <label for="ticketSubject">
-                            Assunto
-                        </label>
+                            <label
+                                for="category"
+                                data-i18n="support.category"
+                            >
+                                Categoria
+                            </label>
 
-                        <input
-                            type="text"
-                            id="ticketSubject"
-                            placeholder="Ex: Meu bot não inicia"
-                            maxlength="120"
-                            required
-                        >
+                            <select id="category">
+
+                                <option data-i18n="support.categoryGeneral">
+                                    Geral
+                                </option>
+
+                                <option data-i18n="support.categoryAccount">
+                                    Conta
+                                </option>
+
+                                <option data-i18n="support.categoryPayment">
+                                    Pagamento
+                                </option>
+
+                                <option data-i18n="support.categoryHosting">
+                                    Hospedagem
+                                </option>
+
+                                <option data-i18n="support.categoryBug">
+                                    Problema técnico
+                                </option>
+
+                            </select>
+
+                        </div>
 
                     </div>
 
 
                     <div class="form-group">
 
-                        <label for="ticketCategory">
-                            Categoria
-                        </label>
-
-                        <select
-                            id="ticketCategory"
-                            required
+                        <label
+                            for="message"
+                            data-i18n="support.message"
                         >
-
-                            <option value="">
-                                Selecione uma categoria
-                            </option>
-
-                            <option value="bot">
-                                Problema com bot
-                            </option>
-
-                            <option value="account">
-                                Conta
-                            </option>
-
-                            <option value="payment">
-                                Pagamento
-                            </option>
-
-                            <option value="hosting">
-                                Hospedagem
-                            </option>
-
-                            <option value="other">
-                                Outro
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="ticketMessage">
                             Mensagem
                         </label>
 
                         <textarea
-                            id="ticketMessage"
+                            id="message"
                             rows="7"
-                            maxlength="4000"
-                            placeholder="Explique o que aconteceu..."
-                            required
+                            placeholder="Explique como podemos ajudar..."
+                            data-i18n-placeholder="support.messagePlaceholder"
                         ></textarea>
 
-                        <small class="form-help">
-                            Explique o problema com o máximo de detalhes possível.
-                        </small>
-
                     </div>
 
 
-                    <div
-                        id="ticketMessageStatus"
-                        class="auth-message"
-                    ></div>
-
-
-                    <div class="ticket-actions">
-
-                        <button
-                            type="button"
-                            id="cancelTicketButton"
-                            class="btn btn-secondary"
-                        >
-                            Cancelar
-                        </button>
-
-                        <button
-                            type="submit"
-                            id="ticketButton"
-                            class="btn btn-primary"
-                        >
-                            Enviar chamado
-                        </button>
-
-                    </div>
-
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        data-i18n="support.send"
+                    >
+                        Enviar chamado
+                    </button>
 
                 </form>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- Histórico -->
+            <!-- CHAMADOS -->
 
-        <section
-            id="ticketsSection"
-            class="tickets-section hidden"
-        >
+            <section class="support-section">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <div>
+                    <div>
 
-                    <span class="card-label">
-                        HISTÓRICO
-                    </span>
+                        <h2 data-i18n="support.ticketsTitle">
+                            Meus chamados
+                        </h2>
 
-                    <h2>
-                        Meus chamados
-                    </h2>
+                        <p data-i18n="support.ticketsDescription">
+                            Acompanhe suas solicitações de suporte.
+                        </p>
 
-                </div>
-
-            </div>
-
-
-            <div id="ticketsList">
-
-                <div class="empty-state">
-
-                    <div class="empty-icon">
-                        —
                     </div>
 
-                    <p>
-                        Nenhum chamado encontrado.
+                </div>
+
+
+                <div class="tickets-empty">
+
+                    <div class="empty-icon">
+                        ?
+                    </div>
+
+                    <h3 data-i18n="support.emptyTitle">
+                        Nenhum chamado aberto
+                    </h3>
+
+                    <p data-i18n="support.emptyDescription">
+                        Quando você abrir um chamado, ele aparecerá aqui.
                     </p>
 
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- FAQ -->
+            <!-- CONTATO -->
 
-        <section class="faq-section">
+            <section class="support-contact">
 
-            <div class="section-header">
+                <div class="contact-icon">
+                    @
+                </div>
 
                 <div>
 
-                    <span class="card-label">
-                        AJUDA
-                    </span>
-
-                    <h2>
-                        Perguntas frequentes
+                    <h2 data-i18n="support.emailTitle">
+                        Suporte por e-mail
                     </h2>
+
+                    <p data-i18n="support.emailDescription">
+                        Se preferir, você também pode entrar em contato diretamente com nossa equipe.
+                    </p>
+
+                    <a
+                        href="mailto:zyphorsupportt@gmail.com"
+                        class="support-email"
+                    >
+                        zyphorsupportt@gmail.com
+                    </a>
 
                 </div>
 
-            </div>
+            </section>
 
 
-            <div class="faq-list">
+            <!-- FAQ -->
+
+            <section class="support-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2 data-i18n="support.faqTitle">
+                            Perguntas frequentes
+                        </h2>
+
+                        <p data-i18n="support.faqDescription">
+                            Algumas respostas rápidas para dúvidas comuns.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-                <details class="faq-item">
+                <div class="faq-list">
 
-                    <summary>
-                        Como criar um bot?
-                    </summary>
 
-                    <p>
-                        Acesse "Meus bots", escolha "Criar bot" e configure
-                        a origem e os dados do seu projeto.
+                    <details class="faq-item">
+
+                        <summary data-i18n="support.faq1Question">
+                            Como começo a usar o Zyphor Cloud?
+                        </summary>
+
+                        <p data-i18n="support.faq1Answer">
+                            Crie sua conta, escolha um plano quando necessário e crie seu primeiro projeto.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary data-i18n="support.faq2Question">
+                            Quais projetos posso hospedar?
+                        </summary>
+
+                        <p data-i18n="support.faq2Answer">
+                            A plataforma foi planejada para bots, sites, aplicações e outros projetos compatíveis com os runtimes disponíveis.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary data-i18n="support.faq3Question">
+                            Como funciona o pagamento?
+                        </summary>
+
+                        <p data-i18n="support.faq3Answer">
+                            Inicialmente, os pagamentos via PIX podem exigir envio e análise de comprovante antes da ativação do plano.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary data-i18n="support.faq4Question">
+                            A hospedagem já está funcionando?
+                        </summary>
+
+                        <p data-i18n="support.faq4Answer">
+                            A interface está sendo preparada. Os recursos reais de hospedagem serão integrados posteriormente ao backend.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </section>
+
+
+            <!-- AVISO -->
+
+            <section class="dashboard-notice">
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3 data-i18n="support.noticeTitle">
+                        Sistema de suporte em desenvolvimento
+                    </h3>
+
+                    <p data-i18n="support.noticeDescription">
+                        Os chamados e respostas ainda são apenas visuais nesta etapa. O sistema real de atendimento será conectado ao backend posteriormente.
                     </p>
 
-                </details>
+                </div>
 
+            </section>
 
-                <details class="faq-item">
-
-                    <summary>
-                        Como enviar um projeto do GitHub?
-                    </summary>
-
-                    <p>
-                        Na criação do bot, selecione GitHub e informe o
-                        endereço do repositório e a branch desejada.
-                    </p>
-
-                </details>
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        Como funciona o pagamento?
-                    </summary>
-
-                    <p>
-                        Selecione um plano, realize o pagamento via PIX
-                        e envie o comprovante para análise.
-                    </p>
-
-                </details>
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        Meu bot está offline. O que faço?
-                    </summary>
-
-                    <p>
-                        Verifique os logs e a configuração do projeto.
-                        Se o problema continuar, abra um chamado.
-                    </p>
-
-                </details>
-
-
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
 
-    <footer class="dashboard-footer">
+    <footer class="site-footer">
 
         <div class="container">
 
-            <span>
-                © 2026 Zyphor Cloud
-            </span>
+            <div class="footer-bottom">
 
-            <span>
-                Hospedagem de bots e projetos.
-            </span>
+                <span data-i18n="footer.copyright">
+                    © 2026 Zyphor Cloud. Todos os direitos reservados.
+                </span>
+
+                <div class="footer-links">
+
+                    <a href="termos.html" data-i18n="footer.terms">
+                        Termos
+                    </a>
+
+                    <a href="privacidade.html" data-i18n="footer.privacy">
+                        Privacidade
+                    </a>
+
+                    <a href="uso-aceitavel.html" data-i18n="footer.acceptableUse">
+                        Uso aceitável
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-    <script src="../js/api.js"></script>
-
+    <script src="../js/i18n.js"></script>
     <script src="../js/suporte.js"></script>
 
 </body>
