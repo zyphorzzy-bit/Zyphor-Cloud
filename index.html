@@ -1,951 +1,719 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Zyphor Cloud — Hospedagem e Gerenciamento</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Zyphor Cloud — plataforma para hospedagem, gerenciamento e deploy de projetos."
+        content="Zyphor Cloud — hospede seus bots, sites e aplicações com controle completo."
     >
 
-    <link rel="stylesheet" href="frontend/css/global.css">
-    <link rel="stylesheet" href="frontend/css/responsive.css">
-
-    <style>
-        .home {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .home-nav {
-            min-height: 72px;
-            padding: 0 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            border-bottom: 1px solid #202020;
-            background: rgba(7, 7, 7, .96);
-            position: relative;
-            z-index: 20;
-        }
-
-        .home-logo {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            white-space: nowrap;
-        }
-
-        .home-logo span {
-            color: #777;
-            font-weight: 500;
-        }
-
-        .home-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .home-links a {
-            color: #888;
-            text-decoration: none;
-            font-size: 13px;
-            transition: .2s;
-        }
-
-        .home-links a:hover {
-            color: #fff;
-        }
-
-        .home-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* =========================
-           IDIOMA
-        ========================= */
-
-        .language-selector {
-            position: relative;
-        }
-
-        .language-btn {
-            padding: 9px 12px;
-            border: 1px solid #292929;
-            border-radius: 8px;
-            background: #111;
-            color: #aaa;
-            font-size: 12px;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .language-btn:hover {
-            color: #fff;
-            border-color: #444;
-        }
-
-        .language-menu {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
-            min-width: 155px;
-            padding: 6px;
-            border: 1px solid #292929;
-            border-radius: 10px;
-            background: #0d0d0d;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .45);
-            display: none;
-        }
-
-        .language-menu.active {
-            display: block;
-        }
-
-        .language-menu button {
-            width: 100%;
-            padding: 10px;
-            border: 0;
-            border-radius: 7px;
-            background: transparent;
-            color: #999;
-            text-align: left;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        .language-menu button:hover {
-            background: #181818;
-            color: #fff;
-        }
-
-        /* =========================
-           BOTÕES
-        ========================= */
-
-        .home-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .home-button {
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            border: 1px solid #292929;
-            color: #aaa;
-            background: #111;
-            white-space: nowrap;
-        }
-
-        .home-button:hover {
-            color: #fff;
-            border-color: #444;
-        }
-
-        .home-button.primary {
-            background: #fff;
-            color: #080808;
-            border-color: #fff;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            flex: 1;
-            max-width: 1250px;
-            width: 86%;
-            margin: auto;
-            padding: 90px 0;
-            display: grid;
-            grid-template-columns: 1fr 430px;
-            align-items: center;
-            gap: 70px;
-        }
-
-        .hero-content {
-            max-width: 680px;
-        }
-
-        .hero-label {
-            display: inline-flex;
-            padding: 7px 11px;
-            border: 1px solid #292929;
-            border-radius: 20px;
-            color: #999;
-            background: #0e0e0e;
-            font-size: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            margin: 20px 0 18px;
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: .98;
-            letter-spacing: -3px;
-        }
-
-        .hero h1 span {
-            color: #777;
-        }
-
-        .hero p {
-            max-width: 560px;
-            color: #888;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .hero-action {
-            padding: 13px 19px;
-            border-radius: 9px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid #303030;
-            color: #bbb;
-            background: #111;
-        }
-
-        .hero-action:hover {
-            color: #fff;
-            border-color: #444;
-        }
-
-        .hero-action.primary {
-            color: #050505;
-            background: #fff;
-            border-color: #fff;
-        }
-
-        /* =========================
-           HERO VISUAL
-        ========================= */
-
-        .hero-visual {
-            height: 420px;
-            border: 1px solid #252525;
-            border-radius: 20px;
-            background:
-                radial-gradient(
-                    circle at 50% 35%,
-                    #242424 0,
-                    #121212 35%,
-                    #0a0a0a 70%
-                );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-visual::before {
-            content: "";
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            border: 1px solid #303030;
-            border-radius: 50%;
-        }
-
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            width: 170px;
-            height: 170px;
-            border: 1px solid #292929;
-            border-radius: 50%;
-        }
-
-        .hero-cloud {
-            width: 110px;
-            height: 110px;
-            border-radius: 28px;
-            background: #fff;
-            color: #050505;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: 900;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 0 70px rgba(255,255,255,.08);
-        }
-
-        /* =========================
-           RECURSOS
-        ========================= */
-
-        .features {
-            max-width: 1250px;
-            width: 86%;
-            margin: 0 auto 80px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-
-        .feature {
-            padding: 25px;
-            border: 1px solid #222;
-            border-radius: 13px;
-            background: #0d0d0d;
-        }
-
-        .feature-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 9px;
-            background: #181818;
-            border: 1px solid #292929;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ccc;
-        }
-
-        .feature h3 {
-            margin: 17px 0 7px;
-            font-size: 14px;
-        }
-
-        .feature p {
-            margin: 0;
-            color: #666;
-            font-size: 11px;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           PLATAFORMAS
-        ========================= */
-
-        .platforms {
-            max-width: 1250px;
-            width: 86%;
-            margin: 0 auto 80px;
-        }
-
-        .platforms-title {
-            margin-bottom: 18px;
-            color: #aaa;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .platform-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-
-        .platform-card {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 15px;
-            border: 1px solid #222;
-            border-radius: 12px;
-            background: #0d0d0d;
-            color: #aaa;
-            text-decoration: none;
-            transition: .2s;
-        }
-
-        .platform-card:hover {
-            color: #fff;
-            border-color: #3a3a3a;
-            transform: translateY(-2px);
-        }
-
-        .platform-card img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .platform-card strong {
-            display: block;
-            font-size: 12px;
-        }
-
-        .platform-card span {
-            display: block;
-            margin-top: 3px;
-            color: #666;
-            font-size: 10px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        .site-footer {
-            border-top: 1px solid #202020;
-            background: #080808;
-            padding: 35px 7% 22px;
-        }
-
-        .footer-content {
-            max-width: 1250px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .footer-brand {
-            max-width: 320px;
-        }
-
-        .footer-brand strong {
-            color: #fff;
-            font-size: 14px;
-        }
-
-        .footer-brand p {
-            margin-top: 9px;
-            color: #666;
-            font-size: 11px;
-            line-height: 1.6;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 18px;
-        }
-
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            font-size: 11px;
-        }
-
-        .footer-links a:hover {
-            color: #fff;
-        }
-
-        .footer-bottom {
-            max-width: 1250px;
-            margin: 25px auto 0;
-            padding-top: 18px;
-            border-top: 1px solid #181818;
-            color: #4f4f4f;
-            font-size: 10px;
-        }
-
-        /* =========================
-           ELEMENTO FLUTUANTE
-        ========================= */
-
-        .zyphor-floating {
-            position: fixed;
-            top: 95px;
-            right: 24px;
-            z-index: 50;
-
-            max-width: 210px;
-            padding: 11px 16px;
-
-            background: #ff4fa3;
-            color: #fff;
-
-            border-radius: 12px;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
-
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* =========================
-           RESPONSIVO EXTRA
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .home-nav {
-                padding: 0 5%;
-            }
-
-            .home-links {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 65px 0;
-                gap: 45px;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-                margin: auto;
-            }
-
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-actions {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                height: 320px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .platform-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                flex-direction: column;
-            }
-
-            .footer-links {
-                justify-content: flex-start;
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            .home-nav {
-                flex-wrap: wrap;
-                padding-top: 13px;
-                padding-bottom: 13px;
-            }
-
-            .home-right {
-                margin-left: auto;
-            }
-
-            .home-buttons .home-button:first-child {
-                display: none;
-            }
-
-            .hero {
-                width: 90%;
-                padding: 55px 0;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-            }
-
-            .hero-action {
-                text-align: center;
-            }
-
-            .platforms {
-                width: 90%;
-            }
-
-            .platform-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .zyphor-floating {
-                top: auto;
-                right: 15px;
-                bottom: 15px;
-                max-width: 180px;
-                padding: 10px 13px;
-            }
-        }
-
-        @media (max-width: 430px) {
-
-            .home-logo {
-                font-size: 15px;
-            }
-
-            .language-btn {
-                padding: 8px 9px;
-            }
-
-            .hero-visual {
-                height: 270px;
-            }
-
-            .hero-cloud {
-                width: 90px;
-                height: 90px;
-            }
-
-            .site-footer {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
-        }
-    </style>
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>Zyphor Cloud</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<div class="home">
-
     <!-- =========================
          NAVBAR
     ========================== -->
+    <header class="site-header">
+        <div class="container nav-container">
 
-    <nav class="home-nav">
-
-        <a href="index.html" class="home-logo">
-            ZYPHOR <span>CLOUD</span>
-        </a>
-
-        <div class="home-links">
-
-            <a
-                href="frontend/planos.html"
-                data-i18n="nav.plans"
-            >
-                Planos
+            <a href="index.html" class="brand">
+                <span class="brand-mark">Z</span>
+                <span class="brand-name">Zyphor Cloud</span>
             </a>
 
-            <a
-                href="frontend/suporte.html"
-                data-i18n="nav.support"
-            >
-                Suporte
-            </a>
+            <nav class="main-nav">
 
-            <a
-                href="frontend/login.html"
-            >
-                Dashboard
-            </a>
-
-        </div>
-
-        <div class="home-right">
-
-            <!-- IDIOMA -->
-
-            <div class="language-selector">
-
-                <button
-                    class="language-btn"
-                    type="button"
-                    aria-label="Selecionar idioma"
+                <a
+                    href="pages/planos.html"
+                    data-i18n="nav.plans"
                 >
-                    🇧🇷 Português
-                </button>
+                    Planos
+                </a>
 
-                <div class="language-menu">
+                <a
+                    href="pages/suporte.html"
+                    data-i18n="nav.support"
+                >
+                    Suporte
+                </a>
+
+                <div class="language-selector">
 
                     <button
                         type="button"
-                        data-lang="pt-BR"
+                        class="language-btn"
+                        aria-label="Selecionar idioma"
                     >
                         🇧🇷 Português
                     </button>
 
-                    <button
-                        type="button"
-                        data-lang="en-US"
-                    >
-                        🇺🇸 English
-                    </button>
+                    <div class="language-menu">
 
-                    <button
-                        type="button"
-                        data-lang="es"
-                    >
-                        🇪🇸 Español
-                    </button>
+                        <button
+                            type="button"
+                            data-lang="pt-BR"
+                        >
+                            🇧🇷 Português
+                        </button>
 
+                        <button
+                            type="button"
+                            data-lang="es"
+                        >
+                            🇪🇸 Español
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="en-US"
+                        >
+                            🇺🇸 English
+                        </button>
+
+                    </div>
                 </div>
 
-            </div>
-
-            <!-- BOTÕES -->
-
-            <div class="home-buttons">
-
                 <a
-                    href="frontend/login.html"
-                    class="home-button"
+                    href="pages/login.html"
+                    class="nav-login"
                     data-i18n="nav.login"
                 >
                     Entrar
                 </a>
 
                 <a
-                    href="frontend/cadastro.html"
-                    class="home-button primary"
-                    data-i18n="nav.signup"
+                    href="pages/cadastro.html"
+                    class="nav-register"
+                    data-i18n="nav.register"
                 >
                     Criar conta
                 </a>
 
-            </div>
+            </nav>
 
         </div>
-
-    </nav>
+    </header>
 
 
     <!-- =========================
          HERO
     ========================== -->
+    <main>
 
-    <main class="hero">
+        <section class="hero">
+            <div class="container hero-container">
 
-        <div class="hero-content">
+                <div class="hero-content">
 
-            <span class="hero-label">
-                ZYPHOR CLOUD
-            </span>
+                    <span
+                        class="hero-badge"
+                        data-i18n="home.badge"
+                    >
+                        Zyphor Cloud
+                    </span>
 
-            <h1 data-i18n="hero.title">
-                Hospede seus projetos. Tenha o controle.
-            </h1>
+                    <h1 data-i18n="home.heroTitle">
+                        Hospede seus projetos.<br>
+                        Tenha o controle.
+                    </h1>
 
-            <p data-i18n="hero.description">
-                Uma plataforma para hospedar, gerenciar e acompanhar
-                seus projetos de forma simples.
-            </p>
+                    <p
+                        class="hero-description"
+                        data-i18n="home.heroDescription"
+                    >
+                        Uma plataforma para hospedar e gerenciar
+                        seus bots, sites e aplicações em um só lugar.
+                    </p>
 
-            <div class="hero-actions">
+                    <div class="hero-actions">
 
-                <a
-                    href="frontend/cadastro.html"
-                    class="hero-action primary"
-                    data-i18n="hero.signup"
-                >
-                    Criar conta
-                </a>
+                        <a
+                            href="pages/cadastro.html"
+                            class="btn btn-primary"
+                            data-i18n="home.start"
+                        >
+                            Começar agora
+                        </a>
 
-                <a
-                    href="frontend/planos.html"
-                    class="hero-action"
-                    data-i18n="nav.plans"
-                >
-                    Planos
-                </a>
+                        <a
+                            href="pages/planos.html"
+                            class="btn btn-secondary"
+                            data-i18n="home.viewPlans"
+                        >
+                            Ver planos
+                        </a>
+
+                    </div>
+
+                    <div class="hero-note">
+                        <span>●</span>
+                        <span data-i18n="home.note">
+                            Plataforma em desenvolvimento
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- DASHBOARD PREVIEW -->
+                <div class="hero-visual">
+
+                    <div class="dashboard-preview">
+
+                        <div class="preview-header">
+
+                            <div class="preview-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span class="preview-title">
+                                Zyphor Cloud
+                            </span>
+
+                        </div>
+
+                        <div class="preview-body">
+
+                            <aside class="preview-sidebar">
+
+                                <div class="preview-logo">
+                                    Z
+                                </div>
+
+                                <div class="preview-menu-item active">
+                                    Dashboard
+                                </div>
+
+                                <div class="preview-menu-item">
+                                    Projetos
+                                </div>
+
+                                <div class="preview-menu-item">
+                                    Planos
+                                </div>
+
+                                <div class="preview-menu-item">
+                                    Configurações
+                                </div>
+
+                            </aside>
+
+
+                            <div class="preview-main">
+
+                                <div class="preview-welcome">
+                                    <span>
+                                        Dashboard
+                                    </span>
+
+                                    <strong>
+                                        Seus projetos
+                                    </strong>
+                                </div>
+
+
+                                <div class="preview-stats">
+
+                                    <div class="preview-card">
+
+                                        <small>
+                                            Projetos
+                                        </small>
+
+                                        <strong>
+                                            01
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="preview-card">
+
+                                        <small>
+                                            Recursos
+                                        </small>
+
+                                        <strong>
+                                            02
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="preview-card">
+
+                                        <small>
+                                            Status
+                                        </small>
+
+                                        <strong class="status-online">
+                                            Online
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="preview-project">
+
+                                    <div>
+                                        <small>
+                                            Projeto
+                                        </small>
+
+                                        <strong>
+                                            Zyphor Bot
+                                        </strong>
+                                    </div>
+
+                                    <span class="project-status">
+                                        Online
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             RESOURCES
+        ========================== -->
+        <section class="resources-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span
+                        class="section-badge"
+                        data-i18n="home.resourcesBadge"
+                    >
+                        Recursos
+                    </span>
+
+                    <h2 data-i18n="home.resourcesTitle">
+                        Tudo em um só lugar.
+                    </h2>
+
+                    <p data-i18n="home.resourcesDescription">
+                        Gerencie seus projetos de forma simples,
+                        organizada e centralizada.
+                    </p>
+
+                </div>
+
+
+                <div class="resources-grid">
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ◈
+                        </div>
+
+                        <h3 data-i18n="home.resource1Title">
+                            Controle de projetos
+                        </h3>
+
+                        <p data-i18n="home.resource1Description">
+                            Crie, configure e gerencie seus projetos
+                            diretamente pelo painel.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ◫
+                        </div>
+
+                        <h3 data-i18n="home.resource2Title">
+                            Arquivos e variáveis
+                        </h3>
+
+                        <p data-i18n="home.resource2Description">
+                            Organize arquivos e configure variáveis
+                            do seu projeto.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ◉
+                        </div>
+
+                        <h3 data-i18n="home.resource3Title">
+                            Logs e deploy
+                        </h3>
+
+                        <p data-i18n="home.resource3Description">
+                            Acompanhe o funcionamento do projeto
+                            e visualize seus registros.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ◇
+                        </div>
+
+                        <h3 data-i18n="home.resource4Title">
+                            Recursos
+                        </h3>
+
+                        <p data-i18n="home.resource4Description">
+                            Visualize memória, CPU, armazenamento
+                            e outros recursos disponíveis.
+                        </p>
+
+                    </article>
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
 
-        <!-- VISUAL -->
+        <!-- =========================
+             PROJECT TYPES
+        ========================== -->
+        <section class="projects-section">
 
-        <div class="hero-visual">
+            <div class="container">
 
-            <div class="hero-cloud">
-                Z
+                <div class="section-heading">
+
+                    <span
+                        class="section-badge"
+                        data-i18n="home.projectsBadge"
+                    >
+                        Projetos
+                    </span>
+
+                    <h2 data-i18n="home.projectsTitle">
+                        Hospede o que você quiser.
+                    </h2>
+
+                    <p data-i18n="home.projectsDescription">
+                        Escolha o tipo de projeto e tenha
+                        as ferramentas necessárias para gerenciá-lo.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+
+                        <div class="project-icon">
+                            🤖
+                        </div>
+
+                        <h3 data-i18n="home.projectBotsTitle">
+                            Bots
+                        </h3>
+
+                        <p data-i18n="home.projectBotsDescription">
+                            Discord, WhatsApp, Telegram
+                            e outros bots compatíveis.
+                        </p>
+
+                        <span
+                            class="project-link"
+                            data-i18n="home.projectAvailable"
+                        >
+                            Disponível em breve
+                        </span>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="project-icon">
+                            🌐
+                        </div>
+
+                        <h3 data-i18n="home.projectSitesTitle">
+                            Sites
+                        </h3>
+
+                        <p data-i18n="home.projectSitesDescription">
+                            Landing pages, portfólios,
+                            dashboards e aplicações web.
+                        </p>
+
+                        <span
+                            class="project-link"
+                            data-i18n="home.projectAvailable"
+                        >
+                            Disponível em breve
+                        </span>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="project-icon">
+                            ⚙️
+                        </div>
+
+                        <h3 data-i18n="home.projectAppsTitle">
+                            Aplicações
+                        </h3>
+
+                        <p data-i18n="home.projectAppsDescription">
+                            Node.js, Python, Java e outros
+                            ambientes compatíveis.
+                        </p>
+
+                        <span
+                            class="project-link"
+                            data-i18n="home.projectAvailable"
+                        >
+                            Disponível em breve
+                        </span>
+
+                    </article>
+
+                </div>
+
             </div>
 
-        </div>
+        </section>
+
+
+        <!-- =========================
+             PLATFORMS
+        ========================== -->
+        <section class="platforms-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span
+                        class="section-badge"
+                        data-i18n="home.platformsBadge"
+                    >
+                        Comunidade
+                    </span>
+
+                    <h2 data-i18n="home.platformsTitle">
+                        Acompanhe a Zyphor.
+                    </h2>
+
+                    <p data-i18n="home.platformsDescription">
+                        Encontre novidades, suporte e atualizações
+                        pelos nossos canais oficiais.
+                    </p>
+
+                </div>
+
+
+                <div class="platforms-grid">
+
+                    <a
+                        href="https://www.tiktok.com/@zyphor.support"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="platform-card"
+                    >
+                        <img
+                            src="assets/images/tiktok.png"
+                            alt="TikTok"
+                        >
+
+                        <div>
+                            <strong>
+                                TikTok
+                            </strong>
+
+                            <span>
+                                @zyphor.support
+                            </span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="https://www.instagram.com/zyphorcloud.7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="platform-card"
+                    >
+                        <img
+                            src="assets/images/instagram.png"
+                            alt="Instagram"
+                        >
+
+                        <div>
+                            <strong>
+                                Instagram
+                            </strong>
+
+                            <span>
+                                @zyphorcloud.7
+                            </span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="https://www.youtube.com/@Zyphorapps"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="platform-card"
+                    >
+                        <img
+                            src="assets/images/youtube.png"
+                            alt="YouTube"
+                        >
+
+                        <div>
+                            <strong>
+                                YouTube
+                            </strong>
+
+                            <span>
+                                @Zyphorapps
+                            </span>
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="https://discord.gg/epnNpECmHn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="platform-card"
+                    >
+                        <img
+                            src="assets/images/discord.png"
+                            alt="Discord"
+                        >
+
+                        <div>
+                            <strong>
+                                Discord
+                            </strong>
+
+                            <span>
+                                Zyphor Cloud
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <div>
+
+                        <span
+                            class="section-badge"
+                            data-i18n="home.ctaBadge"
+                        >
+                            Zyphor Cloud
+                        </span>
+
+                        <h2 data-i18n="home.ctaTitle">
+                            Pronto para começar?
+                        </h2>
+
+                        <p data-i18n="home.ctaDescription">
+                            Crie sua conta e acompanhe
+                            a evolução da plataforma.
+                        </p>
+
+                    </div>
+
+
+                    <div class="cta-actions">
+
+                        <a
+                            href="pages/cadastro.html"
+                            class="btn btn-primary"
+                            data-i18n="home.ctaRegister"
+                        >
+                            Criar conta
+                        </a>
+
+                        <a
+                            href="pages/suporte.html"
+                            class="btn btn-secondary"
+                            data-i18n="home.ctaSupport"
+                        >
+                            Falar com suporte
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
 
     <!-- =========================
-         RECURSOS
+         FLOATING ELEMENT
     ========================== -->
-
-    <section class="features">
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                ◈
-            </div>
-
-            <h3>
-                Gerenciamento
-            </h3>
-
-            <p>
-                Controle seus projetos, arquivos,
-                variáveis e configurações.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                ▶
-            </div>
-
-            <h3>
-                Deploy simples
-            </h3>
-
-            <p>
-                Importe projetos pelo GitHub
-                ou envie seu projeto em ZIP.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                ▣
-            </div>
-
-            <h3>
-                Console e recursos
-            </h3>
-
-            <p>
-                Acompanhe logs, status, memória,
-                CPU e armazenamento.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PLATAFORMAS
-    ========================== -->
-
-    <section class="platforms">
-
-        <div
-            class="platforms-title"
-            data-i18n="footer.platforms"
-        >
-            Plataformas
-        </div>
-
-        <div class="platform-grid">
-
-            <a
-                href="https://www.tiktok.com/@zyphor.support"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="platform-card"
-            >
-                <img
-                    src="frontend/assets/images/tiktok.png"
-                    alt="TikTok"
-                >
-
-                <div>
-                    <strong>TikTok</strong>
-                    <span>@zyphor.support</span>
-                </div>
-            </a>
-
-
-            <a
-                href="https://www.instagram.com/zyphorcloud.7"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="platform-card"
-            >
-                <img
-                    src="frontend/assets/images/instagram.png"
-                    alt="Instagram"
-                >
-
-                <div>
-                    <strong>Instagram</strong>
-                    <span>@zyphorcloud.7</span>
-                </div>
-            </a>
-
-
-            <a
-                href="https://www.youtube.com/@Zyphorapps"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="platform-card"
-            >
-                <img
-                    src="frontend/assets/images/youtube.png"
-                    alt="YouTube"
-                >
-
-                <div>
-                    <strong>YouTube</strong>
-                    <span>@Zyphorapps</span>
-                </div>
-            </a>
-
-
-            <a
-                href="https://discord.gg/epnNpECmHn"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="platform-card"
-            >
-                <img
-                    src="frontend/assets/images/discord.png"
-                    alt="Discord"
-                >
-
-                <div>
-                    <strong>Discord</strong>
-                    <span>Zyphor Cloud</span>
-                </div>
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         ELEMENTO FLUTUANTE
-    ========================== -->
-
     <div class="zyphor-floating">
         larp, bbzona
     </div>
@@ -954,74 +722,143 @@
     <!-- =========================
          FOOTER
     ========================== -->
-
     <footer class="site-footer">
 
-        <div class="footer-content">
+        <div class="container footer-container">
 
-            <div class="footer-brand">
+            <div class="footer-main">
 
-                <strong>
-                    ZYPHOR CLOUD
-                </strong>
+                <div class="footer-brand">
 
-                <p>
-                    Plataforma para hospedagem,
-                    gerenciamento e deploy de projetos.
-                </p>
+                    <a
+                        href="index.html"
+                        class="brand"
+                    >
+                        <span class="brand-mark">
+                            Z
+                        </span>
+
+                        <span class="brand-name">
+                            Zyphor Cloud
+                        </span>
+                    </a>
+
+                    <p data-i18n="footer.description">
+                        Hospedagem e gerenciamento
+                        para seus projetos.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 data-i18n="footer.platformTitle">
+                        Plataforma
+                    </h3>
+
+                    <a
+                        href="pages/planos.html"
+                        data-i18n="nav.plans"
+                    >
+                        Planos
+                    </a>
+
+                    <a
+                        href="pages/login.html"
+                        data-i18n="nav.login"
+                    >
+                        Entrar
+                    </a>
+
+                    <a
+                        href="pages/cadastro.html"
+                        data-i18n="nav.register"
+                    >
+                        Criar conta
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 data-i18n="footer.supportTitle">
+                        Suporte
+                    </h3>
+
+                    <a
+                        href="pages/suporte.html"
+                        data-i18n="nav.support"
+                    >
+                        Suporte
+                    </a>
+
+                    <a
+                        href="mailto:zyphorsupportt@gmail.com"
+                    >
+                        zyphorsupportt@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3 data-i18n="footer.legalTitle">
+                        Legal
+                    </h3>
+
+                    <a
+                        href="pages/termos.html"
+                        data-i18n="footer.terms"
+                    >
+                        Termos de Uso
+                    </a>
+
+                    <a
+                        href="pages/privacidade.html"
+                        data-i18n="footer.privacy"
+                    >
+                        Privacidade
+                    </a>
+
+                    <a
+                        href="pages/uso-aceitavel.html"
+                        data-i18n="footer.acceptableUse"
+                    >
+                        Uso Aceitável
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <div class="footer-links">
+            <div class="footer-bottom">
 
-                <a
-                    href="frontend/termos.html"
-                    data-i18n="footer.terms"
-                >
-                    Termos
-                </a>
+                <span>
+                    © 2026 Zyphor Cloud.
+                    <span data-i18n="footer.rights">
+                        Todos os direitos reservados.
+                    </span>
+                </span>
 
-                <a
-                    href="frontend/privacidade.html"
-                    data-i18n="footer.privacy"
-                >
-                    Privacidade
-                </a>
-
-                <a
-                    href="frontend/uso-aceitavel.html"
-                    data-i18n="footer.acceptable"
-                >
-                    Uso aceitável
-                </a>
-
-                <a
-                    href="frontend/suporte.html"
-                    data-i18n="nav.support"
-                >
-                    Suporte
-                </a>
+                <span data-i18n="footer.status">
+                    Plataforma em desenvolvimento.
+                </span>
 
             </div>
 
-        </div>
-
-
-        <div
-            class="footer-bottom"
-            data-i18n="footer.rights"
-        >
-            © 2026 Zyphor Cloud. Todos os direitos reservados.
         </div>
 
     </footer>
 
-</div>
 
-
-<!-- SISTEMA DE IDIOMAS -->
-<script src="frontend/js/i18n.js"></script>
+    <!-- =========================
+         JS
+    ========================== -->
+    <script src="js/i18n.js"></script>
 
 </body>
 </html>
