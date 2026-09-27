@@ -4,51 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Zyphor Cloud</title>
     <meta
         name="description"
-        content="Zyphor Cloud — hospedagem para bots, sites e aplicações."
+        content="Zyphor Cloud — hospede bots, sites e aplicações em um só lugar."
     >
 
-    <meta name="theme-color" content="#080808">
+    <link rel="icon" href="assets/favicon.png">
 
-    <title>Zyphor Cloud</title>
-
-    <link rel="icon" href="assets/favicon.png" type="image/png">
-
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<header class="zyphor-header">
-    <div class="zyphor-container zyphor-nav">
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container nav-container">
 
-        <a href="index.html" class="zyphor-logo">
-            <span class="zyphor-logo-mark">Z</span>
-            <span class="zyphor-logo-text">Zyphor Cloud</span>
+        <a href="index.html" class="brand">
+            <span class="brand-logo">Z</span>
+
+            <span class="brand-text">
+                Zyphor <span>Cloud</span>
+            </span>
         </a>
 
-        <nav class="zyphor-links">
-            <a href="pages/planos.html" class="zyphor-link">Planos</a>
-            <a href="pages/suporte.html" class="zyphor-link">Suporte</a>
+        <nav class="main-nav">
+            <a href="#inicio">Início</a>
+            <a href="pages/planos.html">Planos</a>
+            <a href="#plataforma">Plataforma</a>
+            <a href="pages/suporte.html">Suporte</a>
         </nav>
 
-        <div class="zyphor-actions">
-
-            <div class="zyphor-language">
-                <button class="zyphor-language-button" type="button">
-                    🇧🇷 PT
-                </button>
-            </div>
-
-            <a href="pages/login.html" class="zyphor-login">
+        <div class="nav-actions">
+            <a href="pages/login.html" class="login-link">
                 Entrar
             </a>
 
-            <a href="pages/cadastro.html" class="zyphor-register">
+            <a href="pages/cadastro.html" class="signup-button">
                 Criar conta
             </a>
-
         </div>
 
     </div>
@@ -57,177 +54,183 @@
 
 <main>
 
-    <section class="zyphor-hero">
+<!-- HERO -->
+<section class="hero" id="inicio">
 
-        <div class="zyphor-container zyphor-hero-grid">
+    <div class="container hero-grid">
 
-            <div>
+        <div class="hero-content">
 
-                <div class="zyphor-badge">
-                    <span></span>
-                    Zyphor Cloud
-                </div>
+            <div class="hero-label">
+                <span class="pulse"></span>
+                Zyphor Cloud
+            </div>
 
-                <h1>
-                    Hospede seus projetos.
-                    <em>Tenha o controle.</em>
-                </h1>
+            <h1>
+                Sua infraestrutura,
+                <span>do seu jeito.</span>
+            </h1>
 
-                <p class="zyphor-hero-description">
-                    Uma plataforma moderna para hospedar,
-                    configurar e gerenciar seus bots, sites
-                    e aplicações em um único painel.
-                </p>
+            <p>
+                Hospede seus bots, sites e aplicações em uma plataforma
+                simples, moderna e feita para você ter controle.
+            </p>
 
-                <div class="zyphor-buttons">
+            <div class="hero-actions">
 
-                    <a
-                        href="pages/cadastro.html"
-                        class="zyphor-btn zyphor-btn-primary"
-                    >
-                        Começar agora
-                    </a>
+                <a
+                    href="pages/cadastro.html"
+                    class="primary-button"
+                >
+                    Começar agora
+                    <span>→</span>
+                </a>
 
-                    <a
-                        href="pages/planos.html"
-                        class="zyphor-btn zyphor-btn-secondary"
-                    >
-                        Ver planos
-                    </a>
-
-                </div>
-
-                <div class="zyphor-hero-note">
-                    ● Plataforma em desenvolvimento
-                </div>
+                <a
+                    href="pages/planos.html"
+                    class="secondary-button"
+                >
+                    Conhecer planos
+                </a>
 
             </div>
 
+            <div class="hero-info">
 
-            <div class="zyphor-preview">
+                <div>
+                    <span class="info-dot"></span>
+                    Plataforma em desenvolvimento
+                </div>
 
-                <div class="preview-top">
+                <span class="info-divider"></span>
 
-                    <div class="preview-dots">
+                <span>Controle simples</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DASHBOARD -->
+        <div class="hero-dashboard">
+
+            <div class="dashboard-frame">
+
+                <div class="dashboard-bar">
+
+                    <div class="dashboard-dots">
                         <i></i>
                         <i></i>
                         <i></i>
                     </div>
 
-                    <span class="preview-url">
-                        panel.zyphor.cloud
-                    </span>
+                    <span>Zyphor Cloud</span>
+
+                    <div class="dashboard-bar-space"></div>
 
                 </div>
 
-                <div class="preview-body">
 
-                    <aside class="preview-sidebar">
+                <div class="dashboard-layout">
 
-                        <div class="preview-side-logo">
+                    <aside class="dashboard-sidebar">
+
+                        <div class="mini-logo">
                             Z
                         </div>
 
-                        <div class="preview-nav-item active">
-                            Dashboard
-                        </div>
+                        <div class="sidebar-links">
 
-                        <div class="preview-nav-item">
-                            Projetos
-                        </div>
+                            <div class="sidebar-link active">
+                                <span>⌂</span>
+                                Dashboard
+                            </div>
 
-                        <div class="preview-nav-item">
-                            Planos
-                        </div>
+                            <div class="sidebar-link">
+                                <span>▣</span>
+                                Projetos
+                            </div>
 
-                        <div class="preview-nav-item">
-                            Suporte
-                        </div>
+                            <div class="sidebar-link">
+                                <span>◫</span>
+                                Recursos
+                            </div>
 
-                        <div class="preview-side-title">
-                            Conta
-                        </div>
+                            <div class="sidebar-link">
+                                <span>⚙</span>
+                                Configurações
+                            </div>
 
-                        <div class="preview-nav-item">
-                            Configurações
                         </div>
 
                     </aside>
 
 
-                    <div class="preview-content">
+                    <div class="dashboard-content">
 
-                        <div class="preview-heading">
+                        <div class="dashboard-heading">
 
                             <div>
-                                <small>PAINEL</small>
-                                <strong>Dashboard</strong>
+                                <small>VISÃO GERAL</small>
+                                <h3>Dashboard</h3>
                             </div>
 
-                            <span class="preview-status">
-                                ● Sistema online
+                            <span class="dashboard-online">
+                                <b></b>
+                                Online
                             </span>
 
                         </div>
 
 
-                        <div class="preview-metrics">
+                        <div class="dashboard-stats">
 
-                            <div class="preview-metric">
-                                <span>PROJETOS</span>
-                                <strong>01</strong>
+                            <div class="dashboard-stat">
+                                <small>PROJETOS</small>
+                                <strong>03</strong>
                             </div>
 
-                            <div class="preview-metric">
-                                <span>MEMÓRIA</span>
-                                <strong>1.2 GB</strong>
+                            <div class="dashboard-stat">
+                                <small>RAM</small>
+                                <strong>1.8 GB</strong>
                             </div>
 
-                            <div class="preview-metric">
-                                <span>CPU</span>
+                            <div class="dashboard-stat">
+                                <small>CPU</small>
                                 <strong>24%</strong>
                             </div>
 
                         </div>
 
 
-                        <div class="preview-chart">
+                        <div class="dashboard-project">
 
-                            <span class="preview-chart-title">
-                                Uso de recursos
-                            </span>
-
-                            <div class="preview-bars">
-                                <i style="height:35%"></i>
-                                <i style="height:48%"></i>
-                                <i style="height:42%"></i>
-                                <i style="height:65%"></i>
-                                <i style="height:55%"></i>
-                                <i style="height:78%"></i>
-                                <i style="height:61%"></i>
-                                <i style="height:88%"></i>
-                                <i style="height:72%"></i>
-                                <i style="height:94%"></i>
+                            <div class="project-icon">
+                                Z
                             </div>
+
+                            <div class="project-info">
+                                <strong>Meu projeto</strong>
+                                <span>Node.js · Online</span>
+                            </div>
+
+                            <div class="project-indicator"></div>
 
                         </div>
 
 
-                        <div class="preview-project">
+                        <div class="dashboard-project">
 
-                            <div>
-                                <div class="preview-project-name">
-                                    Zyphor Bot
-                                </div>
-
-                                <div class="preview-project-type">
-                                    Discord Bot • Node.js
-                                </div>
+                            <div class="project-icon muted">
+                                W
                             </div>
 
-                            <span class="preview-status">
-                                Online
-                            </span>
+                            <div class="project-info">
+                                <strong>Website</strong>
+                                <span>Web · Online</span>
+                            </div>
+
+                            <div class="project-indicator"></div>
 
                         </div>
 
@@ -239,416 +242,478 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <section class="zyphor-section">
+<!-- PLATAFORMA -->
+<section class="platform-section" id="plataforma">
 
-        <div class="zyphor-container">
+    <div class="container">
 
-            <div class="zyphor-section-head">
+        <div class="section-header">
 
-                <span class="zyphor-section-label">
-                    Recursos
-                </span>
+            <div>
+                <span class="section-label">PLATAFORMA</span>
 
                 <h2>
-                    Tudo em um só lugar.
+                    Tudo que você precisa.
                 </h2>
-
-                <p>
-                    Tenha as principais ferramentas para
-                    administrar seus projetos sem complicação.
-                </p>
-
             </div>
 
-
-            <div class="zyphor-grid">
-
-                <article class="zyphor-card">
-                    <div class="zyphor-card-icon">◈</div>
-
-                    <h3>
-                        Controle de projetos
-                    </h3>
-
-                    <p>
-                        Crie e gerencie seus projetos
-                        diretamente pelo painel.
-                    </p>
-                </article>
-
-
-                <article class="zyphor-card">
-                    <div class="zyphor-card-icon">⌁</div>
-
-                    <h3>
-                        Arquivos e variáveis
-                    </h3>
-
-                    <p>
-                        Organize arquivos e configure
-                        variáveis de ambiente.
-                    </p>
-                </article>
-
-
-                <article class="zyphor-card">
-                    <div class="zyphor-card-icon">◉</div>
-
-                    <h3>
-                        Logs e deploy
-                    </h3>
-
-                    <p>
-                        Acompanhe logs e o estado
-                        dos seus projetos.
-                    </p>
-                </article>
-
-            </div>
+            <p>
+                Um painel para organizar, configurar e acompanhar
+                todos os seus projetos.
+            </p>
 
         </div>
 
-    </section>
 
+        <div class="feature-grid">
 
-    <section class="zyphor-section">
+            <article class="feature-card">
 
-        <div class="zyphor-container">
+                <div class="feature-number">
+                    01
+                </div>
 
-            <div class="zyphor-section-head">
+                <div class="feature-icon">
+                    ◈
+                </div>
 
-                <span class="zyphor-section-label">
-                    Projetos
-                </span>
-
-                <h2>
-                    Hospede diferentes tipos de projetos.
-                </h2>
+                <h3>Seus projetos</h3>
 
                 <p>
-                    A plataforma foi pensada para diferentes
-                    necessidades de hospedagem.
+                    Organize bots, sites e aplicações
+                    em um único painel.
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="zyphor-grid">
+            <article class="feature-card">
 
-                <article class="zyphor-card zyphor-project-card">
+                <div class="feature-number">
+                    02
+                </div>
 
-                    <div class="project-icon">
-                        🤖
-                    </div>
+                <div class="feature-icon">
+                    ◌
+                </div>
 
-                    <h3>
-                        Bots
-                    </h3>
+                <h3>Recursos</h3>
 
-                    <p>
-                        Discord, WhatsApp, Telegram
-                        e outros projetos compatíveis.
-                    </p>
+                <p>
+                    Acompanhe RAM, CPU e armazenamento
+                    de cada projeto.
+                </p>
 
-                    <span class="zyphor-coming">
-                        Disponível em breve
-                    </span>
-
-                </article>
+            </article>
 
 
-                <article class="zyphor-card zyphor-project-card">
+            <article class="feature-card">
 
-                    <div class="project-icon">
-                        🌐
-                    </div>
+                <div class="feature-number">
+                    03
+                </div>
 
-                    <h3>
-                        Sites
-                    </h3>
+                <div class="feature-icon">
+                    ≡
+                </div>
 
-                    <p>
-                        Landing pages, portfólios,
-                        dashboards e aplicações web.
-                    </p>
+                <h3>Logs</h3>
 
-                    <span class="zyphor-coming">
-                        Disponível em breve
-                    </span>
+                <p>
+                    Visualize informações e erros
+                    diretamente pelo painel.
+                </p>
 
-                </article>
+            </article>
 
 
-                <article class="zyphor-card zyphor-project-card">
+            <article class="feature-card">
 
-                    <div class="project-icon">
-                        ⚙️
-                    </div>
+                <div class="feature-number">
+                    04
+                </div>
 
-                    <h3>
-                        Aplicações
-                    </h3>
+                <div class="feature-icon">
+                    ⚙
+                </div>
 
-                    <p>
-                        Node.js, Python, Java e
-                        outros ambientes compatíveis.
-                    </p>
+                <h3>Configuração</h3>
 
-                    <span class="zyphor-coming">
-                        Disponível em breve
-                    </span>
+                <p>
+                    Variáveis, arquivos e configurações
+                    em um só lugar.
+                </p>
 
-                </article>
-
-            </div>
+            </article>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <section class="zyphor-section">
+<!-- TIPOS DE PROJETO -->
+<section class="projects-section">
 
-        <div class="zyphor-container">
+    <div class="container">
 
-            <div class="zyphor-section-head">
+        <div class="section-header">
 
-                <span class="zyphor-section-label">
-                    Comunidade
+            <div>
+                <span class="section-label">PROJETOS</span>
+
+                <h2>
+                    Hospede o que quiser.
+                </h2>
+            </div>
+
+            <p>
+                Escolha o tipo de projeto que deseja
+                colocar na Zyphor Cloud.
+            </p>
+
+        </div>
+
+
+        <div class="project-types">
+
+            <a href="pages/criar-bot.html" class="type-card">
+
+                <div class="type-top">
+                    <span class="type-icon">⌁</span>
+                    <span class="type-arrow">↗</span>
+                </div>
+
+                <h3>Bots</h3>
+
+                <p>
+                    Discord, WhatsApp, Telegram
+                    e outras plataformas.
+                </p>
+
+                <span class="type-link">
+                    Criar projeto →
                 </span>
+
+            </a>
+
+
+            <a href="pages/criar-bot.html" class="type-card">
+
+                <div class="type-top">
+                    <span class="type-icon">◫</span>
+                    <span class="type-arrow">↗</span>
+                </div>
+
+                <h3>Sites</h3>
+
+                <p>
+                    Landing pages, portfólios,
+                    dashboards e páginas web.
+                </p>
+
+                <span class="type-link">
+                    Criar projeto →
+                </span>
+
+            </a>
+
+
+            <a href="pages/criar-bot.html" class="type-card">
+
+                <div class="type-top">
+                    <span class="type-icon">◇</span>
+                    <span class="type-arrow">↗</span>
+                </div>
+
+                <h3>Aplicações</h3>
+
+                <p>
+                    Node.js, Python, Java
+                    e outras aplicações compatíveis.
+                </p>
+
+                <span class="type-link">
+                    Criar projeto →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMUNIDADE -->
+<section class="community-section">
+
+    <div class="container">
+
+        <div class="community-heading">
+
+            <div>
+                <span class="section-label">COMUNIDADE</span>
 
                 <h2>
                     Acompanhe a Zyphor.
                 </h2>
-
-                <p>
-                    Novidades, suporte e atualizações
-                    pelos canais oficiais.
-                </p>
-
             </div>
 
-
-            <div class="zyphor-community">
-
-                <a
-                    href="https://www.tiktok.com/@zyphor.support"
-                    target="_blank"
-                    rel="noopener"
-                    class="zyphor-social"
-                >
-                    <img src="assets/images/tiktok.png" alt="TikTok">
-
-                    <div>
-                        <strong>TikTok</strong>
-                        <span>@zyphor.support</span>
-                    </div>
-                </a>
-
-
-                <a
-                    href="https://www.instagram.com/zyphorcloud.7"
-                    target="_blank"
-                    rel="noopener"
-                    class="zyphor-social"
-                >
-                    <img src="assets/images/instagram.png" alt="Instagram">
-
-                    <div>
-                        <strong>Instagram</strong>
-                        <span>@zyphorcloud.7</span>
-                    </div>
-                </a>
-
-
-                <a
-                    href="https://www.youtube.com/@Zyphorapps"
-                    target="_blank"
-                    rel="noopener"
-                    class="zyphor-social"
-                >
-                    <img src="assets/images/youtube.png" alt="YouTube">
-
-                    <div>
-                        <strong>YouTube</strong>
-                        <span>@Zyphorapps</span>
-                    </div>
-                </a>
-
-
-                <a
-                    href="https://discord.gg/epnNpECmHn"
-                    target="_blank"
-                    rel="noopener"
-                    class="zyphor-social"
-                >
-                    <img src="assets/images/discord.png" alt="Discord">
-
-                    <div>
-                        <strong>Discord</strong>
-                        <span>Zyphor Cloud</span>
-                    </div>
-                </a>
-
-            </div>
+            <p>
+                Nossas principais plataformas.
+            </p>
 
         </div>
 
-    </section>
+
+        <div class="social-grid">
+
+            <!-- DISCORD -->
+            <a
+                href="#"
+                class="social-card"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <img
+                    src="assets/images/discord.png"
+                    alt="Discord"
+                >
+
+                <div class="social-text">
+                    <strong>Discord</strong>
+                    <span>Comunidade e suporte</span>
+                </div>
+
+                <span class="social-arrow">↗</span>
+
+            </a>
 
 
-    <div class="zyphor-container">
+            <!-- INSTAGRAM -->
+            <a
+                href="#"
+                class="social-card"
+                target="_blank"
+                rel="noopener"
+            >
 
-        <section class="zyphor-cta">
+                <img
+                    src="assets/images/instagram.png"
+                    alt="Instagram"
+                >
 
-            <div>
+                <div class="social-text">
+                    <strong>Instagram</strong>
+                    <span>Novidades e atualizações</span>
+                </div>
 
-                <span class="zyphor-section-label">
-                    Zyphor Cloud
+                <span class="social-arrow">↗</span>
+
+            </a>
+
+
+            <!-- YOUTUBE -->
+            <a
+                href="#"
+                class="social-card"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <img
+                    src="assets/images/youtube.png"
+                    alt="YouTube"
+                >
+
+                <div class="social-text">
+                    <strong>YouTube</strong>
+                    <span>Vídeos e conteúdos</span>
+                </div>
+
+                <span class="social-arrow">↗</span>
+
+            </a>
+
+
+            <!-- TIKTOK -->
+            <a
+                href="#"
+                class="social-card"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <img
+                    src="assets/images/tiktok.png"
+                    alt="TikTok"
+                >
+
+                <div class="social-text">
+                    <strong>TikTok</strong>
+                    <span>Vídeos e novidades</span>
+                </div>
+
+                <span class="social-arrow">↗</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-content">
+
+                <span class="section-label">
+                    ZYPHOR CLOUD
                 </span>
 
                 <h2>
-                    Pronto para começar?
+                    Comece seu próximo projeto.
                 </h2>
 
                 <p>
-                    Crie sua conta e acompanhe
-                    a evolução da plataforma.
+                    Crie sua conta e tenha seus projetos
+                    organizados em um só lugar.
                 </p>
 
             </div>
 
-
-            <div class="zyphor-buttons">
+            <div class="cta-actions">
 
                 <a
                     href="pages/cadastro.html"
-                    class="zyphor-btn zyphor-btn-primary"
+                    class="primary-button"
                 >
                     Criar conta
+                    <span>→</span>
                 </a>
 
                 <a
                     href="pages/suporte.html"
-                    class="zyphor-btn zyphor-btn-secondary"
+                    class="secondary-button"
                 >
                     Suporte
                 </a>
 
             </div>
 
-        </section>
+        </div>
 
     </div>
+
+</section>
 
 </main>
 
 
+<!-- ELEMENTO FLUTUANTE -->
 <div class="zyphor-floating">
     larp, bbzona
 </div>
 
 
-<footer class="zyphor-footer">
+<!-- FOOTER -->
+<footer class="site-footer">
 
-    <div class="zyphor-container">
+    <div class="container footer-main">
 
-        <div class="zyphor-footer-grid">
+        <div class="footer-brand">
 
-            <div class="zyphor-footer-brand">
+            <a href="index.html" class="brand">
 
-                <a href="index.html" class="zyphor-logo">
-                    <span class="zyphor-logo-mark">Z</span>
-                    <span class="zyphor-logo-text">
-                        Zyphor Cloud
-                    </span>
-                </a>
+                <span class="brand-logo">Z</span>
 
-                <p>
-                    Hospedagem e gerenciamento
-                    para seus projetos.
-                </p>
+                <span class="brand-text">
+                    Zyphor <span>Cloud</span>
+                </span>
 
-            </div>
+            </a>
 
+            <p>
+                Infraestrutura simples para
+                quem cria.
+            </p>
 
-            <div class="zyphor-footer-column">
-
-                <h3>Plataforma</h3>
-
-                <a href="pages/planos.html">
-                    Planos
-                </a>
-
-                <a href="pages/login.html">
-                    Entrar
-                </a>
-
-                <a href="pages/cadastro.html">
-                    Criar conta
-                </a>
-
-            </div>
-
-
-            <div class="zyphor-footer-column">
-
-                <h3>Suporte</h3>
-
-                <a href="pages/suporte.html">
-                    Suporte
-                </a>
-
-                <a href="mailto:zyphorsupportt@gmail.com">
-                    E-mail
-                </a>
-
-            </div>
-
-
-            <div class="zyphor-footer-column">
-
-                <h3>Legal</h3>
-
-                <a href="pages/termos.html">
-                    Termos de Uso
-                </a>
-
-                <a href="pages/privacidade.html">
-                    Privacidade
-                </a>
-
-                <a href="pages/uso-aceitavel.html">
-                    Uso Aceitável
-                </a>
-
-            </div>
+            <a
+                href="mailto:zyphorsupportt@gmail.com"
+                class="support-email"
+            >
+                zyphorsupportt@gmail.com
+            </a>
 
         </div>
 
 
-        <div class="zyphor-footer-bottom">
+        <div class="footer-column">
 
-            <span>
-                © 2026 Zyphor Cloud.
-                Todos os direitos reservados.
-            </span>
+            <h4>Plataforma</h4>
 
-            <span>
-                Plataforma em desenvolvimento.
-            </span>
+            <a href="pages/planos.html">Planos</a>
+            <a href="pages/dashboard.html">Dashboard</a>
+            <a href="pages/suporte.html">Suporte</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Conta</h4>
+
+            <a href="pages/login.html">Entrar</a>
+            <a href="pages/cadastro.html">Criar conta</a>
+            <a href="pages/conta.html">Minha conta</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Legal</h4>
+
+            <a href="pages/termos.html">Termos</a>
+            <a href="pages/privacidade.html">Privacidade</a>
+            <a href="pages/uso-aceitavel.html">
+                Uso aceitável
+            </a>
 
         </div>
 
     </div>
 
+
+    <div class="container footer-bottom">
+
+        <span>
+            © 2026 Zyphor Cloud. Todos os direitos reservados.
+        </span>
+
+        <span>
+            Feito para quem cria.
+        </span>
+
+    </div>
+
 </footer>
-
-
-<script src="js/i18n.js"></script>
 
 </body>
 </html>
