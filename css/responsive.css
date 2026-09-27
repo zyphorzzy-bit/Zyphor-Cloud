@@ -1,45 +1,81 @@
-@media (max-width: 950px) {
+/* =========================================
+   NOTEBOOK / TABLET HORIZONTAL
+========================================= */
 
-    .hero-container {
+@media (max-width: 1050px) {
+
+    .hero-grid {
+        gap: 40px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .container {
+        width: min(100% - 30px, 700px);
+    }
+
+    .nav-container {
+        min-height: 64px;
+    }
+
+    .main-nav {
+        gap: 14px;
+    }
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero-grid {
         grid-template-columns: 1fr;
         gap: 45px;
     }
 
     .hero-content {
         max-width: 650px;
-        margin: 0 auto;
-        text-align: center;
     }
 
-    .hero-badge {
-        margin-left: auto;
-        margin-right: auto;
+    .hero-content > p {
+        max-width: 550px;
     }
 
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
+    .hero-dashboard {
+        max-width: 700px;
     }
 
-    .hero-actions {
-        justify-content: center;
+    .section-header,
+    .community-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .hero-note {
-        text-align: center;
+    .section-header > p,
+    .community-heading > p {
+        max-width: 500px;
     }
 
-    .dashboard-preview {
-        max-width: 680px;
-        margin: auto;
+    .project-types {
+        grid-template-columns: 1fr;
     }
 
-    .resources-grid {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .platforms-grid {
-        grid-template-columns: repeat(2,1fr);
+    .type-card {
+        min-height: 185px;
     }
 
     .footer-main {
@@ -49,70 +85,286 @@
     .footer-brand {
         grid-column: 1 / -1;
     }
+
 }
 
 
-@media (max-width: 700px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
 
     .container {
-        width: calc(100% - 28px);
+        width: calc(100% - 24px);
+    }
+
+    .site-header {
+        background: #050505;
     }
 
     .nav-container {
-        min-height: auto;
-        padding: 10px 0;
+        padding: 13px 0;
+
         flex-wrap: wrap;
+
+        gap: 13px;
+    }
+
+    .brand-logo {
+        width: 31px;
+        height: 31px;
+    }
+
+    .brand-text {
+        font-size: 14px;
     }
 
     .main-nav {
+        order: 3;
+
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+
+        justify-content: flex-start;
+
+        gap: 6px;
+
+        overflow-x: auto;
+
+        padding-bottom: 2px;
     }
 
+    .main-nav a {
+        flex-shrink: 0;
+
+        padding: 6px 8px;
+
+        border: 1px solid #181818;
+        border-radius: 6px;
+
+        background: #090909;
+
+        font-size: 9px;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+
+        gap: 6px;
+    }
+
+    .login-link {
+        font-size: 10px;
+    }
+
+    .signup-button {
+        padding: 7px 9px;
+
+        font-size: 9px;
+    }
+
+
+    /* HERO */
+
     .hero {
-        padding: 65px 0 70px;
+        padding: 55px 0 60px;
+    }
+
+    .hero-grid {
+        gap: 35px;
     }
 
     .hero h1 {
-        font-size: clamp(39px, 11vw, 55px);
+        font-size: clamp(37px, 11vw, 48px);
+
+        letter-spacing: -1.9px;
+    }
+
+    .hero-content > p {
+        margin-top: 17px;
+
+        font-size: 12px;
     }
 
     .hero-actions {
+        width: 100%;
+
         flex-direction: column;
+
+        align-items: stretch;
+
+        margin-top: 23px;
     }
 
-    .hero-actions .btn {
+    .primary-button,
+    .secondary-button {
         width: 100%;
     }
 
-    .section {
-        padding: 70px 0;
+    .hero-info {
+        flex-wrap: wrap;
     }
 
-    .resources-grid,
-    .projects-grid,
-    .platforms-grid {
+
+    /* DASHBOARD */
+
+    .dashboard-layout {
+        grid-template-columns: 82px 1fr;
+
+        min-height: 275px;
+    }
+
+    .dashboard-sidebar {
+        padding: 14px 7px;
+    }
+
+    .mini-logo {
+        width: 27px;
+        height: 27px;
+
+        margin-bottom: 18px;
+    }
+
+    .sidebar-link {
+        min-height: 29px;
+
+        padding: 0 6px;
+
+        gap: 5px;
+
+        font-size: 7px;
+    }
+
+    .sidebar-link span {
+        width: 10px;
+    }
+
+    .dashboard-content {
+        padding: 15px;
+    }
+
+    .dashboard-heading h3 {
+        font-size: 15px;
+    }
+
+    .dashboard-stats {
+        gap: 5px;
+
+        margin-top: 16px;
+    }
+
+    .dashboard-stat {
+        padding: 9px;
+    }
+
+    .dashboard-stat strong {
+        font-size: 11px;
+    }
+
+    .dashboard-project {
+        min-height: 46px;
+
+        padding: 8px;
+    }
+
+    .project-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    /* SECTIONS */
+
+    .platform-section,
+    .projects-section,
+    .community-section {
+        padding: 65px 0;
+    }
+
+    .section-header h2,
+    .community-heading h2 {
+        font-size: 25px;
+    }
+
+    .feature-grid {
         grid-template-columns: 1fr;
     }
 
+    .feature-card {
+        min-height: 170px;
+    }
+
+
+    /* SOCIAL */
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-card {
+        min-height: 68px;
+    }
+
+    .social-card img {
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+        min-height: 36px;
+    }
+
+
+    /* CTA */
+
+    .cta-section {
+        padding: 20px 0 65px;
+    }
+
     .cta-box {
-        flex-direction: column;
         align-items: flex-start;
-        padding: 27px;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        gap: 25px;
+    }
+
+    .cta-content h2 {
+        font-size: 22px;
     }
 
     .cta-actions {
         width: 100%;
+
         flex-direction: column;
     }
 
-    .cta-actions .btn {
-        width: 100%;
+
+    /* FLOATING */
+
+    .zyphor-floating {
+        top: 12px;
+        right: 10px;
+
+        max-width: 110px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 8px;
     }
+
+
+    /* FOOTER */
 
     .footer-main {
         grid-template-columns: 1fr 1fr;
+
+        gap: 32px 20px;
+
+        padding: 45px 0 35px;
     }
 
     .footer-brand {
@@ -120,52 +372,65 @@
     }
 
     .footer-bottom {
+        min-height: auto;
+
+        padding: 16px 0;
+
         flex-direction: column;
+        align-items: flex-start;
+
+        gap: 5px;
     }
+
 }
 
 
-@media (max-width: 460px) {
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
 
-    .brand-name {
-        font-size: 12px;
+@media (max-width: 430px) {
+
+    .hero h1 {
+        font-size: 35px;
+
+        letter-spacing: -1.5px;
     }
 
-    .main-nav {
-        gap: 2px;
+    .hero-label {
+        font-size: 9px;
     }
 
-    .main-nav > a {
-        padding: 7px;
-        font-size: 10px;
+    .dashboard-layout {
+        grid-template-columns: 1fr;
     }
 
-    .language-btn {
-        font-size: 10px;
-    }
-
-    .preview-sidebar {
+    .dashboard-sidebar {
         display: none;
     }
 
-    .preview-content {
-        grid-template-columns: 1fr;
+    .dashboard-content {
+        padding: 14px;
     }
 
-    .preview-main {
-        padding: 17px;
+    .dashboard-stats {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .preview-stats {
-        grid-template-columns: 1fr;
+    .dashboard-stat small {
+        font-size: 6px;
     }
 
-    .zyphor-floating {
-        top: 72px;
-        right: 10px;
-        max-width: 135px;
-        padding: 7px 10px;
-        font-size: 9px;
+    .dashboard-stat strong {
+        font-size: 10px;
+    }
+
+    .social-card img {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
     }
 
     .footer-main {
@@ -175,4 +440,59 @@
     .footer-brand {
         grid-column: auto;
     }
+
+}
+
+
+/* =========================================
+   CELULARES MUITO PEQUENOS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: calc(100% - 18px);
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .dashboard-stats {
+        gap: 4px;
+    }
+
+    .dashboard-stat {
+        padding: 8px 6px;
+    }
+
+    .dashboard-stat strong {
+        font-size: 9px;
+    }
+
+    .social-card {
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .social-card img {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        min-height: 32px;
+    }
+
+    .social-text strong {
+        font-size: 11px;
+    }
+
+    .social-text span {
+        font-size: 8px;
+    }
+
 }
